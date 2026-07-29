@@ -6,9 +6,9 @@ export const siteConfig = {
   whatsapp: "https://wa.me/50670867130",
   whatsappDisplay: "+506 7086 7130",
   // Destinatario principal del formulario y correo visible en el sitio.
-  email: "jasalas@1989arquitectura.com",
+  email: "lcsalas@1989arquitectura.com",
   // Copia automática de cada consulta (FormSubmit `_cc`).
-  emailCc: "lcsalas@1989arquitectura.com",
+  emailCc: "jasalas@1989arquitectura.com",
   instagram: "https://www.instagram.com/19.89_arquitectura/",
   instagramHandle: "@19.89_arquitectura",
   // El botón "Agendar reunión" lleva a la página de contacto.
