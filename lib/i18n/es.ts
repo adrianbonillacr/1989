@@ -74,19 +74,67 @@ export const es = {
       "Para quienes ya tienen una propiedad o proyecto en funcionamiento y quieren identificar oportunidades de mejora, priorizar inversiones y aumentar su valor.",
     path2Link: "Ver diagnóstico",
     strategyEyebrow: "Estrategia 19.89",
-    strategyTitle: "Una metodología para tomar mejores decisiones.",
+    strategyTitle: "Una forma de trabajar para tomar mejores decisiones.",
     strategyText:
-      "La Estrategia 19.89 es una metodología desarrollada para acompañar proyectos residenciales, comerciales y hoteleros desde sus primeras etapas hasta su consolidación. Su objetivo es ayudar a propietarios e inversionistas a tomar mejores decisiones, establecer prioridades y desarrollar proyectos capaces de diferenciarse y generar valor a largo plazo.",
-    strategyWhy:
-      "Las decisiones más importantes de un proyecto suelen tomarse antes del primer plano. La Estrategia 19.89 nace para orientarlas desde el inicio y transformar cada inversión en una oportunidad de generar mayor valor.",
-    processEyebrow: "Cómo trabajamos",
+      "La Estrategia 19.89 fue desarrollada para acompañar proyectos residenciales, comerciales y hoteleros desde sus primeras etapas hasta su consolidación. Su objetivo es ayudar a propietarios e inversionistas a tomar mejores decisiones, establecer prioridades y desarrollar proyectos capaces de diferenciarse y generar valor a largo plazo.",
+    // ¿Por qué comenzar con una estrategia? (PDF p4)
+    whyEyebrow: "¿Por qué comenzar con una estrategia?",
+    whyTitle:
+      "Las decisiones más importantes de un proyecto suelen tomarse antes del primer plano.",
+    whyText1:
+      "La elección de una propiedad, la distribución de la inversión, la definición del concepto o la forma en que el proyecto llegará al mercado son decisiones que determinan gran parte de su éxito.",
+    whyText2:
+      "Sin una estrategia clara pueden surgir inversiones de bajo impacto, oportunidades desaprovechadas y proyectos que no logran desarrollar todo su potencial.",
+    whyText3:
+      "La Estrategia 19.89 nace para orientar esas decisiones desde el inicio y transformar cada inversión en una oportunidad para generar mayor valor.",
+
+    // ¿Cómo trabajamos? (PDF p5)
+    processEyebrow: "¿Cómo trabajamos?",
     processTitle:
       "Un proceso que acompaña de la primera decisión a la consolidación.",
-    disciplinesEyebrow: "Disciplinas",
-    disciplinesTitle: "Disciplinas bajo una misma visión.",
+    processIntro:
+      "Nuestro proceso acompaña al cliente desde la primera decisión hasta la consolidación del proyecto, integrando análisis, diseño, experiencia y posicionamiento bajo una misma visión estratégica.",
+
+    // ¿Qué analizamos? (PDF p6)
+    analyzeEyebrow: "¿Qué analizamos?",
+    analyzeTitle: "Cada proyecto es diferente.",
+    analyzeText:
+      "Por eso evaluamos únicamente aquellos aspectos capaces de generar valor y contribuir al cumplimiento de sus objetivos. Entre ellos:",
+    analyzeNote:
+      "Más que evaluar disciplinas de forma independiente, buscamos comprender cómo trabajan en conjunto para fortalecer el proyecto y maximizar su potencial desde el inicio.",
+
+    // El Valor de 19.89 (PDF p7)
+    valueEyebrow: "El Valor de 19.89",
+    valueTitle:
+      "En 19.89 creemos que los mejores proyectos comienzan mucho antes del diseño.",
+    valueText1:
+      "Comienzan comprendiendo el potencial de la inversión, definiendo una estrategia clara y orientando cada decisión hacia la generación de valor.",
+    valueText2:
+      "Por eso acompañamos a nuestros clientes desde las primeras etapas del proyecto hasta su consolidación, integrando análisis, diseño, experiencia y posicionamiento bajo una misma visión estratégica.",
+    valueText3:
+      "Nuestro compromiso es aportar criterio, dirección y una visión integral para desarrollar proyectos con identidad, diferenciación y valor a largo plazo.",
+
+    // Roadmap · Del análisis a la acción (PDF p25-26)
+    roadmapEyebrow: "Del análisis a la acción",
+    roadmapTitle: "El siguiente paso es convertir la estrategia en resultados.",
+    roadmapIntro:
+      "Ahora que conocemos los objetivos del proyecto y hemos definido una estrategia para su desarrollo, el siguiente paso consiste en planificar su implementación de forma ordenada y alineada con las prioridades establecidas.",
+    roadmapNote:
+      "Cada proyecto es diferente. Por ello, el alcance, las disciplinas, el cronograma y la inversión se estructuran de manera personalizada, asegurando que cada decisión contribuya a generar el mayor valor posible.",
+    scenariosEyebrow: "Dónde empieza cada proyecto",
+    scenariosTitle:
+      "El punto de partida define el recorrido. Estas son las tres situaciones posibles.",
+    scenarioStartLabel: "Punto de partida",
+    scenarioFirstStepLabel: "Primer paso",
+    scenarioRouteLabel: "Recorrido",
+    considerationsLabel: "Consideraciones",
+    considerationsIntro:
+      "Las propuestas desarrolladas por 19.89 se estructuran de forma personalizada para responder a las características y objetivos de cada proyecto. Por esta razón:",
+    disciplinesEyebrow: "Servicios",
+    disciplinesTitle: "Cada proyecto activa solo los que necesita, bajo una misma visión.",
     disciplinesNote:
-      "No son servicios aislados: son herramientas que se integran dentro de la estrategia según las necesidades de cada proyecto.",
-    disciplinesLink: "Ver todas las disciplinas",
+      "No operan de forma aislada: son herramientas que se integran dentro de la estrategia según las necesidades de cada proyecto.",
+    disciplinesLink: "Ver todos los servicios",
     portfolioEyebrow: "Portafolio destacado",
     architectureLabel: "Arquitectura",
     lightingLabel: "Iluminación",
@@ -101,6 +149,91 @@ export const es = {
     { number: "04", title: "Desarrollamos", description: "Implementamos las disciplinas necesarias para transformar la estrategia en resultados." },
     { number: "05", title: "Posicionamos", description: "Construimos una identidad sólida y una presencia comercial alineada con el valor del proyecto." },
     { number: "06", title: "Evolucionamos", description: "Acompañamos el crecimiento del proyecto con una visión de largo plazo y nuevas oportunidades de mejora." },
+  ],
+
+  // Aspectos que se evalúan en la estrategia (PDF v2, p6 · ¿Qué analizamos?)
+  analyzeItems: [
+    "Selección de activos (cuando aún no existe una propiedad).",
+    "Análisis financiero estratégico.",
+    "Arquitectura.",
+    "Diseño de iluminación.",
+    "Diseño de interiores.",
+    "Equipamiento y ambientación.",
+    "Protección de identidad.",
+    "Fotografía profesional.",
+    "Marketing digital.",
+    "Automatización y movilidad eléctrica.",
+  ],
+
+  // Roadmap de implementación (PDF v2, p26 · Del análisis a la acción).
+  // `icon` referencia el set de íconos de components/RoadmapIcon.tsx
+  roadmapSteps: [
+    { number: "01", icon: "scope", title: "Definimos el alcance", description: "Seleccionamos las disciplinas y servicios que mejor responden a las necesidades y objetivos del proyecto." },
+    { number: "02", icon: "proposal", title: "Elaboramos la propuesta", description: "Preparamos una propuesta técnica y económica con los alcances, entregables, honorarios y cronograma de trabajo." },
+    { number: "03", icon: "plan", title: "Planificamos la implementación", description: "Organizamos el desarrollo del proyecto por etapas, estableciendo prioridades y una hoja de ruta clara para su ejecución." },
+    { number: "04", icon: "start", title: "Iniciamos el desarrollo", description: "Una vez aprobada la propuesta, comenzamos la implementación de las disciplinas seleccionadas y acompañamos el proyecto durante su evolución." },
+  ],
+
+  // Los tres puntos de partida posibles (PDF v2, p9 · Opción A / Opción B).
+  scenarios: [
+    {
+      icon: "search",
+      tag: "Proyecto Nuevo",
+      title: "Aún no existe una propiedad",
+      start: "Hay intención de invertir, pero todavía no se ha comprado el activo.",
+      firstStep: "Selección de activos",
+      firstStepText:
+        "Evaluamos oportunidades alineadas con los objetivos, presupuesto y visión del proyecto: ubicación, contexto, potencial de desarrollo y riesgos.",
+      route: [
+        "Selección de activos",
+        "Desarrollo del proyecto",
+        "Identidad y posicionamiento",
+        "Automatización y movilidad",
+      ],
+      href: "/proyecto-desde-cero",
+      linkLabel: "Ver proceso",
+    },
+    {
+      icon: "property",
+      tag: "Proyecto Nuevo",
+      title: "Ya existe una propiedad",
+      start: "El activo ya fue adquirido y el proyecto está por definirse.",
+      firstStep: "Diagnóstico estratégico",
+      firstStepText:
+        "Analizamos el punto de partida y pasamos directo al desarrollo del proyecto con una hoja de ruta definida.",
+      route: [
+        "Diagnóstico estratégico",
+        "Desarrollo del proyecto",
+        "Identidad y posicionamiento",
+        "Automatización y movilidad",
+      ],
+      href: "/proyecto-desde-cero",
+      linkLabel: "Ver proceso",
+    },
+    {
+      icon: "built",
+      tag: "Proyecto Construido",
+      title: "El proyecto ya está en funcionamiento",
+      start: "La propiedad opera y se busca aumentar su valor y diferenciación.",
+      firstStep: "Índice de Valor 19.89",
+      firstStepText:
+        "Medimos cinco dimensiones del proyecto para entender dónde invertir primero y qué acciones generan mayor impacto.",
+      route: [
+        "Diagnóstico estratégico",
+        "Índice de Valor 19.89",
+        "Roadmap de prioridades",
+        "Evolución",
+      ],
+      href: "/proyecto-ya-construido",
+      linkLabel: "Ver diagnóstico",
+    },
+  ],
+
+  // Condiciones de las propuestas (PDF v2, p26 · Consideraciones)
+  considerations: [
+    "Los servicios pueden contratarse de forma integral o por etapas.",
+    "Los alcances, cronogramas e inversión se definirán según las necesidades específicas del proyecto.",
+    "Los costos asociados a construcción, materiales, mobiliario, equipamiento, permisos, contratistas e instalaciones especializadas no forman parte de los honorarios profesionales, salvo que se indique expresamente en la propuesta.",
   ],
 
   homeDisciplines: [
@@ -375,14 +508,14 @@ export const es = {
     metaTitle:
       "Estrategia 19.89 — Descubrimos el potencial. Diseñamos la estrategia. Creamos valor",
     metaDescription:
-      "La Estrategia 19.89 es una metodología para acompañar proyectos residenciales, comerciales y hoteleros desde sus primeras etapas hasta su consolidación.",
+      "La Estrategia 19.89 acompaña proyectos residenciales, comerciales y hoteleros desde sus primeras etapas hasta su consolidación.",
     heroEyebrow: "Estrategia 19.89",
     heroText:
-      "La Estrategia 19.89 es una metodología desarrollada para acompañar proyectos residenciales, comerciales y hoteleros desde sus primeras etapas hasta su consolidación.",
-    principlesEyebrow: "La metodología",
+      "La Estrategia 19.89 fue desarrollada para acompañar proyectos residenciales, comerciales y hoteleros desde sus primeras etapas hasta su consolidación.",
+    principlesEyebrow: "Los principios",
     principlesTitle: "Seis principios ordenan cada decisión.",
     howEyebrow: "Cómo se aplica",
-    howTitle: "La metodología se recorre por uno de dos caminos.",
+    howTitle: "La estrategia se recorre por uno de dos caminos.",
     path1Label: "Camino 01",
     path1Title: "Proyecto Nuevo",
     path1Text:
@@ -409,7 +542,7 @@ export const es = {
     metaDescription:
       "Selección de activos, diagnóstico, análisis financiero, arquitectura, iluminación, interiores, identidad, fotografía, marketing, automatización y movilidad: módulos de la Estrategia 19.89.",
     heroEyebrow: "Disciplinas",
-    heroTitle: "Disciplinas estratégicas",
+    heroTitle: "Herramientas que se integran a cada proyecto.",
     heroSubtitle:
       "Herramientas especializadas que se integran según las necesidades de cada proyecto. Ninguna opera de forma aislada: todas responden a la Estrategia 19.89.",
     integrateLink: "Conocer disciplina",

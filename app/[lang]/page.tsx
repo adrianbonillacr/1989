@@ -8,6 +8,7 @@ import Logo from "@/components/Logo";
 import Preloader from "@/components/Preloader";
 import ProjectCard from "@/components/ProjectCard";
 import Reveal from "@/components/Reveal";
+import RoadmapIcon, { type RoadmapIconName } from "@/components/RoadmapIcon";
 import SectionHeader from "@/components/SectionHeader";
 import { getDict, isLang, type Lang } from "@/lib/i18n";
 import { getProject, kahwiFeaturedCover, type Project } from "@/lib/projects";
@@ -160,7 +161,7 @@ export default async function HomePage({ params }: { params: Params }) {
         </div>
       </section>
 
-      {/* ESTRATEGIA 19.89 — resumen incorporado al inicio (antes página aparte) */}
+      {/* ESTRATEGIA 19.89 — qué es y por qué comenzar con una estrategia */}
       <section id="estrategia" className="scroll-mt-20 bg-charcoal text-white">
         <div className="container-site section-pad">
           <Reveal className="mx-auto max-w-3xl text-center">
@@ -173,18 +174,41 @@ export default async function HomePage({ params }: { params: Params }) {
             <p className="mx-auto mt-8 max-w-[62ch] font-light leading-[1.7] text-mist">
               {t.home.strategyText}
             </p>
-            <p className="mx-auto mt-6 max-w-[62ch] border-l border-earth pl-5 text-left font-light leading-[1.7] text-mist">
-              {t.home.strategyWhy}
-            </p>
+          </Reveal>
+
+          {/* ¿Por qué comenzar con una estrategia? */}
+          <Reveal className="mt-24 border-t border-white/15 pt-16">
+            <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
+              <SectionHeader
+                eyebrow={t.home.whyEyebrow}
+                title={t.home.whyTitle}
+                dark
+                titleClassName="max-w-[18ch]"
+              />
+              <div className="space-y-5 lg:pt-2">
+                <p className="max-w-[58ch] font-light leading-[1.7] text-mist">
+                  {t.home.whyText1}
+                </p>
+                <p className="max-w-[58ch] font-light leading-[1.7] text-mist">
+                  {t.home.whyText2}
+                </p>
+                <p className="max-w-[58ch] border-l border-earth pl-5 font-light leading-[1.7] text-white">
+                  {t.home.whyText3}
+                </p>
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>
 
-      {/* DEL ANÁLISIS A LA ACCIÓN */}
+      {/* ¿CÓMO TRABAJAMOS? — las seis etapas del proceso */}
       <section className="section-pad bg-white">
         <div className="container-site">
           <Reveal>
             <SectionHeader eyebrow={t.home.processEyebrow} title={t.home.processTitle} />
+            <p className="mt-6 max-w-[64ch] font-light leading-[1.7] text-charcoal">
+              {t.home.processIntro}
+            </p>
           </Reveal>
           <div className="mt-16">
             {t.processSteps.map((step, i) => (
@@ -202,6 +226,210 @@ export default async function HomePage({ params }: { params: Params }) {
             ))}
             <div className="border-t border-stone/40" aria-hidden="true" />
           </div>
+        </div>
+      </section>
+
+      {/* ¿QUÉ ANALIZAMOS? */}
+      <section className="section-pad bg-mist">
+        <div className="container-site">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
+            <Reveal>
+              <SectionHeader eyebrow={t.home.analyzeEyebrow} title={t.home.analyzeTitle} />
+              <p className="mt-6 max-w-[52ch] font-light leading-[1.7] text-charcoal">
+                {t.home.analyzeText}
+              </p>
+            </Reveal>
+            <Reveal delay={120}>
+              <ul className="grid gap-x-10 gap-y-0 sm:grid-cols-2" role="list">
+                {t.analyzeItems.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 border-b border-stone/40 py-3.5 text-[0.95rem] font-light leading-[1.6] text-ink"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="mt-2 h-[0.3rem] w-[0.3rem] shrink-0 rounded-full bg-earth"
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+          <Reveal className="mt-14">
+            <p className="max-w-[70ch] border-l border-earth pl-5 font-light leading-[1.7] text-charcoal">
+              {t.home.analyzeNote}
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* EL VALOR DE 19.89 */}
+      <section className="section-pad bg-ink text-white">
+        <div className="container-site">
+          <Reveal className="mx-auto max-w-3xl text-center">
+            <SectionHeader
+              eyebrow={t.home.valueEyebrow}
+              title={t.home.valueTitle}
+              dark
+              align="center"
+              titleClassName="max-w-[20ch]"
+            />
+          </Reveal>
+          <Reveal className="mt-14 grid gap-8 md:grid-cols-3">
+            {[t.home.valueText1, t.home.valueText2, t.home.valueText3].map((text, i) => (
+              <p
+                key={i}
+                className="border-t border-white/20 pt-6 font-light leading-[1.7] text-mist"
+              >
+                {text}
+              </p>
+            ))}
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ROADMAP · DEL ANÁLISIS A LA ACCIÓN */}
+      <section id="roadmap" className="section-pad scroll-mt-20 bg-white">
+        <div className="container-site">
+          <Reveal>
+            <SectionHeader eyebrow={t.home.roadmapEyebrow} title={t.home.roadmapTitle} />
+            <p className="mt-6 max-w-[64ch] font-light leading-[1.7] text-charcoal">
+              {t.home.roadmapIntro}
+            </p>
+          </Reveal>
+
+          {/* Roadmap lineal: 4 pasos conectados por una línea continua */}
+          <Reveal className="mt-20">
+            <ol className="relative grid gap-12 md:grid-cols-4 md:gap-8" role="list">
+              {/* Línea de recorrido (solo desktop) */}
+              <span
+                aria-hidden="true"
+                className="absolute left-0 right-0 top-7 hidden h-px bg-stone/50 md:block"
+              />
+              {t.roadmapSteps.map((step) => (
+                <li key={step.number} className="relative">
+                  <div className="flex items-center gap-4 md:block">
+                    <span className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-stone/60 bg-white text-earth">
+                      <RoadmapIcon name={step.icon as RoadmapIconName} />
+                    </span>
+                    <span className="text-[0.7rem] font-medium uppercase tracking-[0.28em] text-stone md:mt-6 md:block">
+                      {step.number}
+                    </span>
+                  </div>
+                  <h3 className="mt-4 text-lg font-medium leading-snug text-ink md:mt-3">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 max-w-[38ch] text-[0.95rem] font-light leading-[1.7] text-charcoal">
+                    {step.description}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </Reveal>
+
+          <Reveal className="mt-16">
+            <p className="max-w-[70ch] border-l border-earth pl-5 font-light leading-[1.7] text-charcoal">
+              {t.home.roadmapNote}
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* TRES PUNTOS DE PARTIDA */}
+      <section className="section-pad bg-mist">
+        <div className="container-site">
+          <Reveal>
+            <SectionHeader
+              eyebrow={t.home.scenariosEyebrow}
+              title={t.home.scenariosTitle}
+              titleClassName="max-w-[22ch]"
+            />
+          </Reveal>
+
+          <div className="mt-16 grid gap-6 lg:grid-cols-3">
+            {t.scenarios.map((scenario, i) => (
+              <Reveal key={scenario.title} delay={i * 100}>
+                <article className="flex h-full flex-col border border-stone/50 bg-white p-8">
+                  <div className="flex items-center gap-4">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-mist text-earth">
+                      <RoadmapIcon name={scenario.icon as RoadmapIconName} className="h-5 w-5" />
+                    </span>
+                    <span className="text-[0.62rem] font-medium uppercase tracking-[0.28em] text-earth">
+                      {scenario.tag}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-7 text-[1.35rem] font-semibold leading-snug text-ink">
+                    {scenario.title}
+                  </h3>
+
+                  <p className="mt-4 text-[0.95rem] font-light leading-[1.7] text-charcoal">
+                    {scenario.start}
+                  </p>
+
+                  <div className="mt-7 border-t border-stone/40 pt-6">
+                    <p className="text-[0.62rem] font-medium uppercase tracking-[0.28em] text-stone">
+                      {t.home.scenarioFirstStepLabel}
+                    </p>
+                    <p className="mt-3 font-medium text-ink">{scenario.firstStep}</p>
+                    <p className="mt-2 text-[0.95rem] font-light leading-[1.7] text-charcoal">
+                      {scenario.firstStepText}
+                    </p>
+                  </div>
+
+                  <div className="mt-7 border-t border-stone/40 pt-6">
+                    <p className="text-[0.62rem] font-medium uppercase tracking-[0.28em] text-stone">
+                      {t.home.scenarioRouteLabel}
+                    </p>
+                    <ol className="mt-4 space-y-2.5" role="list">
+                      {scenario.route.map((item, index) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-3 text-[0.9rem] font-light leading-[1.5] text-ink"
+                        >
+                          <span className="mt-px w-4 shrink-0 text-[0.7rem] font-medium text-earth">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          {item}
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+
+                  <div className="mt-8 pt-2">
+                    <ArrowLink href={`/${lang}${scenario.href}`}>
+                      {scenario.linkLabel}
+                    </ArrowLink>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* Consideraciones */}
+          <Reveal className="mt-20 border-t border-stone/40 pt-12">
+            <p className="text-[0.72rem] font-medium uppercase tracking-[0.28em] text-earth">
+              {t.home.considerationsLabel}
+            </p>
+            <p className="mt-6 max-w-[70ch] font-light leading-[1.7] text-charcoal">
+              {t.home.considerationsIntro}
+            </p>
+            <ul className="mt-6 max-w-[78ch] space-y-3" role="list">
+              {t.considerations.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-[0.95rem] font-light leading-[1.7] text-charcoal"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="mt-2.5 h-[0.3rem] w-[0.3rem] shrink-0 rounded-full bg-stone"
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </div>
       </section>
 

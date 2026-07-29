@@ -1,7 +1,7 @@
 # Conectar el formulario de contacto al Google Sheet
 
 Cada consulta del formulario se registra como una fila en el
-[Sheet de contactos](https://docs.google.com/spreadsheets/d/1MK7espfDD54J_O_S68vc--9D0sgE-RyHWt2FNuPgmgo/edit)
+[Sheet de contactos](https://docs.google.com/spreadsheets/d/1SM7H1hnsaXBQHFpAE46RQ8Pj7_yor-3_qay1deN9X5M/edit)
 mediante un Web App de Google Apps Script. El código del sitio ya está listo;
 solo falta **un paso único** que debe hacer el dueño del sheet (requiere su
 cuenta de Google):

@@ -46,15 +46,15 @@ export default async function ContactoPage({ params }: { params: Params }) {
         <div className="container-site pb-16 pt-44">
           <div className="flex items-center gap-4">
             <span aria-hidden="true" className="h-[0.4rem] w-[0.4rem] rounded-full bg-earth" />
-            <p className="text-[0.72rem] font-medium uppercase tracking-[0.28em] text-earth">
-              {c.heroEyebrow}
-            </p>
             <span className="h-px flex-1 bg-stone/40" aria-hidden="true" />
           </div>
-          <h1 className="mt-8 max-w-[20ch] text-[clamp(2.2rem,5vw,3.8rem)] font-semibold leading-[1.12] text-ink">
-            {c.heroTitle}
+          <h1 className="mt-7 max-w-[20ch] text-[clamp(2.2rem,5vw,3.8rem)] font-semibold leading-[1.12] text-ink">
+            {c.heroEyebrow}
           </h1>
-          <p className="mt-7 max-w-[58ch] text-lg font-light leading-[1.7] text-charcoal">
+          <p className="mt-6 max-w-[46ch] text-[clamp(1.05rem,1.9vw,1.35rem)] font-light leading-[1.5] text-earth">
+            {c.heroTitle}
+          </p>
+          <p className="mt-5 max-w-[58ch] font-light leading-[1.7] text-charcoal">
             {c.heroText}
           </p>
           {/* Dos rutas claras: preseleccionan la etapa en el formulario */}
@@ -108,13 +108,16 @@ export default async function ContactoPage({ params }: { params: Params }) {
                 <dl className="mt-10 space-y-8">
                   <div>
                     <dt className={directLabel}>{c.emailLabel}</dt>
-                    <dd className="mt-2">
-                      <a
-                        href={`mailto:${siteConfig.email}`}
-                        className="font-light text-ink transition-colors duration-300 hover:text-earth"
-                      >
-                        {siteConfig.email}
-                      </a>
+                    <dd className="mt-2 space-y-1.5">
+                      {[siteConfig.email, siteConfig.emailCc].map((address) => (
+                        <a
+                          key={address}
+                          href={`mailto:${address}`}
+                          className="block font-light text-ink transition-colors duration-300 hover:text-earth"
+                        >
+                          {address}
+                        </a>
+                      ))}
                     </dd>
                   </div>
                   <div>

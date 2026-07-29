@@ -1,6 +1,9 @@
 /**
  * Hero de páginas interiores: fondo negro sólido (ink, según libro de marca),
- * eyebrow con punto, H1 y subtítulo opcional. Sin fotografías.
+ * H1 con el nombre de la página, claim y subtítulo opcional. Sin fotografías.
+ *
+ * Jerarquía: `eyebrow` (nombre de la página) es el H1 grande y `title` (el
+ * claim) baja a texto mediano, igual que en SectionHeader.
  */
 export default function InteriorHero({
   eyebrow,
@@ -22,15 +25,16 @@ export default function InteriorHero({
       <div className="container-site pb-20 pt-40">
         <div className="flex items-center gap-4">
           <span aria-hidden="true" className="h-[0.4rem] w-[0.4rem] rounded-full bg-stone" />
-          <p className="text-[0.72rem] font-medium uppercase tracking-[0.28em] text-stone">
-            {eyebrow}
-          </p>
+          <span aria-hidden="true" className="h-px w-20 bg-stone/40" />
         </div>
-        <h1 className="mt-8 max-w-[20ch] text-[clamp(2.2rem,5vw,3.8rem)] font-semibold leading-[1.12]">
-          {title}
+        <h1 className="mt-7 max-w-[20ch] text-[clamp(2.2rem,5vw,3.8rem)] font-semibold leading-[1.12]">
+          {eyebrow}
         </h1>
+        <p className="mt-6 max-w-[46ch] text-[clamp(1.05rem,1.9vw,1.35rem)] font-light leading-[1.5] text-stone">
+          {title}
+        </p>
         {subtitle && (
-          <p className="mt-6 max-w-[52ch] text-base font-light leading-[1.7] text-mist md:text-lg">
+          <p className="mt-5 max-w-[52ch] text-base font-light leading-[1.7] text-mist">
             {subtitle}
           </p>
         )}

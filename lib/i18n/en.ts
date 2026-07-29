@@ -75,18 +75,66 @@ export const en: Dictionary = {
       "For those who already own a property or an operating project and want to identify improvement opportunities, prioritize investments and increase its value.",
     path2Link: "See the diagnosis",
     strategyEyebrow: "19.89 Strategy",
-    strategyTitle: "A methodology for making better decisions.",
+    strategyTitle: "A way of working that leads to better decisions.",
     strategyText:
-      "The 19.89 Strategy is a methodology developed to accompany residential, commercial and hospitality projects from their earliest stages through consolidation. Its goal is to help owners and investors make better decisions, set priorities and develop projects capable of standing out and generating long-term value.",
-    strategyWhy:
-      "The most important decisions of a project are usually made before the first drawing. The 19.89 Strategy exists to guide them from the start and turn each investment into an opportunity to create greater value.",
+      "The 19.89 Strategy was developed to accompany residential, commercial and hospitality projects from their earliest stages through consolidation. Its goal is to help owners and investors make better decisions, set priorities and develop projects capable of standing out and generating long-term value.",
+
+    // Why start with a strategy? (PDF p4)
+    whyEyebrow: "Why start with a strategy?",
+    whyTitle:
+      "The most important decisions of a project are usually made before the first drawing.",
+    whyText1:
+      "Choosing a property, allocating the investment, defining the concept or deciding how the project will reach the market are decisions that determine much of its success.",
+    whyText2:
+      "Without a clear strategy, low-impact investments, missed opportunities and projects that never reach their full potential can arise.",
+    whyText3:
+      "The 19.89 Strategy exists to guide those decisions from the start and turn each investment into an opportunity to create greater value.",
+
+    // How we work (PDF p5)
     processEyebrow: "How we work",
     processTitle: "A process that accompanies from the first decision to consolidation.",
-    disciplinesEyebrow: "Disciplines",
-    disciplinesTitle: "Disciplines under a single vision.",
+    processIntro:
+      "Our process accompanies the client from the first decision to the consolidation of the project, integrating analysis, design, experience and positioning under a single strategic vision.",
+
+    // What we analyze (PDF p6)
+    analyzeEyebrow: "What we analyze",
+    analyzeTitle: "Every project is different.",
+    analyzeText:
+      "That is why we evaluate only those aspects capable of generating value and contributing to the project's goals. Among them:",
+    analyzeNote:
+      "Rather than evaluating disciplines independently, we seek to understand how they work together to strengthen the project and maximize its potential from the start.",
+
+    // The Value of 19.89 (PDF p7)
+    valueEyebrow: "The Value of 19.89",
+    valueTitle: "At 19.89 we believe the best projects begin long before design.",
+    valueText1:
+      "They begin by understanding the potential of the investment, defining a clear strategy and directing every decision toward creating value.",
+    valueText2:
+      "That is why we accompany our clients from the earliest stages of the project through its consolidation, integrating analysis, design, experience and positioning under a single strategic vision.",
+    valueText3:
+      "Our commitment is to bring judgment, direction and an integral vision to develop projects with identity, differentiation and long-term value.",
+
+    // Roadmap · From analysis to action (PDF p25-26)
+    roadmapEyebrow: "From analysis to action",
+    roadmapTitle: "The next step is turning strategy into results.",
+    roadmapIntro:
+      "Now that we know the project's goals and have defined a strategy for its development, the next step is to plan its implementation in an orderly way, aligned with the priorities that were set.",
+    roadmapNote:
+      "Every project is different. That is why scope, disciplines, schedule and investment are structured in a personalized way, ensuring every decision contributes to generating the greatest possible value.",
+    scenariosEyebrow: "Where each project begins",
+    scenariosTitle:
+      "The starting point defines the route. These are the three possible situations.",
+    scenarioStartLabel: "Starting point",
+    scenarioFirstStepLabel: "First step",
+    scenarioRouteLabel: "Route",
+    considerationsLabel: "Considerations",
+    considerationsIntro:
+      "Proposals developed by 19.89 are structured in a personalized way to respond to the characteristics and goals of each project. For this reason:",
+    disciplinesEyebrow: "Services",
+    disciplinesTitle: "Each project activates only the ones it needs, under a single vision.",
     disciplinesNote:
-      "They are not isolated services: they are tools that integrate into the strategy according to the needs of each project.",
-    disciplinesLink: "See all disciplines",
+      "They do not operate in isolation: they are tools that integrate into the strategy according to the needs of each project.",
+    disciplinesLink: "See all services",
     portfolioEyebrow: "Featured portfolio",
     architectureLabel: "Architecture",
     lightingLabel: "Lighting",
@@ -101,6 +149,91 @@ export const en: Dictionary = {
     { number: "04", title: "We develop", description: "We implement the disciplines needed to turn the strategy into results." },
     { number: "05", title: "We position", description: "We build a solid identity and a commercial presence aligned with the project's value." },
     { number: "06", title: "We evolve", description: "We accompany the project's growth with a long-term vision and new opportunities for improvement." },
+  ],
+
+  // Aspects evaluated within the strategy (PDF v2, p6 · What we analyze)
+  analyzeItems: [
+    "Asset selection (when there is no property yet).",
+    "Strategic financial analysis.",
+    "Architecture.",
+    "Lighting design.",
+    "Interior design.",
+    "Furnishing and styling.",
+    "Brand protection.",
+    "Professional photography.",
+    "Digital marketing.",
+    "Automation and electric mobility.",
+  ],
+
+  // Implementation roadmap (PDF v2, p26 · From analysis to action).
+  // `icon` maps to the icon set in components/RoadmapIcon.tsx
+  roadmapSteps: [
+    { number: "01", icon: "scope", title: "We define the scope", description: "We select the disciplines and services that best respond to the needs and goals of the project." },
+    { number: "02", icon: "proposal", title: "We prepare the proposal", description: "We put together a technical and financial proposal with scope, deliverables, fees and work schedule." },
+    { number: "03", icon: "plan", title: "We plan the implementation", description: "We organize the project's development in stages, setting priorities and a clear roadmap for execution." },
+    { number: "04", icon: "start", title: "We begin development", description: "Once the proposal is approved, we implement the selected disciplines and accompany the project throughout its evolution." },
+  ],
+
+  // The three possible starting points (PDF v2, p9 · Option A / Option B).
+  scenarios: [
+    {
+      icon: "search",
+      tag: "New Project",
+      title: "There is no property yet",
+      start: "There is intent to invest, but the asset has not been purchased yet.",
+      firstStep: "Asset selection",
+      firstStepText:
+        "We evaluate opportunities aligned with the goals, budget and vision of the project: location, context, development potential and risks.",
+      route: [
+        "Asset selection",
+        "Project development",
+        "Identity and positioning",
+        "Automation and mobility",
+      ],
+      href: "/proyecto-desde-cero",
+      linkLabel: "See the process",
+    },
+    {
+      icon: "property",
+      tag: "New Project",
+      title: "The property already exists",
+      start: "The asset has been acquired and the project is yet to be defined.",
+      firstStep: "Strategic diagnosis",
+      firstStepText:
+        "We analyze the starting point and move straight into project development with a defined roadmap.",
+      route: [
+        "Strategic diagnosis",
+        "Project development",
+        "Identity and positioning",
+        "Automation and mobility",
+      ],
+      href: "/proyecto-desde-cero",
+      linkLabel: "See the process",
+    },
+    {
+      icon: "built",
+      tag: "Built Project",
+      title: "The project is already operating",
+      start: "The property is running and the goal is to increase its value and differentiation.",
+      firstStep: "19.89 Value Index",
+      firstStepText:
+        "We measure five dimensions of the project to understand where to invest first and which actions create the greatest impact.",
+      route: [
+        "Strategic diagnosis",
+        "19.89 Value Index",
+        "Roadmap of priorities",
+        "Evolution",
+      ],
+      href: "/proyecto-ya-construido",
+      linkLabel: "See the diagnosis",
+    },
+  ],
+
+  // Proposal conditions (PDF v2, p26 · Considerations)
+  considerations: [
+    "Services can be contracted as a whole or in stages.",
+    "Scope, schedules and investment are defined according to the specific needs of each project.",
+    "Costs related to construction, materials, furniture, equipment, permits, contractors and specialized installations are not part of the professional fees, unless expressly stated in the proposal.",
   ],
 
   homeDisciplines: [
@@ -372,14 +505,14 @@ export const en: Dictionary = {
     metaTitle:
       "19.89 Strategy — We uncover the potential. We design the strategy. We create value",
     metaDescription:
-      "The 19.89 Strategy is a methodology to accompany residential, commercial and hospitality projects from their earliest stages through consolidation.",
+      "The 19.89 Strategy accompanies residential, commercial and hospitality projects from their earliest stages through consolidation.",
     heroEyebrow: "19.89 Strategy",
     heroText:
-      "The 19.89 Strategy is a methodology developed to accompany residential, commercial and hospitality projects from their earliest stages through consolidation.",
-    principlesEyebrow: "The methodology",
+      "The 19.89 Strategy was developed to accompany residential, commercial and hospitality projects from their earliest stages through consolidation.",
+    principlesEyebrow: "The principles",
     principlesTitle: "Six principles order every decision.",
     howEyebrow: "How it is applied",
-    howTitle: "The methodology unfolds along one of two paths.",
+    howTitle: "The strategy unfolds along one of two paths.",
     path1Label: "Path 01",
     path1Title: "New Project",
     path1Text:
@@ -406,7 +539,7 @@ export const en: Dictionary = {
     metaDescription:
       "Asset selection, diagnosis, financial analysis, architecture, lighting, interiors, identity, photography, marketing, automation and mobility: modules of the 19.89 Strategy.",
     heroEyebrow: "Disciplines",
-    heroTitle: "Strategic disciplines",
+    heroTitle: "Tools that integrate into every project.",
     heroSubtitle:
       "Specialized tools that integrate according to the needs of each project. None operates in isolation: they all respond to the 19.89 Strategy.",
     integrateLink: "Learn about it",

@@ -69,11 +69,13 @@ export default function Footer({ lang, t }: { lang: Lang; t: Dictionary }) {
                 WhatsApp
               </a>
             </li>
-            <li>
-              <a href={`mailto:${siteConfig.email}`} className={footerLink}>
-                {siteConfig.email}
-              </a>
-            </li>
+            {[siteConfig.email, siteConfig.emailCc].map((address) => (
+              <li key={address}>
+                <a href={`mailto:${address}`} className={footerLink}>
+                  {address}
+                </a>
+              </li>
+            ))}
             <li>
               <a
                 href={siteConfig.instagram}

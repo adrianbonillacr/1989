@@ -102,6 +102,7 @@ export default function ContactForm({ t }: { t: FormDict }) {
       <input type="hidden" name="_subject" value={t.subject} />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_cc" value={siteConfig.emailCc} />
       {nextUrl && <input type="hidden" name="_next" value={nextUrl} />}
 
       <div>

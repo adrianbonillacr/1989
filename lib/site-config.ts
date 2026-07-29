@@ -5,7 +5,10 @@ export const siteConfig = {
   tagline: "Arquitectura e inversión con valor",
   whatsapp: "https://wa.me/50670867130",
   whatsappDisplay: "+506 7086 7130",
-  email: "adrianbonillacr@hotmail.com",
+  // Destinatario principal del formulario y correo visible en el sitio.
+  email: "jasalas@1989arquitectura.com",
+  // Copia automática de cada consulta (FormSubmit `_cc`).
+  emailCc: "lcsalas@1989arquitectura.com",
   instagram: "https://www.instagram.com/19.89_arquitectura/",
   instagramHandle: "@19.89_arquitectura",
   // El botón "Agendar reunión" lleva a la página de contacto.
@@ -13,9 +16,9 @@ export const siteConfig = {
   calendarUrl: "/contacto",
   // Webhook (Apps Script Web App) que registra cada consulta en el Google
   // Sheet de contactos. Instrucciones para generarlo: docs/contactos-sheet.md
-  // TODO: pegar aquí la URL que termina en /exec al desplegar el script.
-  contactSheetWebhook: "",
+  contactSheetWebhook:
+    "https://script.google.com/macros/s/AKfycbwFjXBN_3hUSrZqKud7TGGI0uZGF40CtonX47Hndm6j2B5yV2XAaoMKlRP0Gox8tEgj/exec",
   contactSheetUrl:
-    "https://docs.google.com/spreadsheets/d/1MK7espfDD54J_O_S68vc--9D0sgE-RyHWt2FNuPgmgo/edit",
+    "https://docs.google.com/spreadsheets/d/1SM7H1hnsaXBQHFpAE46RQ8Pj7_yor-3_qay1deN9X5M/edit",
   domain: "https://1989arquitectura.com",
 };

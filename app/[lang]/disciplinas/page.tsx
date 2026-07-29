@@ -28,15 +28,15 @@ export default async function DisciplinasPage({ params }: { params: Params }) {
         <div className="container-site pb-20 pt-44">
           <div className="flex items-center gap-4">
             <span aria-hidden="true" className="h-[0.4rem] w-[0.4rem] rounded-full bg-earth" />
-            <p className="text-[0.72rem] font-medium uppercase tracking-[0.28em] text-earth">
-              {d.heroEyebrow}
-            </p>
             <span className="h-px flex-1 bg-stone/40" aria-hidden="true" />
           </div>
-          <h1 className="mt-8 max-w-[22ch] text-[clamp(2.2rem,5vw,3.8rem)] font-semibold leading-[1.12] text-ink">
-            {d.heroTitle}
+          <h1 className="mt-7 max-w-[22ch] text-[clamp(2.2rem,5vw,3.8rem)] font-semibold leading-[1.12] text-ink">
+            {d.heroEyebrow}
           </h1>
-          <p className="mt-7 max-w-[58ch] text-lg font-light leading-[1.7] text-charcoal">
+          <p className="mt-6 max-w-[46ch] text-[clamp(1.05rem,1.9vw,1.35rem)] font-light leading-[1.5] text-earth">
+            {d.heroTitle}
+          </p>
+          <p className="mt-5 max-w-[58ch] font-light leading-[1.7] text-charcoal">
             {d.heroSubtitle}
           </p>
         </div>
