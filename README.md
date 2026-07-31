@@ -1,6 +1,6 @@
 # Sitio web — 19°89° Arquitectura
 
-Sitio completo del estudio (Next.js + Tailwind CSS + TypeScript), construido según el Libro de Marca 2025. Seis páginas: Inicio, Proyecto desde 0, Proyecto ya construido, Portafolio (+ case-studies), Equipo y Contacto.
+Sitio completo del estudio (Next.js + Tailwind CSS + TypeScript), construido según el Libro de Marca 2025. Páginas: Inicio, Proyecto Nuevo, Proyecto Construido, Disciplinas, Budaya, Portafolio (+ case-studies), Quiénes Somos y Contacto (más `/equipo`, página conceptual fuera del menú).
 
 ## Cómo correr el proyecto
 
@@ -37,7 +37,8 @@ Resumen de rutas dentro de `/public`:
 | `images/texturas/` | `concreto.jpg`, `madera.jpg`, `travertino.jpg` | Fondos de secciones y banners |
 | `images/servicios/` | `desde-cero-etapa-01.jpg` … `04.jpg` | Zigzag de etapas |
 | `images/proyectos/<slug>/` | `cover.jpg` + `01.jpg` … `05.jpg` | Card + galería de cada proyecto |
-| `images/equipo/` | `retrato-01.jpg` … `retrato-06.jpg` | Retratos (3:4 vertical) |
+| `images/equipo/` | `retrato-01.jpg` … `retrato-04.jpg` | Retratos del equipo en Quiénes Somos (3:4 vertical) |
+| `images/budaya/` | `01.jpg` … `06.jpg` | Ambientes de Budaya (3 en «¿Qué hacemos?» + 3 en «Ambientes») |
 
 Formato: horizontal 16:9 o 4:3, **mínimo 2400px de ancho** (retratos: 3:4, mínimo 1200px). Slugs de proyectos: `tree-lodge`, `cafetal`, `diciembre-seis`, `kahwi`, `amarea`, `edica`, `flex-center`.
 

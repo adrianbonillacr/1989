@@ -32,6 +32,11 @@ export default function Footer({ lang, t }: { lang: Lang; t: Dictionary }) {
                 {t.nav.builtProject}
               </Link>
             </li>
+            <li>
+              <Link href={`/${lang}/budaya`} className={footerLink}>
+                {t.nav.budaya}
+              </Link>
+            </li>
           </ul>
         </nav>
 
@@ -46,6 +51,11 @@ export default function Footer({ lang, t }: { lang: Lang; t: Dictionary }) {
             <li>
               <Link href={`/${lang}/portafolio`} className={footerLink}>
                 {t.nav.portfolio}
+              </Link>
+            </li>
+            <li>
+              <Link href={`/${lang}/quienes-somos`} className={footerLink}>
+                {t.nav.about}
               </Link>
             </li>
             <li>

@@ -28,7 +28,9 @@ export const en: Dictionary = {
     builtProject: "Built Project",
     strategy: "19.89 Strategy",
     disciplines: "Disciplines",
+    budaya: "Budaya",
     portfolio: "Portfolio",
+    about: "About Us",
     contact: "Contact",
     cta: "Book a meeting",
     logoAria: "19.89 Arquitectura — Home",
@@ -557,6 +559,104 @@ export const en: Dictionary = {
     heroText:
       "The strategic advantage of 19.89 lies in integrating architecture, investment, lighting, interiors, identity, communication and technology under a single vision. Each discipline contributes criteria so that design decisions also respond to value decisions.",
     specialtiesEyebrow: "Specialties",
+  },
+
+  about: {
+    metaTitle: "About us — Architecture, Light and Hospitality",
+    metaDescription:
+      "19.89 is an architecture and lighting design firm specialized in hospitality projects. We design experiences that create value, inspire connections and endure over time.",
+    heroEyebrow: "About us",
+    heroTitle: "Architecture, Light and Hospitality.",
+    heroSubtitle:
+      "The most memorable spaces are not remembered for their architecture alone. They are remembered for how they made people feel.",
+    introEyebrow: "The firm",
+    introTitle: "We design experiences, not just spaces.",
+    introParagraphs: [
+      "At 19.89 we are an architecture and lighting design firm specialized in hospitality projects. We develop solutions that combine strategy, design and functionality to create memorable spaces, strengthen the identity of each project and increase its perceived value.",
+      "We understand that the success of a project goes far beyond good architecture. The way a space is lived, lit and experienced directly shapes the perception of those who inhabit it, visit it and remember it.",
+      "That is why we approach every project from an integral vision, where architecture and lighting design work in harmony to create functional, authentic spaces that connect emotionally with people.",
+      "Our expertise is complemented by services such as interior design, furnishing & styling (Budaya), identity protection, photography and digital marketing, and automation — allowing us to develop projects with a solid identity and a coherent vision from conception to positioning.",
+    ],
+    introHighlight:
+      "At 19.89 we do not only design spaces; we design experiences that create value, inspire connections and endure over time.",
+    hospitalityEyebrow: "Hospitality specialists",
+    hospitalityTitle:
+      "A hospitality project must offer far more than a well-designed space.",
+    hospitalityParagraphs: [
+      "We believe a hospitality project must generate experiences capable of connecting with people, strengthening the identity of the place and standing out in an increasingly competitive market.",
+      "Our specialty is developing projects where architecture and lighting design become strategic tools to create functional, memorable and emotionally meaningful environments.",
+      "Whether it is a boutique hotel, lodge, eco-lodge, villas or even residential, commercial and industrial projects, we understand that every design decision directly influences the user experience and the success of the project.",
+    ],
+    purposeEyebrow: "We design with purpose",
+    purposeTitle: "The best architecture does not only answer a functional need.",
+    purposeParagraphs: [
+      "We believe it also has the ability to move, connect and transform the way people experience a space.",
+      "Each project is an opportunity to integrate architecture, light and hospitality into a single vision, where every design decision adds value, strengthens the identity of the place and enriches the user experience.",
+      "We aim to develop projects that transcend trends and remain relevant over time, creating authentic, functional and memorable spaces with a positive impact both for those who inhabit them and for those who visit them.",
+    ],
+    claimTitle: "Architecture. Light. Hospitality.",
+    claimText:
+      "Three disciplines. One vision. Designing spaces that go beyond aesthetics to become memorable experiences.",
+    teamEyebrow: "Meet the team",
+    teamTitle: "Behind every project there is a team with a shared vision.",
+    teamText:
+      "Architecture, lighting, interior design and communication working together from the first decision to the positioning of the project. Each discipline contributes criteria so that design also responds to experience and value.",
+    teamPhotoAlt: (i: number) => `19.89 Arquitectura team — portrait ${i}`,
+    teamPhotoLabel: "19.89 Team",
+  },
+
+  budaya: {
+    metaTitle: "Budaya — Furnishing & Styling by 19.89",
+    metaDescription:
+      "Budaya is the Furnishing & Styling brand of 19.89, specialized in hospitality projects: furniture, textiles, decor, tableware, decorative lighting and art.",
+    heroEyebrow: "Budaya",
+    heroTitle: "The Furnishing & Styling brand of 19.89.",
+    heroSubtitle:
+      "A great project does not end when the architecture is finished. It is the furnishing, the choice of materials, the textiles, the decor and the details that turn a space into an experience.",
+    introEyebrow: "The brand",
+    introTitle: "Coherent environments with an identity of their own.",
+    introParagraphs: [
+      "Budaya is the Furnishing & Styling brand of 19.89, specialized in hospitality projects. We design, select and integrate solutions that combine design, functionality and identity to create memorable spaces, strengthen the user experience and increase the perceived value of every project.",
+      "Each proposal is born from an integral vision, where every element responds to the architectural concept and to the objectives of the project. More than selecting products, we develop coherent environments that convey their own identity and enrich the way people live each space.",
+    ],
+    scopeEyebrow: "What we do",
+    scopeTitle: "Integral furnishing and styling solutions.",
+    scopeText:
+      "We develop integral furnishing and styling solutions for hospitality, commercial and residential projects, carefully selecting each element to guarantee a coherent, functional proposal aligned with the identity of the project.",
+    scopeLabel: "Our scope includes",
+    scopeItems: [
+      "Indoor and outdoor furniture.",
+      "Textiles and bed linen.",
+      "Towels and accessories for bathroom and pool.",
+      "Decor and decorative objects.",
+      "Tableware, glassware and table accessories.",
+      "Decorative lighting.",
+      "Art and styling elements.",
+    ],
+    processEyebrow: "Our process",
+    processTitle: "Every element has a purpose within the project's story.",
+    processParagraphs: [
+      "Every project begins by understanding the identity of the space and the experience it aims to convey.",
+      "From that analysis, we develop an integral proposal where each piece is strategically selected to complement the architecture, reinforce the concept and guarantee a coherent experience for the user.",
+    ],
+    processHighlight:
+      "We do not seek to fill spaces with objects. We seek for every element to have a purpose and contribute to the story the project wants to tell.",
+    hospitalityEyebrow: "Hospitality as a starting point",
+    hospitalityTitle: "Every detail shapes the perception of the space.",
+    hospitalityParagraphs: [
+      "Hospitality projects are our specialty because we understand that the user experience depends on much more than good architectural design.",
+      "In boutique hotels, lodges, eco-lodges, villas or even residential, commercial and industrial projects, every detail shapes the perception of the space. From the texture of a bed sheet to the choice of a lamp or the presentation of a table, everything communicates the identity of the project.",
+      "That is why at Budaya we understand furnishing and styling as a strategic investment capable of elevating the experience, strengthening the brand and increasing the perceived value of the project.",
+    ],
+    galleryEyebrow: "Environments",
+    galleryTitle: "Pieces, textures and details that complete the experience.",
+    galleryAlt: (i: number) => `Budaya — furnishing and styling (image ${i})`,
+    galleryLabel: "Budaya",
+    closingTitle: "We design environments. We create experiences.",
+    closingText:
+      "At Budaya we believe details are not a complement to design; they are what turn a well-designed space into an unforgettable place.",
+    ctaTitle: "Let's talk about the furnishing of your project.",
+    ctaButton: "I want to furnish and style my project",
   },
 
   contactPage: {

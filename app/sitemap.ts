@@ -11,7 +11,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/proyecto-desde-cero", changeFrequency: "monthly", priority: 0.9 },
     { path: "/proyecto-ya-construido", changeFrequency: "monthly", priority: 0.9 },
     { path: "/disciplinas", changeFrequency: "monthly", priority: 0.7 },
+    { path: "/budaya", changeFrequency: "monthly", priority: 0.8 },
     { path: "/portafolio", changeFrequency: "monthly", priority: 0.8 },
+    { path: "/quienes-somos", changeFrequency: "monthly", priority: 0.8 },
     { path: "/equipo", changeFrequency: "yearly", priority: 0.4 },
     { path: "/contacto", changeFrequency: "yearly", priority: 0.7 },
     ...projects.map((p) => ({

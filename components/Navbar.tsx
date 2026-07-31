@@ -13,7 +13,9 @@ const darkHeroRoutes = [
   "/",
   "/proyecto-desde-cero",
   "/proyecto-ya-construido",
+  "/budaya",
   "/portafolio",
+  "/quienes-somos",
 ];
 
 function isActive(pathname: string, href: string): boolean {
@@ -32,7 +34,9 @@ export default function Navbar({ lang, t }: { lang: Lang; t: NavDict }) {
     { href: `/${lang}/proyecto-desde-cero`, label: t.newProject },
     { href: `/${lang}/proyecto-ya-construido`, label: t.builtProject },
     { href: `/${lang}/disciplinas`, label: t.disciplines },
+    { href: `/${lang}/budaya`, label: t.budaya },
     { href: `/${lang}/portafolio`, label: t.portfolio },
+    { href: `/${lang}/quienes-somos`, label: t.about },
     { href: `/${lang}/contacto`, label: t.contact },
   ];
 
@@ -151,7 +155,12 @@ export default function Navbar({ lang, t }: { lang: Lang; t: NavDict }) {
         </Link>
 
         {/* Navegación de escritorio */}
-        <nav aria-label={t.mainNavLabel} className="hidden items-center gap-6 min-[1200px]:flex">
+        {/* Con 8 entradas el ancho del contenedor (1104px) queda justo:
+            gap-5 y un tracking más corto dejan aire entre logo, nav y CTA. */}
+        <nav
+          aria-label={t.mainNavLabel}
+          className="hidden items-center gap-4 min-[1200px]:flex min-[1320px]:gap-5"
+        >
           {navLinks.map((link) => {
             const active =
               link.href === `/${lang}`
@@ -163,7 +172,7 @@ export default function Navbar({ lang, t }: { lang: Lang; t: NavDict }) {
                 href={link.href}
                 onClick={scrollTopIfSameRoute(link.href)}
                 aria-current={active ? "page" : undefined}
-                className="group relative py-1 text-[0.66rem] font-normal uppercase tracking-[0.15em]"
+                className="group relative whitespace-nowrap py-1 text-[0.66rem] font-normal uppercase tracking-[0.11em]"
               >
                 {link.label}
                 <span
@@ -177,11 +186,11 @@ export default function Navbar({ lang, t }: { lang: Lang; t: NavDict }) {
           })}
         </nav>
 
-        <div className="hidden items-center gap-6 min-[1200px]:flex">
+        <div className="hidden items-center gap-5 min-[1200px]:flex">
           <LangSwitch />
           <Link
             href={`/${lang}/contacto`}
-            className="inline-block bg-earth px-5 py-2.5 text-[0.72rem] font-normal uppercase tracking-[0.14em] text-white transition-colors duration-300 hover:bg-earth-dark"
+            className="inline-block whitespace-nowrap bg-earth px-4 py-2.5 text-[0.72rem] font-normal uppercase tracking-[0.12em] text-white transition-colors duration-300 hover:bg-earth-dark"
           >
             {t.cta}
           </Link>
@@ -224,9 +233,11 @@ export default function Navbar({ lang, t }: { lang: Lang; t: NavDict }) {
               <span aria-hidden="true">×</span>
             </button>
           </div>
+          {/* Con 8 entradas + idioma + CTA el menú queda justo en pantallas
+              bajas: se centra cuando hay altura y se vuelve scrolleable cuando no. */}
           <nav
             aria-label={t.mainNavLabel}
-            className="container-site flex flex-1 flex-col justify-center gap-6"
+            className="container-site flex flex-1 flex-col justify-center gap-5 overflow-y-auto py-6 [@media(max-height:640px)]:justify-start"
           >
             {navLinks.map((link) => {
               const active =

@@ -27,7 +27,9 @@ export const es = {
     builtProject: "Proyecto Construido",
     strategy: "Estrategia 19.89",
     disciplines: "Disciplinas",
+    budaya: "Budaya",
     portfolio: "Portafolio",
+    about: "Quiénes Somos",
     contact: "Contacto",
     cta: "Agendar reunión",
     logoAria: "19.89 Arquitectura — Inicio",
@@ -560,6 +562,109 @@ export const es = {
     heroText:
       "La ventaja estratégica de 19.89 está en integrar arquitectura, inversión, iluminación, interiores, identidad, comunicación y tecnología bajo una sola visión. Cada disciplina aporta criterio para que las decisiones de diseño también respondan a decisiones de valor.",
     specialtiesEyebrow: "Especialidades",
+  },
+
+  // Quiénes Somos — texto entregado por el cliente (30/07/2026)
+  about: {
+    metaTitle: "Quiénes somos — Arquitectura, Luz y Hospitalidad",
+    metaDescription:
+      "19.89 es una firma de arquitectura y diseño de iluminación especializada en proyectos de hospitality. Diseñamos experiencias que generan valor, inspiran conexiones y trascienden en el tiempo.",
+    heroEyebrow: "Quiénes somos",
+    heroTitle: "Arquitectura, Luz y Hospitalidad.",
+    heroSubtitle:
+      "Los espacios más memorables no se recuerdan únicamente por su arquitectura. Se recuerdan por cómo hicieron sentir a las personas.",
+    introEyebrow: "La firma",
+    introTitle: "Diseñamos experiencias, no solo espacios.",
+    introParagraphs: [
+      "En 19.89 somos una firma de arquitectura y diseño de iluminación especializada en proyectos de hospitality. Desarrollamos soluciones que combinan estrategia, diseño y funcionalidad para crear espacios memorables, fortalecer la identidad de cada proyecto y aumentar su valor percibido.",
+      "Entendemos que el éxito de un proyecto va mucho más allá de una buena arquitectura. La forma en que un espacio se vive, se ilumina y se experimenta influye directamente en la percepción de quienes lo habitan, lo visitan y lo recuerdan.",
+      "Por eso abordamos cada proyecto desde una visión integral, donde la arquitectura y el diseño de iluminación trabajan en armonía para crear espacios funcionales, auténticos y emocionalmente conectados con las personas.",
+      "Nuestra experiencia se complementa con servicios como interiorismo, equipamiento & ambientación (Budaya), protección de identidad, fotografía y marketing digital, automatización, permitiéndonos desarrollar proyectos con una identidad sólida y una visión coherente desde su concepción hasta su posicionamiento.",
+    ],
+    introHighlight:
+      "En 19.89 no solo diseñamos espacios; diseñamos experiencias que generan valor, inspiran conexiones y trascienden en el tiempo.",
+    hospitalityEyebrow: "Especialistas en Hospitality",
+    hospitalityTitle:
+      "Un proyecto de hospitality debe ofrecer mucho más que un espacio bien diseñado.",
+    hospitalityParagraphs: [
+      "Creemos que un proyecto de hospitality debe generar experiencias capaces de conectar con las personas, fortalecer la identidad del lugar y diferenciarse dentro de un mercado cada vez más competitivo.",
+      "Nuestra especialidad es desarrollar proyectos donde la arquitectura y el diseño de iluminación se convierten en herramientas estratégicas para crear ambientes funcionales, memorables y emocionalmente significativos.",
+      "Ya sea un hotel boutique, lodge, eco-lodge, villas o incluso proyectos residenciales, comerciales e industriales, entendemos que cada decisión de diseño influye directamente en la experiencia del usuario y en el éxito del proyecto.",
+    ],
+    purposeEyebrow: "Diseñamos con Propósito",
+    purposeTitle:
+      "La mejor arquitectura no solo responde a una necesidad funcional.",
+    purposeParagraphs: [
+      "Creemos que también tiene la capacidad de emocionar, conectar y transformar la manera en que las personas viven un espacio.",
+      "Cada proyecto representa una oportunidad para integrar arquitectura, luz y hospitalidad en una misma visión, donde cada decisión de diseño aporta valor, fortalece la identidad del lugar y enriquece la experiencia del usuario.",
+      "Aspiramos a desarrollar proyectos que trasciendan las tendencias y permanezcan vigentes con el paso del tiempo, creando espacios auténticos, funcionales y memorables que generen un impacto positivo tanto para quienes los habitan como para quienes los visitan.",
+    ],
+    claimTitle: "Arquitectura. Luz. Hospitalidad.",
+    claimText:
+      "Tres disciplinas. Una misma visión. Diseñar espacios que trasciendan la estética para convertirse en experiencias memorables.",
+    teamEyebrow: "Conocé el equipo",
+    teamTitle: "Detrás de cada proyecto hay un equipo con una misma visión.",
+    teamText:
+      "Arquitectura, iluminación, interiorismo y comunicación trabajando juntos desde la primera decisión hasta el posicionamiento del proyecto. Cada disciplina aporta criterio para que el diseño responda también a la experiencia y al valor.",
+    teamPhotoAlt: (i: number) => `Equipo 19.89 Arquitectura — retrato ${i}`,
+    teamPhotoLabel: "Equipo 19.89",
+  },
+
+  // Budaya — Equipamiento & Ambientación (texto entregado por el cliente)
+  budaya: {
+    metaTitle: "Budaya — Equipamiento & Ambientación de 19.89",
+    metaDescription:
+      "Budaya es la marca de Equipamiento & Ambientación de 19.89, especializada en proyectos de hospitality: mobiliario, textiles, decoración, vajilla, iluminación decorativa y arte.",
+    heroEyebrow: "Budaya",
+    heroTitle: "La marca de Equipamiento & Ambientación de 19.89.",
+    heroSubtitle:
+      "Un gran proyecto no termina cuando finaliza la arquitectura. Es el equipamiento, la selección de materiales, los textiles, la decoración y los detalles los que transforman un espacio en una experiencia.",
+    introEyebrow: "La marca",
+    introTitle: "Ambientes coherentes con una identidad propia.",
+    introParagraphs: [
+      "Budaya es la marca de Equipamiento & Ambientación de 19.89, especializada en proyectos de hospitality. Diseñamos, seleccionamos e integramos soluciones que combinan diseño, funcionalidad e identidad para crear espacios memorables, fortalecer la experiencia del usuario e incrementar el valor percibido de cada proyecto.",
+      "Cada propuesta nace de una visión integral, donde cada elemento responde al concepto arquitectónico y a los objetivos del proyecto. Más que seleccionar productos, desarrollamos ambientes coherentes que transmiten una identidad propia y enriquecen la forma en que las personas viven cada espacio.",
+    ],
+    scopeEyebrow: "¿Qué hacemos?",
+    scopeTitle:
+      "Soluciones integrales de equipamiento y ambientación.",
+    scopeText:
+      "Desarrollamos soluciones integrales de equipamiento y ambientación para proyectos de hospitality, comerciales y residenciales, seleccionando cuidadosamente cada elemento para garantizar una propuesta coherente, funcional y alineada con la identidad del proyecto.",
+    scopeLabel: "Nuestro alcance incluye",
+    scopeItems: [
+      "Mobiliario interior y exterior.",
+      "Textiles y ropa de cama.",
+      "Paños y accesorios para baño y piscina.",
+      "Decoración y objetos decorativos.",
+      "Vajilla, cristalería y accesorios de mesa.",
+      "Iluminación decorativa.",
+      "Arte y elementos de ambientación.",
+    ],
+    processEyebrow: "Nuestro Proceso",
+    processTitle:
+      "Cada elemento tiene un propósito dentro de la historia del proyecto.",
+    processParagraphs: [
+      "Cada proyecto comienza comprendiendo la identidad del espacio y la experiencia que se desea transmitir.",
+      "A partir de ese análisis, desarrollamos una propuesta integral donde cada pieza se selecciona estratégicamente para complementar la arquitectura, reforzar el concepto y garantizar una experiencia coherente para el usuario.",
+    ],
+    processHighlight:
+      "No buscamos llenar espacios de objetos. Buscamos que cada elemento tenga un propósito y contribuya a la historia que el proyecto quiere contar.",
+    hospitalityEyebrow: "Hospitality como punto de partida",
+    hospitalityTitle: "Cada detalle influye en la percepción del espacio.",
+    hospitalityParagraphs: [
+      "Nuestra especialidad son los proyectos de hospitality porque entendemos que la experiencia del usuario depende de mucho más que un buen diseño arquitectónico.",
+      "En hoteles boutique, lodge, eco-lodge, villas o incluso proyectos residenciales, comerciales e industriales, cada detalle influye en la percepción del espacio. Desde la textura de una sábana hasta la selección de una lámpara o la presentación de una mesa, todo comunica la identidad del proyecto.",
+      "Por eso, en Budaya concebimos el equipamiento y la ambientación como una inversión estratégica capaz de elevar la experiencia, fortalecer la marca y aumentar el valor percibido del proyecto.",
+    ],
+    galleryEyebrow: "Ambientes",
+    galleryTitle: "Piezas, texturas y detalles que completan la experiencia.",
+    galleryAlt: (i: number) => `Budaya — equipamiento y ambientación (imagen ${i})`,
+    galleryLabel: "Budaya",
+    closingTitle: "Diseñamos ambientes. Creamos experiencias.",
+    closingText:
+      "En Budaya creemos que los detalles no son un complemento del diseño; son los que convierten un espacio bien diseñado en un lugar inolvidable.",
+    ctaTitle: "Conversemos sobre el equipamiento de tu proyecto.",
+    ctaButton: "Quiero equipar y ambientar mi proyecto",
   },
 
   contactPage: {

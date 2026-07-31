@@ -7,7 +7,9 @@ const nextConfig: NextConfig = {
       "proyecto-desde-cero",
       "proyecto-ya-construido",
       "disciplinas",
+      "budaya",
       "equipo",
+      "quienes-somos",
       "contacto",
       "portafolio",
     ];
