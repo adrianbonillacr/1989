@@ -26,7 +26,7 @@ export const es = {
     newProject: "Proyecto Nuevo",
     builtProject: "Proyecto Construido",
     strategy: "Estrategia 19.89",
-    disciplines: "Disciplinas",
+    services: "Servicios",
     budaya: "Budaya",
     portfolio: "Portafolio",
     about: "Quiénes Somos",
@@ -35,6 +35,15 @@ export const es = {
     logoAria: "19.89 Arquitectura — Inicio",
     openMenu: "Abrir menú",
     closeMenu: "Cerrar menú",
+    // Submenú de Servicios: los tres puntos de partida de `scenarios`,
+    // que es de donde salen también sus destinos.
+    servicesMenu: {
+      label: "Puntos de partida",
+      noProperty: "Aún no existe una propiedad",
+      hasProperty: "Ya existe una propiedad",
+      running: "Proyecto en funcionamiento",
+      open: "Desplegar servicios",
+    },
     menuLabel: "Menú de navegación",
     mainNavLabel: "Principal",
     langSwitchLabel: "Idioma",
@@ -60,6 +69,9 @@ export const es = {
     heroTitle: "Arquitectura e inversión con valor.",
     heroSubtitle:
       "Desarrollamos, transformamos y posicionamos proyectos inmobiliarios con estrategia, diseño y visión de largo plazo.",
+    // Sin uso desde 05/08/2026: se retiraron del inicio las secciones
+    // "Dos caminos", "Estrategia 19.89" (con "¿Por qué comenzar…?") y
+    // "El Valor de 19.89". Los textos se conservan por si vuelven.
     pathsEyebrow: "Dos caminos para crear valor",
     pathsTitle:
       "Cada proyecto está en un momento distinto. Por eso trabajamos en dos rutas claras.",
@@ -90,6 +102,8 @@ export const es = {
     whyText3:
       "La Estrategia 19.89 nace para orientar esas decisiones desde el inicio y transformar cada inversión en una oportunidad para generar mayor valor.",
 
+    // — fin del bloque sin uso —
+
     // ¿Cómo trabajamos? (PDF p5)
     processEyebrow: "¿Cómo trabajamos?",
     processTitle:
@@ -105,7 +119,7 @@ export const es = {
     analyzeNote:
       "Más que evaluar disciplinas de forma independiente, buscamos comprender cómo trabajan en conjunto para fortalecer el proyecto y maximizar su potencial desde el inicio.",
 
-    // El Valor de 19.89 (PDF p7)
+    // El Valor de 19.89 (PDF p7) — sin uso desde 05/08/2026 (sección retirada)
     valueEyebrow: "El Valor de 19.89",
     valueTitle:
       "En 19.89 creemos que los mejores proyectos comienzan mucho antes del diseño.",
@@ -200,11 +214,10 @@ export const es = {
       tag: "Proyecto Nuevo",
       title: "Ya existe una propiedad",
       start: "El activo ya fue adquirido y el proyecto está por definirse.",
-      firstStep: "Diagnóstico estratégico",
+      firstStep: "Desarrollo del proyecto",
       firstStepText:
-        "Analizamos el punto de partida y pasamos directo al desarrollo del proyecto con una hoja de ruta definida.",
+        "Con el activo ya definido entramos directo al desarrollo: arquitectura, iluminación, interiores y equipamiento bajo una misma visión.",
       route: [
-        "Diagnóstico estratégico",
         "Desarrollo del proyecto",
         "Identidad y posicionamiento",
         "Automatización y movilidad",
@@ -217,9 +230,9 @@ export const es = {
       tag: "Proyecto Construido",
       title: "El proyecto ya está en funcionamiento",
       start: "La propiedad opera y se busca aumentar su valor y diferenciación.",
-      firstStep: "Índice de Valor 19.89",
+      firstStep: "Diagnóstico estratégico",
       firstStepText:
-        "Medimos cinco dimensiones del proyecto para entender dónde invertir primero y qué acciones generan mayor impacto.",
+        "Analizamos el punto de partida y pasamos directo al desarrollo del proyecto con una hoja de ruta definida.",
       route: [
         "Diagnóstico estratégico",
         "Índice de Valor 19.89",
@@ -265,18 +278,218 @@ export const es = {
     both: "Proyecto Nuevo · Proyecto Construido",
     newOnly: "Solo Proyecto Nuevo",
   },
+  // `detail` solo se muestra en la landing de Servicios (/disciplinas); en el
+  // inicio el acordeón queda corto y remata con el enlace "+ info".
   disciplines: [
-    { slug: "seleccion-de-activos", name: "Selección de activos", tagline: "La mejor inversión comienza eligiendo bien.", description: "Evaluamos oportunidades inmobiliarias antes de comprar: ubicación, contexto, potencial de desarrollo y riesgos, para que la inversión comience con la propiedad correcta.", stage: "asesoria", newOnly: true },
-    { slug: "diagnostico-estrategico", name: "Diagnóstico estratégico", tagline: "Medimos primero. Invertimos después.", description: "Analizamos el estado actual de un proyecto existente para identificar oportunidades, prioridades y una ruta clara de desarrollo antes de invertir.", stage: "asesoria", newOnly: false },
-    { slug: "analisis-financiero", name: "Análisis financiero estratégico", tagline: "Invertir mejor comienza por comprender el potencial del proyecto.", description: "Orientamos la inversión con criterio financiero: dónde existe mayor potencial de valor, cómo priorizar recursos y cómo sostener la rentabilidad del proyecto.", stage: "desarrollo", newOnly: true },
-    { slug: "arquitectura", name: "Arquitectura", tagline: "Diseño con fundamento estratégico, del anteproyecto a la obra.", description: "Diseño con fundamento estratégico: anteproyecto, desarrollo, remodelaciones y supervisión, donde cada decisión espacial responde también a una decisión de inversión.", stage: "desarrollo", newOnly: true },
-    { slug: "diseno-de-iluminacion", name: "Diseño de iluminación", tagline: "Atmósferas que transforman la experiencia del espacio.", description: "Definimos atmósferas y criterios lumínicos que transforman la experiencia del espacio y ponen en valor la arquitectura.", stage: "desarrollo", newOnly: false },
-    { slug: "diseno-de-interiores", name: "Diseño de interiores", tagline: "Narrativa espacial, materiales y curaduría con intención.", description: "Construimos la narrativa espacial del proyecto: materiales, acabados y curaduría que dan carácter y coherencia a cada ambiente.", stage: "desarrollo", newOnly: false },
-    { slug: "equipamiento-y-ambientacion", name: "Equipamiento y ambientación", tagline: "Piezas y ambientación que completan la experiencia.", description: "Curaduría de mobiliario, piezas y styling que completan la experiencia y refuerzan la identidad del proyecto.", stage: "desarrollo", newOnly: false },
-    { slug: "proteccion-de-identidad", name: "Protección de identidad", tagline: "Una marca protegida es un activo que crece.", description: "Protegemos y ordenamos la marca del proyecto: identidad visual, registro y posicionamiento para que el activo crezca con respaldo.", stage: "identidad", newOnly: false },
-    { slug: "fotografia-profesional", name: "Fotografía profesional", tagline: "El proyecto merece verse como lo que es.", description: "Fotografía arquitectónica y hotelera con dirección visual, para que el proyecto se vea como lo que es y comunique su valor.", stage: "identidad", newOnly: false },
-    { slug: "marketing-digital", name: "Marketing digital", tagline: "Un gran proyecto necesita ser visible.", description: "Estrategia de comunicación, contenido y campañas para hacer visible el proyecto y conectarlo con su mercado.", stage: "identidad", newOnly: false },
-    { slug: "automatizacion-y-movilidad", name: "Automatización y Movilidad", tagline: "Innovación que simplifica la operación y aporta valor.", description: "Tecnología que simplifica la operación y mejora la experiencia: automatización, control inteligente y movilidad eléctrica que suman valor al proyecto.", stage: "tecnologia", newOnly: false },
+    {
+      slug: "seleccion-de-activos",
+      name: "Selección de activos",
+      tagline: "La mejor inversión comienza eligiendo bien.",
+      description: "Evaluamos oportunidades inmobiliarias antes de comprar: ubicación, contexto, potencial de desarrollo y riesgos, para que la inversión comience con la propiedad correcta.",
+      stage: "asesoria",
+      newOnly: true,
+      detail: {
+        text: "Antes de invertir contrastamos las oportunidades disponibles con el perfil, el presupuesto y la visión del proyecto. El objetivo no es encontrar una propiedad, sino la propiedad correcta para lo que se quiere desarrollar.",
+        includes: [
+          "Comprensión del perfil de inversión y de los objetivos del proyecto.",
+          "Identificación de oportunidades alineadas con esa visión.",
+          "Evaluación de ubicación, contexto y potencial de desarrollo.",
+          "Identificación de riesgos y limitaciones de cada opción.",
+          "Recomendaciones estratégicas para la toma de decisiones.",
+        ],
+        outcome: "Una decisión de compra respaldada por criterio, con las oportunidades y los riesgos sobre la mesa antes de firmar.",
+      },
+    },
+    {
+      slug: "diagnostico-estrategico",
+      name: "Diagnóstico estratégico",
+      tagline: "Medimos primero. Invertimos después.",
+      description: "Analizamos el estado actual de un proyecto existente para identificar oportunidades, prioridades y una ruta clara de desarrollo antes de invertir.",
+      stage: "asesoria",
+      newOnly: false,
+      detail: {
+        text: "Cuando la propiedad ya existe o el proyecto ya opera, el punto de partida es entenderlo. Analizamos cómo funciona hoy, dónde está dejando valor sobre la mesa y qué acciones tienen mayor impacto antes de destinar recursos.",
+        includes: [
+          "Análisis del estado actual de la propiedad o del proyecto en operación.",
+          "Lectura del contexto y del mercado en el que compite.",
+          "Identificación de fortalezas, brechas y oportunidades de mejora.",
+          "Priorización de intervenciones según impacto e inversión.",
+          "Hoja de ruta de desarrollo por etapas.",
+        ],
+        outcome: "Claridad sobre dónde invertir primero y por qué, con una hoja de ruta que permite contratar de forma integral o por etapas.",
+      },
+    },
+    {
+      slug: "analisis-financiero",
+      name: "Análisis financiero estratégico",
+      tagline: "Invertir mejor comienza por comprender el potencial del proyecto.",
+      description: "Orientamos la inversión con criterio financiero: dónde existe mayor potencial de valor, cómo priorizar recursos y cómo sostener la rentabilidad del proyecto.",
+      stage: "desarrollo",
+      newOnly: true,
+      detail: {
+        text: "El diseño y la inversión se deciden juntos. Traducimos las decisiones del proyecto a números para entender dónde está el mayor potencial de valor y cómo sostener la rentabilidad en el tiempo.",
+        includes: [
+          "Estructura de la inversión y de los costos del proyecto.",
+          "Escenarios de desarrollo y su efecto sobre el retorno.",
+          "Priorización de recursos según potencial de valor.",
+          "Criterios para sostener la rentabilidad durante la operación.",
+          "Ordenamiento del desembolso por etapas.",
+        ],
+        outcome: "Un proyecto que se sostiene tanto en planos como en números.",
+      },
+    },
+    {
+      slug: "arquitectura",
+      name: "Arquitectura",
+      tagline: "Diseño con fundamento estratégico, del anteproyecto a la obra.",
+      description: "Diseño con fundamento estratégico: anteproyecto, desarrollo, remodelaciones y supervisión, donde cada decisión espacial responde también a una decisión de inversión.",
+      stage: "desarrollo",
+      newOnly: true,
+      detail: {
+        text: "Diseñamos con fundamento estratégico: cada decisión espacial responde también a una decisión de inversión. Acompañamos el proyecto desde el anteproyecto hasta la ejecución en obra.",
+        includes: [
+          "Anteproyecto y desarrollo del concepto arquitectónico.",
+          "Planos y documentación técnica del proyecto.",
+          "Remodelaciones y ampliaciones de propiedades existentes.",
+          "Coordinación con las demás disciplinas del proyecto.",
+          "Supervisión durante la ejecución de obra.",
+        ],
+        outcome: "Espacios funcionales y coherentes con la identidad del proyecto, construidos según lo diseñado.",
+      },
+    },
+    {
+      slug: "diseno-de-iluminacion",
+      name: "Diseño de iluminación",
+      tagline: "Atmósferas que transforman la experiencia del espacio.",
+      description: "Definimos atmósferas y criterios lumínicos que transforman la experiencia del espacio y ponen en valor la arquitectura.",
+      stage: "desarrollo",
+      newOnly: false,
+      detail: {
+        text: "La luz define cómo se percibe un espacio y cómo se siente quien lo habita. Trabajamos la iluminación como herramienta de experiencia y de valor, no como el último detalle de la obra.",
+        includes: [
+          "Concepto lumínico y definición de atmósferas por ambiente.",
+          "Selección de luminarias, temperaturas de color e intensidades.",
+          "Integración de la luz con la arquitectura y el interiorismo.",
+          "Criterios de control, escenas y eficiencia energética.",
+          "Acompañamiento durante la instalación y el ajuste final.",
+        ],
+        outcome: "Ambientes que se recuerdan y una arquitectura que se lee bien a cualquier hora del día.",
+      },
+    },
+    {
+      slug: "diseno-de-interiores",
+      name: "Diseño de interiores",
+      tagline: "Narrativa espacial, materiales y curaduría con intención.",
+      description: "Construimos la narrativa espacial del proyecto: materiales, acabados y curaduría que dan carácter y coherencia a cada ambiente.",
+      stage: "desarrollo",
+      newOnly: false,
+      detail: {
+        text: "El interiorismo construye la narrativa del proyecto: qué cuenta el espacio, con qué materiales lo cuenta y cómo se vive por dentro.",
+        includes: [
+          "Concepto de interiorismo y narrativa espacial.",
+          "Paleta de materiales, acabados y color.",
+          "Distribución, recorridos y uso de cada ambiente.",
+          "Detalle de mobiliario fijo y soluciones a medida.",
+          "Coordinación con iluminación, equipamiento y obra.",
+        ],
+        outcome: "Ambientes con carácter y coherencia, alineados con la identidad y con la experiencia que se quiere generar.",
+      },
+    },
+    {
+      slug: "equipamiento-y-ambientacion",
+      name: "Equipamiento y ambientación",
+      tagline: "Piezas y ambientación que completan la experiencia.",
+      description: "Curaduría de mobiliario, piezas y styling que completan la experiencia y refuerzan la identidad del proyecto.",
+      stage: "desarrollo",
+      newOnly: false,
+      detail: {
+        text: "A través de Budaya, la marca de Equipamiento & Ambientación de 19.89, completamos el proyecto con las piezas que terminan de darle carácter.",
+        includes: [
+          "Curaduría de mobiliario y piezas para cada ambiente.",
+          "Textiles, decoración, vajilla y accesorios.",
+          "Iluminación decorativa y piezas de arte.",
+          "Styling y montaje final de los espacios.",
+          "Coordinación de tiempos, proveedores y entregas.",
+        ],
+        outcome: "Un proyecto que se entrega listo para vivirse y para fotografiarse, no solo construido.",
+      },
+    },
+    {
+      slug: "proteccion-de-identidad",
+      name: "Protección de identidad",
+      tagline: "Una marca protegida es un activo que crece.",
+      description: "Protegemos y ordenamos la marca del proyecto: identidad visual, registro y posicionamiento para que el activo crezca con respaldo.",
+      stage: "identidad",
+      newOnly: false,
+      detail: {
+        text: "La marca de un proyecto es parte de su valor. Ordenarla y protegerla evita conflictos futuros y permite que el activo crezca con respaldo.",
+        includes: [
+          "Definición y ordenamiento de la identidad visual.",
+          "Manual de marca y criterios de aplicación.",
+          "Revisión de disponibilidad y riesgos en el uso del nombre.",
+          "Acompañamiento durante el proceso de registro.",
+          "Lineamientos para sostener la identidad en el tiempo.",
+        ],
+        outcome: "Una marca consistente y protegida, capaz de sostener el posicionamiento del proyecto.",
+      },
+    },
+    {
+      slug: "fotografia-profesional",
+      name: "Fotografía profesional",
+      tagline: "El proyecto merece verse como lo que es.",
+      description: "Fotografía arquitectónica y hotelera con dirección visual, para que el proyecto se vea como lo que es y comunique su valor.",
+      stage: "identidad",
+      newOnly: false,
+      detail: {
+        text: "Un proyecto se comunica con imágenes. La fotografía arquitectónica y hotelera traduce el trabajo de diseño en material capaz de publicar, vender y posicionar.",
+        includes: [
+          "Dirección visual y plan de tomas del proyecto.",
+          "Fotografía arquitectónica de interiores y exteriores.",
+          "Fotografía de ambiente, detalle y experiencia.",
+          "Producción y styling de cada escena.",
+          "Edición y entrega en los formatos que el proyecto necesita.",
+        ],
+        outcome: "Un banco de imágenes propio, coherente con la identidad y listo para campañas, prensa y canales de venta.",
+      },
+    },
+    {
+      slug: "marketing-digital",
+      name: "Marketing digital",
+      tagline: "Un gran proyecto necesita ser visible.",
+      description: "Estrategia de comunicación, contenido y campañas para hacer visible el proyecto y conectarlo con su mercado.",
+      stage: "identidad",
+      newOnly: false,
+      detail: {
+        text: "Un gran proyecto necesita ser visible para el mercado correcto. Definimos qué se comunica, a quién y por cuáles canales.",
+        includes: [
+          "Estrategia de comunicación y mensajes clave.",
+          "Definición de audiencias y canales prioritarios.",
+          "Plan de contenido alineado con la identidad del proyecto.",
+          "Campañas digitales y seguimiento de resultados.",
+          "Ajustes según el desempeño de cada acción.",
+        ],
+        outcome: "Un proyecto presente donde su mercado lo busca, con una comunicación consistente y medible.",
+      },
+    },
+    {
+      slug: "automatizacion-y-movilidad",
+      name: "Automatización y Movilidad",
+      tagline: "Innovación que simplifica la operación y aporta valor.",
+      description: "Tecnología que simplifica la operación y mejora la experiencia: automatización, control inteligente y movilidad eléctrica que suman valor al proyecto.",
+      stage: "tecnologia",
+      newOnly: false,
+      detail: {
+        text: "Las mejores soluciones tecnológicas son las que pasan desapercibidas: no añaden complejidad, hacen que el espacio funcione mejor.",
+        includes: [
+          "Automatización y control inteligente de los espacios.",
+          "Soluciones de movilidad eléctrica.",
+          "Tecnologías orientadas al confort y la eficiencia.",
+          "Herramientas para optimizar la operación del proyecto.",
+          "Oportunidades de innovación y diferenciación.",
+        ],
+        outcome: "Mayor comodidad para los usuarios, una operación más eficiente y un proyecto preparado para lo que viene.",
+      },
+    },
   ],
 
   fromZero: {
@@ -551,6 +764,10 @@ export const es = {
     modalLabel: "Detalle de la disciplina",
     modalClose: "Cerrar",
     modalPillar: "Se integra en",
+    includesLabel: "Qué incluye",
+    outcomeLabel: "Qué se logra",
+    /** Enlace del acordeón del inicio hacia el detalle de este servicio. */
+    moreLabel: "+ info",
   },
 
   team: {

@@ -19,26 +19,74 @@ const darkHeroRoutes = [
 ];
 
 function isActive(pathname: string, href: string): boolean {
-  return pathname === href || pathname.startsWith(`${href}/`);
+  const base = href.split("#")[0];
+  return pathname === base || pathname.startsWith(`${base}/`);
+}
+
+type NavItem = {
+  href: string;
+  label: string;
+  /** Si existe, la entrada no navega: abre un submenú con estos destinos. */
+  children?: { href: string; label: string }[];
+};
+
+/** Flecha del submenú (gira al abrir). */
+function Chevron({ open, className = "" }: { open: boolean; className?: string }) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 10 6"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.2"
+      className={`shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""} ${className}`}
+    >
+      <path d="M1 1l4 4 4-4" />
+    </svg>
+  );
 }
 
 export default function Navbar({ lang, t }: { lang: Lang; t: NavDict }) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const burgerRef = useRef<HTMLButtonElement>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
 
-  const navLinks = [
+  // Los tres puntos de partida del submenú son los mismos escenarios de la
+  // portada: dos arrancan en el proceso desde cero y el tercero en el
+  // diagnóstico del proyecto que ya opera.
+  const navItems: NavItem[] = [
+    { href: `/${lang}/quienes-somos`, label: t.about },
     { href: `/${lang}`, label: t.home },
-    { href: `/${lang}/proyecto-desde-cero`, label: t.newProject },
-    { href: `/${lang}/proyecto-ya-construido`, label: t.builtProject },
-    { href: `/${lang}/disciplinas`, label: t.disciplines },
+    {
+      href: `/${lang}/disciplinas`,
+      label: t.services,
+      children: [
+        { href: `/${lang}/proyecto-desde-cero`, label: t.servicesMenu.noProperty },
+        { href: `/${lang}/proyecto-desde-cero#etapa-1`, label: t.servicesMenu.hasProperty },
+        { href: `/${lang}/proyecto-ya-construido`, label: t.servicesMenu.running },
+      ],
+    },
     { href: `/${lang}/budaya`, label: t.budaya },
     { href: `/${lang}/portafolio`, label: t.portfolio },
-    { href: `/${lang}/quienes-somos`, label: t.about },
     { href: `/${lang}/contacto`, label: t.contact },
   ];
+
+  const itemActive = (item: NavItem): boolean => {
+    if (item.children) {
+      return (
+        isActive(pathname, item.href) ||
+        item.children.some((child) => isActive(pathname, child.href))
+      );
+    }
+    return item.href === `/${lang}`
+      ? pathname === `/${lang}`
+      : isActive(pathname, item.href);
+  };
 
   // Ruta sin el prefijo de idioma, para decidir el estilo del hero
   const bare = "/" + pathname.split("/").slice(2).join("/");
@@ -56,10 +104,32 @@ export default function Navbar({ lang, t }: { lang: Lang; t: NavDict }) {
   // Cerrar el menú al navegar
   useEffect(() => {
     setMenuOpen(false);
+    setServicesOpen(false);
+    setMobileServicesOpen(false);
   }, [pathname]);
+
+  // Submenú de escritorio: se cierra al pulsar fuera o con Escape
+  useEffect(() => {
+    if (!servicesOpen) return;
+
+    const onPointerDown = (e: PointerEvent) => {
+      if (!servicesRef.current?.contains(e.target as Node)) setServicesOpen(false);
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setServicesOpen(false);
+    };
+
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [servicesOpen]);
 
   const closeMenu = useCallback(() => {
     setMenuOpen(false);
+    setMobileServicesOpen(false);
     burgerRef.current?.focus();
   }, []);
 
@@ -155,26 +225,72 @@ export default function Navbar({ lang, t }: { lang: Lang; t: NavDict }) {
         </Link>
 
         {/* Navegación de escritorio */}
-        {/* Con 8 entradas el ancho del contenedor (1104px) queda justo:
-            gap-5 y un tracking más corto dejan aire entre logo, nav y CTA. */}
+        {/* gap-5 y un tracking corto dejan aire entre logo, nav y CTA. */}
         <nav
           aria-label={t.mainNavLabel}
           className="hidden items-center gap-4 min-[1200px]:flex min-[1320px]:gap-5"
         >
-          {navLinks.map((link) => {
-            const active =
-              link.href === `/${lang}`
-                ? pathname === `/${lang}`
-                : isActive(pathname, link.href);
+          {navItems.map((item) => {
+            const active = itemActive(item);
+
+            if (item.children) {
+              return (
+                <div key={item.label} ref={servicesRef} className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setServicesOpen((open) => !open)}
+                    aria-expanded={servicesOpen}
+                    aria-haspopup="true"
+                    aria-controls="services-menu"
+                    className="group relative flex items-center gap-1.5 whitespace-nowrap py-1 text-[0.66rem] font-normal uppercase tracking-[0.11em]"
+                  >
+                    {item.label}
+                    <Chevron open={servicesOpen} className="h-[0.3rem] w-[0.5rem]" />
+                    <span
+                      aria-hidden="true"
+                      className={`absolute -bottom-0.5 left-0 h-px w-full origin-left bg-earth transition-transform duration-300 ${
+                        active || servicesOpen
+                          ? "scale-x-100"
+                          : "scale-x-0 group-hover:scale-x-100"
+                      }`}
+                    />
+                  </button>
+
+                  {servicesOpen && (
+                    <div
+                      id="services-menu"
+                      aria-label={item.label}
+                      className="absolute left-1/2 top-full z-50 mt-4 w-[19rem] -translate-x-1/2 border border-ink/10 bg-white py-2 text-ink shadow-[0_20px_45px_-20px_rgba(0,0,0,0.45)]"
+                    >
+                      <p className="px-5 pb-2 pt-1 text-[0.6rem] font-medium uppercase tracking-[0.24em] text-stone">
+                        {t.servicesMenu.label}
+                      </p>
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          onClick={() => setServicesOpen(false)}
+                          aria-current={isActive(pathname, child.href) ? "page" : undefined}
+                          className="block px-5 py-3 text-[0.9rem] font-light leading-snug text-charcoal transition-colors duration-300 hover:bg-mist hover:text-ink aria-[current=page]:text-earth"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
             return (
               <Link
-                key={link.href}
-                href={link.href}
-                onClick={scrollTopIfSameRoute(link.href)}
+                key={item.href}
+                href={item.href}
+                onClick={scrollTopIfSameRoute(item.href)}
                 aria-current={active ? "page" : undefined}
                 className="group relative whitespace-nowrap py-1 text-[0.66rem] font-normal uppercase tracking-[0.11em]"
               >
-                {link.label}
+                {item.label}
                 <span
                   aria-hidden="true"
                   className={`absolute -bottom-0.5 left-0 h-px w-full origin-left bg-earth transition-transform duration-300 ${
@@ -233,31 +349,74 @@ export default function Navbar({ lang, t }: { lang: Lang; t: NavDict }) {
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          {/* Con 8 entradas + idioma + CTA el menú queda justo en pantallas
-              bajas: se centra cuando hay altura y se vuelve scrolleable cuando no. */}
+          {/* Con las entradas + submenú + idioma + CTA el menú queda justo en
+              pantallas bajas: se centra cuando hay altura y se vuelve
+              scrolleable cuando no. */}
           <nav
             aria-label={t.mainNavLabel}
             className="container-site flex flex-1 flex-col justify-center gap-5 overflow-y-auto py-6 [@media(max-height:640px)]:justify-start"
           >
-            {navLinks.map((link) => {
-              const active =
-                link.href === `/${lang}`
-                  ? pathname === `/${lang}`
-                  : isActive(pathname, link.href);
+            {navItems.map((item) => {
+              const active = itemActive(item);
+
+              if (item.children) {
+                return (
+                  <div key={item.label} className="flex flex-col gap-4">
+                    <button
+                      type="button"
+                      onClick={() => setMobileServicesOpen((open) => !open)}
+                      aria-expanded={mobileServicesOpen}
+                      aria-controls="mobile-services-menu"
+                      className={`flex w-fit items-center gap-3 text-[1.2rem] font-light uppercase tracking-[0.2em] transition-colors duration-300 ${
+                        active ? "text-earth" : "text-white hover:text-stone"
+                      }`}
+                    >
+                      {item.label}
+                      <Chevron open={mobileServicesOpen} className="h-2 w-3" />
+                    </button>
+
+                    {mobileServicesOpen && (
+                      <div
+                        id="mobile-services-menu"
+                        className="flex flex-col gap-4 border-l border-stone/40 pl-5"
+                      >
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            onClick={() => setMenuOpen(false)}
+                            aria-current={
+                              isActive(pathname, child.href) ? "page" : undefined
+                            }
+                            className={`text-[0.95rem] font-light leading-snug transition-colors duration-300 ${
+                              isActive(pathname, child.href)
+                                ? "text-earth"
+                                : "text-mist hover:text-white"
+                            }`}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
               return (
                 <Link
-                  key={link.href}
-                  href={link.href}
+                  key={item.href}
+                  href={item.href}
                   onClick={(e) => {
                     setMenuOpen(false);
-                    scrollTopIfSameRoute(link.href)(e);
+                    scrollTopIfSameRoute(item.href)(e);
                   }}
                   aria-current={active ? "page" : undefined}
                   className={`text-[1.2rem] font-light uppercase tracking-[0.2em] transition-colors duration-300 ${
                     active ? "text-earth" : "text-white hover:text-stone"
                   }`}
                 >
-                  {link.label}
+                  {item.label}
                 </Link>
               );
             })}

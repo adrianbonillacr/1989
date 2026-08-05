@@ -1,6 +1,7 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useEffect, useId, useState } from "react";
+import Link from "next/link";
 
 type Discipline = {
   slug: string;
@@ -9,17 +10,31 @@ type Discipline = {
   description: string;
   stage: string;
   newOnly: boolean;
+  detail: {
+    text: string;
+    includes: readonly string[];
+    outcome: string;
+  };
 };
 
 type Labels = {
   stageLabels: Record<string, string>;
   pathTags: { both: string; newOnly: string };
+  includesLabel: string;
+  outcomeLabel: string;
+  moreLabel: string;
 };
 
 /**
  * Lista de disciplinas tipo acordeón: al tocar un ítem se despliega una
  * pestaña debajo con el detalle (empujando el resto para ajustar el espacio);
  * al volver a tocarlo se cierra. Solo uno abierto a la vez.
+ *
+ * Dos modos:
+ * · corto (inicio) — resumen + enlace "+ info" hacia la landing de Servicios,
+ *   que abre ese mismo ítem ampliado;
+ * · ampliado (`expanded`, landing de Servicios) — añade el detalle, qué
+ *   incluye y qué se logra, y responde al hash de la URL para abrirse solo.
  *
  * El detalle se monta/desmonta al abrir/cerrar (la lista refluye y ajusta el
  * espacio) con una animación de entrada. Funciona en fondo claro y oscuro.
@@ -28,13 +43,33 @@ export default function DisciplineAccordion({
   items,
   labels,
   dark,
+  expanded,
+  moreHrefBase,
 }: {
-  items: Discipline[];
+  items: readonly Discipline[];
   labels: Labels;
   dark?: boolean;
+  expanded?: boolean;
+  /** Ruta de la landing de Servicios; el ancla del ítem se añade aquí. */
+  moreHrefBase?: string;
 }) {
   const [openSlug, setOpenSlug] = useState<string | null>(null);
   const baseId = useId();
+
+  // En la landing, un enlace "+ info" (/disciplinas#arquitectura) abre
+  // directamente ese servicio; el navegador se encarga del desplazamiento.
+  useEffect(() => {
+    if (!expanded) return;
+
+    const openFromHash = () => {
+      const slug = decodeURIComponent(window.location.hash.slice(1));
+      if (slug && items.some((d) => d.slug === slug)) setOpenSlug(slug);
+    };
+
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+    return () => window.removeEventListener("hashchange", openFromHash);
+  }, [expanded, items]);
 
   const line = dark ? "border-stone/25" : "border-stone/40";
   const name = dark ? "text-white" : "text-ink";
@@ -43,6 +78,7 @@ export default function DisciplineAccordion({
   const pillar = dark
     ? "border-stone/40 text-mist"
     : "border-stone/40 text-charcoal";
+  const label = dark ? "text-stone" : "text-stone";
 
   return (
     <ul role="list" className={`border-t ${line}`}>
@@ -50,7 +86,11 @@ export default function DisciplineAccordion({
         const open = openSlug === d.slug;
         const panelId = `${baseId}-${d.slug}`;
         return (
-          <li key={d.slug} className={`border-b ${line}`}>
+          <li
+            key={d.slug}
+            id={expanded ? d.slug : undefined}
+            className={`border-b scroll-mt-24 ${line}`}
+          >
             <button
               type="button"
               onClick={() => setOpenSlug(open ? null : d.slug)}
@@ -86,11 +126,64 @@ export default function DisciplineAccordion({
                 <p className={`mt-4 font-light leading-[1.75] ${desc}`}>
                   {d.description}
                 </p>
-                <p
-                  className={`mt-6 w-fit border px-2.5 py-1 text-[0.6rem] font-normal uppercase tracking-[0.18em] ${pillar}`}
-                >
-                  {d.newOnly ? labels.pathTags.newOnly : labels.pathTags.both}
-                </p>
+
+                {expanded && (
+                  <>
+                    <p className={`mt-4 font-light leading-[1.75] ${desc}`}>
+                      {d.detail.text}
+                    </p>
+
+                    <p
+                      className={`mt-8 text-[0.62rem] font-medium uppercase tracking-[0.28em] ${label}`}
+                    >
+                      {labels.includesLabel}
+                    </p>
+                    <ul role="list" className="mt-4 space-y-2.5">
+                      {d.detail.includes.map((item) => (
+                        <li
+                          key={item}
+                          className={`flex items-start gap-3 text-[0.95rem] font-light leading-[1.6] ${desc}`}
+                        >
+                          <span
+                            aria-hidden="true"
+                            className="mt-2 h-[0.3rem] w-[0.3rem] shrink-0 rounded-full bg-earth"
+                          />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <p
+                      className={`mt-8 text-[0.62rem] font-medium uppercase tracking-[0.28em] ${label}`}
+                    >
+                      {labels.outcomeLabel}
+                    </p>
+                    <p
+                      className={`mt-3 border-l border-earth pl-5 font-light leading-[1.75] ${dark ? "text-white" : "text-ink"}`}
+                    >
+                      {d.detail.outcome}
+                    </p>
+                  </>
+                )}
+
+                <div className="mt-6 flex flex-wrap items-center gap-4">
+                  <p
+                    className={`w-fit border px-2.5 py-1 text-[0.6rem] font-normal uppercase tracking-[0.18em] ${pillar}`}
+                  >
+                    {d.newOnly ? labels.pathTags.newOnly : labels.pathTags.both}
+                  </p>
+
+                  {/* "+ info": lleva a la landing de Servicios con este ítem abierto */}
+                  {!expanded && moreHrefBase && (
+                    <Link
+                      href={`${moreHrefBase}#${d.slug}`}
+                      className="inline-flex items-center gap-2 border border-earth px-3 py-1.5 text-[0.62rem] font-medium uppercase tracking-[0.18em] text-earth transition-colors duration-300 hover:bg-earth hover:text-white"
+                    >
+                      {labels.moreLabel}
+                      <span aria-hidden="true">→</span>
+                    </Link>
+                  )}
+                </div>
               </div>
             )}
           </li>

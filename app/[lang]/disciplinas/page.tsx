@@ -47,7 +47,14 @@ export default async function DisciplinasPage({ params }: { params: Params }) {
         <div className="container-site">
           <DisciplineAccordion
             items={t.disciplines}
-            labels={{ stageLabels: t.stageLabels, pathTags: t.pathTags }}
+            labels={{
+              stageLabels: t.stageLabels,
+              pathTags: t.pathTags,
+              includesLabel: d.includesLabel,
+              outcomeLabel: d.outcomeLabel,
+              moreLabel: d.moreLabel,
+            }}
+            expanded
           />
         </div>
       </section>

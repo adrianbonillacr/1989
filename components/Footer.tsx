@@ -45,7 +45,7 @@ export default function Footer({ lang, t }: { lang: Lang; t: Dictionary }) {
           <ul className="mt-6 space-y-3">
             <li>
               <Link href={`/${lang}/disciplinas`} className={footerLink}>
-                {t.nav.disciplines}
+                {t.nav.services}
               </Link>
             </li>
             <li>

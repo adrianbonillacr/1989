@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import ArrowLink from "@/components/ArrowLink";
 import Button from "@/components/Button";
 import CtaBanner from "@/components/CtaBanner";
@@ -37,30 +36,6 @@ export default async function HomePage({ params }: { params: Params }) {
   const lang = rawLang as Lang;
   const t = getDict(lang);
 
-  const paths = [
-    {
-      tag: t.home.path1Tag,
-      title: t.home.path1Title,
-      tagline: t.home.path1Tagline,
-      description: t.home.path1Description,
-      linkLabel: t.home.path1Link,
-      href: `/${lang}/proyecto-desde-cero`,
-      number: "01",
-      // Colores sólidos de marca (sin fotografías)
-      bg: "bg-earth",
-    },
-    {
-      tag: t.home.path2Tag,
-      title: t.home.path2Title,
-      tagline: t.home.path2Tagline,
-      description: t.home.path2Description,
-      linkLabel: t.home.path2Link,
-      href: `/${lang}/proyecto-ya-construido`,
-      number: "02",
-      bg: "bg-charcoal",
-    },
-  ];
-
   return (
     <>
       {/* Pre-pantalla de 2s: fondo sólido con el logo */}
@@ -92,7 +67,7 @@ export default async function HomePage({ params }: { params: Params }) {
           </div>
         </div>
         <a
-          href="#dos-caminos"
+          href="#como-trabajamos"
           className="absolute bottom-10 left-6 flex items-center gap-4 text-[0.65rem] font-normal uppercase tracking-[0.3em] text-mist transition-colors duration-300 hover:text-white md:left-10"
         >
           {t.common.discover}
@@ -108,101 +83,8 @@ export default async function HomePage({ params }: { params: Params }) {
         </span>
       </section>
 
-      {/* DOS CAMINOS */}
-      <section id="dos-caminos" className="section-pad bg-white">
-        <div className="container-site">
-          <Reveal>
-            <SectionHeader
-              eyebrow={t.home.pathsEyebrow}
-              title={t.home.pathsTitle}
-              titleClassName="max-w-[30ch]"
-            />
-          </Reveal>
-          <div className="mt-16 grid gap-12 md:grid-cols-2 md:gap-10">
-            {paths.map((path, i) => (
-              <Reveal key={path.href} delay={i * 120}>
-                {/* Toda la card (bloque de color + texto) es el área clicable */}
-                <Link href={path.href} className="group block">
-                  <article>
-                    {/* Bloque de color sólido de marca (sin fotografía) */}
-                    <div className={`relative aspect-[4/3] overflow-hidden ${path.bg}`}>
-                      <div aria-hidden="true" className="texture-grain absolute inset-0" />
-                      <span className="absolute left-5 top-5 border border-white/60 px-3 py-1.5 text-[0.62rem] font-normal uppercase tracking-[0.28em] text-white">
-                        {path.tag}
-                      </span>
-                      <span
-                        aria-hidden="true"
-                        className="absolute bottom-4 right-6 text-[clamp(4.5rem,9vw,7rem)] font-semibold leading-none text-white/15 transition-colors duration-500 group-hover:text-white/25"
-                      >
-                        {path.number}
-                      </span>
-                    </div>
-                    <h3 className="mt-8 text-2xl font-semibold text-ink transition-colors duration-300 group-hover:text-earth">
-                      {path.title}
-                    </h3>
-                    <p className="mt-3 font-normal italic text-earth">{path.tagline}</p>
-                    <p className="mt-4 max-w-[54ch] font-light leading-[1.7] text-charcoal">
-                      {path.description}
-                    </p>
-                    <span className="mt-6 inline-flex items-center gap-3 text-[0.8rem] font-normal uppercase tracking-[0.14em] text-earth">
-                      {path.linkLabel}
-                      <span
-                        aria-hidden="true"
-                        className="transition-transform duration-300 group-hover:translate-x-1.5"
-                      >
-                        →
-                      </span>
-                    </span>
-                  </article>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ESTRATEGIA 19.89 — qué es y por qué comenzar con una estrategia */}
-      <section id="estrategia" className="scroll-mt-20 bg-charcoal text-white">
-        <div className="container-site section-pad">
-          <Reveal className="mx-auto max-w-3xl text-center">
-            <SectionHeader
-              eyebrow={t.home.strategyEyebrow}
-              title={t.home.strategyTitle}
-              dark
-              align="center"
-            />
-            <p className="mx-auto mt-8 max-w-[62ch] font-light leading-[1.7] text-mist">
-              {t.home.strategyText}
-            </p>
-          </Reveal>
-
-          {/* ¿Por qué comenzar con una estrategia? */}
-          <Reveal className="mt-24 border-t border-white/15 pt-16">
-            <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
-              <SectionHeader
-                eyebrow={t.home.whyEyebrow}
-                title={t.home.whyTitle}
-                dark
-                titleClassName="max-w-[18ch]"
-              />
-              <div className="space-y-5 lg:pt-2">
-                <p className="max-w-[58ch] font-light leading-[1.7] text-mist">
-                  {t.home.whyText1}
-                </p>
-                <p className="max-w-[58ch] font-light leading-[1.7] text-mist">
-                  {t.home.whyText2}
-                </p>
-                <p className="max-w-[58ch] border-l border-earth pl-5 font-light leading-[1.7] text-white">
-                  {t.home.whyText3}
-                </p>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       {/* ¿CÓMO TRABAJAMOS? — las seis etapas del proceso */}
-      <section className="section-pad bg-white">
+      <section id="como-trabajamos" className="section-pad scroll-mt-20 bg-white">
         <div className="container-site">
           <Reveal>
             <SectionHeader eyebrow={t.home.processEyebrow} title={t.home.processTitle} />
@@ -260,31 +142,6 @@ export default async function HomePage({ params }: { params: Params }) {
             <p className="max-w-[70ch] border-l border-earth pl-5 font-light leading-[1.7] text-charcoal">
               {t.home.analyzeNote}
             </p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* EL VALOR DE 19.89 */}
-      <section className="section-pad bg-ink text-white">
-        <div className="container-site">
-          <Reveal className="mx-auto max-w-3xl text-center">
-            <SectionHeader
-              eyebrow={t.home.valueEyebrow}
-              title={t.home.valueTitle}
-              dark
-              align="center"
-              titleClassName="max-w-[20ch]"
-            />
-          </Reveal>
-          <Reveal className="mt-14 grid gap-8 md:grid-cols-3">
-            {[t.home.valueText1, t.home.valueText2, t.home.valueText3].map((text, i) => (
-              <p
-                key={i}
-                className="border-t border-white/20 pt-6 font-light leading-[1.7] text-mist"
-              >
-                {text}
-              </p>
-            ))}
           </Reveal>
         </div>
       </section>
@@ -449,8 +306,15 @@ export default async function HomePage({ params }: { params: Params }) {
           <Reveal className="mt-12">
             <DisciplineAccordion
               items={t.disciplines}
-              labels={{ stageLabels: t.stageLabels, pathTags: t.pathTags }}
+              labels={{
+                stageLabels: t.stageLabels,
+                pathTags: t.pathTags,
+                includesLabel: t.disciplinesPage.includesLabel,
+                outcomeLabel: t.disciplinesPage.outcomeLabel,
+                moreLabel: t.disciplinesPage.moreLabel,
+              }}
               dark
+              moreHrefBase={`/${lang}/disciplinas`}
             />
           </Reveal>
           <Reveal className="mt-10">
