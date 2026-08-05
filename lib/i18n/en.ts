@@ -529,26 +529,69 @@ export const en: Dictionary = {
     stage2Title: "The strategy becomes a project.",
     stage2Text:
       "With a defined strategy and a clear roadmap, the development stage begins. Each discipline is implemented according to the project's needs and the opportunities identified during the analysis.",
-    developmentDisciplines: [
-      "Strategic financial analysis",
-      "Architecture",
-      "Lighting design",
-      "Interior design",
-      "Furnishing & styling",
+    benefitsLabel: "Benefits",
+    developmentCards: [
+      {
+        label: "Strategic financial analysis",
+        title: "Investing better starts with understanding the project's potential.",
+        description:
+          "It directs investments, sets priorities and evaluates where the greatest opportunities to generate value exist.",
+        benefits: [
+          "Greater clarity to invest.",
+          "Prioritization of resources.",
+          "Better decision-making.",
+        ],
+        note: "Consultative analysis focused on finding the project's profitability. Included within the schematic design service.",
+      },
+      {
+        label: "Architecture",
+        title: "Every spatial decision is also an investment decision.",
+        description:
+          "We develop the project from schematic design through construction: concept, drawings, technical documentation and supervision, coordinating the other disciplines along the way.",
+        benefits: [
+          "Functional spaces, coherent with the project.",
+          "Design decisions made with investment criteria.",
+          "Construction faithful to the design.",
+        ],
+        note: "Includes schematic design, development, remodeling and construction supervision, according to the scope defined in the proposal.",
+      },
+      {
+        label: "Lighting design",
+        title: "Light defines how a space is perceived and how it is remembered.",
+        description:
+          "We define the lighting concept of each space — fixtures, color temperatures, intensities and scenes — integrated with the architecture and the interiors from the start of the design.",
+        benefits: [
+          "Atmospheres that elevate the experience.",
+          "Architecture that reads well at any hour.",
+          "Control and energy efficiency criteria.",
+        ],
+        note: "Includes lighting concept, technical specification and support during installation and final adjustment.",
+      },
+      {
+        label: "Interior design",
+        title: "The project's narrative is built from the inside.",
+        description:
+          "We define materials, finishes, color, layout and bespoke furniture so each space has its own character and stays coherent with the project's identity.",
+        benefits: [
+          "Spaces with a character of their own.",
+          "Coherence across every space.",
+          "Materials chosen for use and durability.",
+        ],
+        note: "Includes concept, material palette, layout and detailing of built-in furniture, coordinated with lighting and construction.",
+      },
+      {
+        label: "Furnishing & styling",
+        title: "The pieces that finally give the project its character.",
+        description:
+          "Curation of furniture, textiles, decoration, decorative lighting and art, with the final installation of each space so the project is handed over complete.",
+        benefits: [
+          "A project ready to be lived in and photographed.",
+          "Identity reinforced down to the last detail.",
+          "Suppliers, schedules and deliveries coordinated.",
+        ],
+        note: "Service delivered by Budaya, 19.89's Furnishing & Styling brand.",
+      },
     ],
-    financial: {
-      label: "Strategic financial analysis",
-      title: "Investing better starts with understanding the project's potential.",
-      description:
-        "It directs investments, sets priorities and evaluates where the greatest opportunities to generate value exist.",
-      benefitsLabel: "Benefits",
-      benefits: [
-        "Greater clarity to invest.",
-        "Prioritization of resources.",
-        "Better decision-making.",
-      ],
-      note: "Consultative analysis focused on finding the project's profitability. Included within the schematic design service.",
-    },
     stage3Eyebrow: "Stage 3 · Identity and positioning",
     stage3Title: "A great project deserves an identity capable of communicating its value.",
     stage3Text:

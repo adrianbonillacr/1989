@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CtaBanner from "@/components/CtaBanner";
+import DisciplineTabs from "@/components/DisciplineTabs";
 import InteriorHero from "@/components/InteriorHero";
 import Reveal from "@/components/Reveal";
 import SectionHeader from "@/components/SectionHeader";
@@ -178,40 +179,13 @@ export default async function ProyectoDesdeCeroPage({ params }: { params: Params
             </p>
           </Reveal>
 
+          {/* Cada disciplina de la etapa abre su propia ficha */}
           <Reveal className="mt-12">
-            <ul className="grid gap-px border border-stone/40 bg-stone/40 sm:grid-cols-2 lg:grid-cols-5" role="list">
-              {z.developmentDisciplines.map((name) => (
-                <li key={name} className="bg-mist p-6">
-                  <span className="text-[0.9rem] font-medium leading-snug text-ink">
-                    {name}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-
-          {/* Destacado: Análisis financiero estratégico */}
-          <Reveal className="mt-12">
-            <div className="border border-stone/40 bg-white p-8 lg:p-12">
-              <p className="text-[0.66rem] font-medium uppercase tracking-[0.26em] text-stone">
-                {z.financial.label}
-              </p>
-              <h3 className="mt-4 max-w-[28ch] text-2xl font-semibold leading-snug text-ink">
-                {z.financial.title}
-              </h3>
-              <div className="mt-6 grid gap-10 lg:grid-cols-2">
-                <p className="max-w-[52ch] font-light leading-[1.7] text-charcoal">
-                  {z.financial.description}
-                </p>
-                <div>
-                  <ListLabel>{z.financial.benefitsLabel}</ListLabel>
-                  <BrandList items={z.financial.benefits} />
-                </div>
-              </div>
-              <p className="mt-8 border-t border-stone/40 pt-5 text-[0.82rem] font-light leading-[1.7] text-charcoal">
-                {z.financial.note}
-              </p>
-            </div>
+            <DisciplineTabs
+              cards={z.developmentCards}
+              benefitsLabel={z.benefitsLabel}
+              ariaLabel={z.stage2Eyebrow}
+            />
           </Reveal>
         </div>
       </section>

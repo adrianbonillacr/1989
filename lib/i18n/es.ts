@@ -541,26 +541,71 @@ export const es = {
     stage2Title: "La estrategia se convierte en proyecto.",
     stage2Text:
       "Con una estrategia definida y una hoja de ruta clara, comienza la etapa de desarrollo. Cada disciplina se implementa según las necesidades del proyecto y las oportunidades identificadas durante el análisis.",
-    developmentDisciplines: [
-      "Análisis financiero estratégico",
-      "Arquitectura",
-      "Diseño de iluminación",
-      "Diseño de interiores",
-      "Equipamiento y ambientación",
+    // Las cinco disciplinas de la etapa funcionan como pestañas: al pulsar
+    // una se muestra su ficha debajo. La primera es la que se ve al entrar.
+    benefitsLabel: "Beneficios",
+    developmentCards: [
+      {
+        label: "Análisis financiero estratégico",
+        title: "Invertir mejor comienza por comprender el potencial del proyecto.",
+        description:
+          "Permite orientar las inversiones, establecer prioridades y evaluar dónde existen mayores oportunidades para generar valor.",
+        benefits: [
+          "Mayor claridad para invertir.",
+          "Priorización de recursos.",
+          "Mejor toma de decisiones.",
+        ],
+        note: "Análisis consultivo orientado a encontrar la rentabilidad del proyecto. Incluido dentro del servicio de anteproyecto.",
+      },
+      {
+        label: "Arquitectura",
+        title: "Cada decisión espacial es también una decisión de inversión.",
+        description:
+          "Desarrollamos el proyecto desde el anteproyecto hasta la obra: concepto, planos, documentación técnica y supervisión, coordinando en el camino a las demás disciplinas.",
+        benefits: [
+          "Espacios funcionales y coherentes con el proyecto.",
+          "Decisiones de diseño con criterio de inversión.",
+          "Ejecución fiel a lo diseñado.",
+        ],
+        note: "Incluye anteproyecto, desarrollo, remodelaciones y supervisión de obra, según el alcance definido en la propuesta.",
+      },
+      {
+        label: "Diseño de iluminación",
+        title: "La luz define cómo se percibe y cómo se recuerda un espacio.",
+        description:
+          "Definimos el concepto lumínico de cada ambiente —luminarias, temperaturas, intensidades y escenas— integrado con la arquitectura y el interiorismo desde el inicio del diseño.",
+        benefits: [
+          "Atmósferas que elevan la experiencia.",
+          "Arquitectura que se lee bien a cualquier hora.",
+          "Criterios de control y eficiencia energética.",
+        ],
+        note: "Incluye concepto lumínico, especificación técnica y acompañamiento durante la instalación y el ajuste final.",
+      },
+      {
+        label: "Diseño de interiores",
+        title: "La narrativa del proyecto se construye por dentro.",
+        description:
+          "Definimos materiales, acabados, color, distribución y mobiliario a medida para que cada ambiente tenga carácter propio y coherencia con la identidad del proyecto.",
+        benefits: [
+          "Ambientes con identidad propia.",
+          "Coherencia entre todos los espacios.",
+          "Materiales elegidos con criterio de uso y durabilidad.",
+        ],
+        note: "Incluye concepto, paleta de materiales, distribución y detalle de mobiliario fijo, coordinado con iluminación y obra.",
+      },
+      {
+        label: "Equipamiento y ambientación",
+        title: "Las piezas que terminan de dar carácter al proyecto.",
+        description:
+          "Curaduría de mobiliario, textiles, decoración, iluminación decorativa y arte, con el montaje final de cada espacio para que el proyecto se entregue completo.",
+        benefits: [
+          "Un proyecto listo para vivirse y fotografiarse.",
+          "Identidad reforzada hasta en el último detalle.",
+          "Proveedores, tiempos y entregas coordinados.",
+        ],
+        note: "Servicio desarrollado por Budaya, la marca de Equipamiento & Ambientación de 19.89.",
+      },
     ],
-    financial: {
-      label: "Análisis financiero estratégico",
-      title: "Invertir mejor comienza por comprender el potencial del proyecto.",
-      description:
-        "Permite orientar las inversiones, establecer prioridades y evaluar dónde existen mayores oportunidades para generar valor.",
-      benefitsLabel: "Beneficios",
-      benefits: [
-        "Mayor claridad para invertir.",
-        "Priorización de recursos.",
-        "Mejor toma de decisiones.",
-      ],
-      note: "Análisis consultivo orientado a encontrar la rentabilidad del proyecto. Incluido dentro del servicio de anteproyecto.",
-    },
     stage3Eyebrow: "Etapa 3 · Identidad y posicionamiento",
     stage3Title: "Un gran proyecto merece una identidad capaz de comunicar su valor.",
     stage3Text:
