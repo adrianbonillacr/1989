@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ArrowLink from "@/components/ArrowLink";
 import Button from "@/components/Button";
 import CtaBanner from "@/components/CtaBanner";
@@ -204,11 +205,23 @@ export default async function HomePage({ params }: { params: Params }) {
             />
           </Reveal>
 
-          <div className="mt-16 grid gap-6 lg:grid-cols-3">
+          {/* Las tres tarjetas comparten las filas del grid (subgrid), así cada
+              zona —rótulo, título, primer paso, recorrido y pie— queda a la
+              misma altura en las tres columnas. Cada tarjeta es un enlace al
+              servicio con el que arranca ese escenario. */}
+          <div className="mt-16 grid gap-6 lg:grid-cols-3 lg:grid-rows-[repeat(9,auto)]">
             {t.scenarios.map((scenario, i) => (
-              <Reveal key={scenario.title} delay={i * 100}>
-                <article className="flex h-full flex-col border border-stone/50 bg-white p-8">
-                  <div className="flex items-center gap-4">
+              <Reveal
+                key={scenario.title}
+                delay={i * 100}
+                className="lg:row-span-9 lg:grid lg:grid-rows-subgrid"
+              >
+                <Link
+                  href={`/${lang}/disciplinas#${scenario.serviceSlug}`}
+                  className="group block h-full border border-stone/50 bg-white transition-colors duration-300 hover:border-earth lg:row-span-9 lg:grid lg:grid-rows-subgrid"
+                >
+                  {/* 1 · icono + nombre */}
+                  <div className="flex items-center gap-4 px-8 pb-6 pt-8">
                     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-mist text-earth">
                       <RoadmapIcon name={scenario.icon as RoadmapIconName} className="h-5 w-5" />
                     </span>
@@ -217,49 +230,53 @@ export default async function HomePage({ params }: { params: Params }) {
                     </span>
                   </div>
 
-                  <h3 className="mt-7 text-[1.35rem] font-semibold leading-snug text-ink">
-                    {scenario.title}
-                  </h3>
+                  {/* 2 · título sobre el fondo de la sección */}
+                  <div className="flex items-center bg-mist px-8 py-5">
+                    <h3 className="text-[1.35rem] font-semibold leading-snug text-ink transition-colors duration-300 group-hover:text-earth">
+                      {scenario.title}
+                    </h3>
+                  </div>
 
-                  <p className="mt-4 text-[0.95rem] font-light leading-[1.7] text-charcoal">
+                  {/* 3 · desarrollo de la información */}
+                  <p className="px-8 pb-7 pt-6 text-[0.95rem] font-light leading-[1.7] text-charcoal">
                     {scenario.start}
                   </p>
 
-                  <div className="mt-7 border-t border-stone/40 pt-6">
-                    <p className="text-[0.62rem] font-medium uppercase tracking-[0.28em] text-stone">
-                      {t.home.scenarioFirstStepLabel}
-                    </p>
-                    <p className="mt-3 font-medium text-ink">{scenario.firstStep}</p>
-                    <p className="mt-2 text-[0.95rem] font-light leading-[1.7] text-charcoal">
-                      {scenario.firstStepText}
-                    </p>
-                  </div>
+                  <p className="mx-8 border-t border-stone/40 pt-6 text-[0.62rem] font-medium uppercase tracking-[0.28em] text-stone">
+                    {t.home.scenarioFirstStepLabel}
+                  </p>
+                  <p className="px-8 pt-3 font-medium text-ink">{scenario.firstStep}</p>
+                  <p className="px-8 pb-7 pt-2 text-[0.95rem] font-light leading-[1.7] text-charcoal">
+                    {scenario.firstStepText}
+                  </p>
 
-                  <div className="mt-7 border-t border-stone/40 pt-6">
-                    <p className="text-[0.62rem] font-medium uppercase tracking-[0.28em] text-stone">
-                      {t.home.scenarioRouteLabel}
-                    </p>
-                    <ol className="mt-4 space-y-2.5" role="list">
-                      {scenario.route.map((item, index) => (
-                        <li
-                          key={item}
-                          className="flex items-start gap-3 text-[0.9rem] font-light leading-[1.5] text-ink"
-                        >
-                          <span className="mt-px w-4 shrink-0 text-[0.7rem] font-medium text-earth">
-                            {String(index + 1).padStart(2, "0")}
-                          </span>
-                          {item}
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
+                  <p className="mx-8 border-t border-stone/40 pt-6 text-[0.62rem] font-medium uppercase tracking-[0.28em] text-stone">
+                    {t.home.scenarioRouteLabel}
+                  </p>
+                  <ol className="space-y-2.5 px-8 pb-6 pt-4" role="list">
+                    {scenario.route.map((item, index) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 text-[0.9rem] font-light leading-[1.5] text-ink"
+                      >
+                        <span className="mt-px w-4 shrink-0 text-[0.7rem] font-medium text-earth">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        {item}
+                      </li>
+                    ))}
+                  </ol>
 
-                  <div className="mt-8 pt-2">
-                    <ArrowLink href={`/${lang}${scenario.href}`}>
-                      {scenario.linkLabel}
-                    </ArrowLink>
-                  </div>
-                </article>
+                  <p className="flex items-center gap-3 px-8 pb-8 text-[0.8rem] font-normal uppercase tracking-[0.14em] text-earth">
+                    {t.home.scenarioLink}
+                    <span
+                      aria-hidden="true"
+                      className="transition-transform duration-300 group-hover:translate-x-1.5"
+                    >
+                      →
+                    </span>
+                  </p>
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -309,8 +326,8 @@ export default async function HomePage({ params }: { params: Params }) {
               labels={{
                 stageLabels: t.stageLabels,
                 pathTags: t.pathTags,
-                includesLabel: t.disciplinesPage.includesLabel,
-                outcomeLabel: t.disciplinesPage.outcomeLabel,
+                considerationsLabel: t.disciplinesPage.considerationsLabel,
+                costLabel: t.disciplinesPage.costLabel,
                 moreLabel: t.disciplinesPage.moreLabel,
               }}
               dark

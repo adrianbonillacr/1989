@@ -1,8 +1,521 @@
-import type { Dictionary } from "./es";
+import type { Dictionary, DisciplineEntry } from "./es";
 
 /**
  * ENGLISH dictionary — mirrors the structure of es.ts exactly.
  */
+
+const disciplines: DisciplineEntry[] = [
+  {
+    slug: "seleccion-de-activos",
+    name: "Asset selection",
+    tagline: "The best investment starts with the right property.",
+    description:
+      "We evaluate real estate opportunities before buying: location, context, development potential and risks, so the investment starts with the right property.",
+    stage: "asesoria",
+    newOnly: true,
+    detail: {
+      text: [
+        "When the client has not yet acquired a property, this discipline evaluates opportunities aligned with the project's goals, budget and vision.",
+        "Our aim is to bring judgment and analysis to support the decision before investing.",
+      ],
+      blocks: [
+        {
+          label: "Objectives",
+          items: [
+            "Understand the investment profile.",
+            "Identify opportunities aligned with the project.",
+            "Assess the overall potential of the assets.",
+            "Identify risks and opportunities.",
+            "Guide decision-making.",
+          ],
+        },
+        {
+          label: "We assess",
+          items: [
+            "Location and context.",
+            "Development potential.",
+            "General condition of the asset.",
+            "Opportunities and limitations.",
+            "Fit with the project's goals.",
+          ],
+        },
+        {
+          label: "Includes",
+          items: [
+            "Initial strategy meeting.",
+            "Definition of the investment profile.",
+            "Evaluation of selected opportunities.",
+            "General analysis of the asset's potential.",
+            "Strategic recommendations.",
+            "Meeting to present the results.",
+          ],
+        },
+        {
+          label: "Deliverables",
+          items: [
+            "Executive report.",
+            "Evaluation of the opportunities analyzed.",
+            "Strategic recommendations for decision-making.",
+          ],
+        },
+      ],
+      considerations: [
+        "If the project's development continues with 19.89 Arquitectura, these fees may be credited partially or fully within the integral contract, subject to the agreed terms.",
+      ],
+      cost: "Detailed in the proposal, according to scope.",
+    },
+  },
+  {
+    slug: "diagnostico-estrategico",
+    name: "Strategic diagnosis",
+    tagline: "We measure first. We invest after.",
+    description:
+      "We analyze the current state of an existing project to identify opportunities, priorities and a clear development route before investing.",
+    stage: "asesoria",
+    newOnly: false,
+    detail: {
+      text: [
+        "When the property already exists or the project is already running, the starting point is to understand it. Before investing, remodeling or adding new disciplines it is essential to grasp how it works, what its strengths are and where the greatest opportunities lie.",
+        "The result makes clear where to invest first and which actions can create the greatest impact.",
+      ],
+      blocks: [
+        {
+          label: "What we look for during the consultancy",
+          items: [
+            "Understand how the project works as a whole.",
+            "Identify strengths and opportunities for improvement.",
+            "Detect aspects affecting the user or guest experience.",
+            "Set intervention priorities.",
+            "Guide future investments through a clear strategy.",
+          ],
+        },
+        {
+          label: "Deliverables",
+          items: [
+            "19.89 Value Index with the five dimensions measured.",
+            "Roadmap with intervention priorities.",
+            "Staged recommendations by urgency, impact and budget.",
+          ],
+        },
+        {
+          label: "Benefits",
+          items: [
+            "Clarity on where to invest first.",
+            "Investment ordered by priority.",
+            "Lower risk of low-impact interventions.",
+          ],
+        },
+      ],
+      considerations: [
+        "The recommended disciplines can be contracted as a whole or in stages, according to the priorities and goals defined.",
+      ],
+      cost: "Detailed in the proposal, according to the project's scope.",
+    },
+  },
+  {
+    slug: "analisis-financiero",
+    name: "Strategic financial analysis",
+    tagline: "Investing better starts with understanding the project's potential.",
+    description:
+      "We guide investment with financial criteria: where the greatest value potential lies, how to prioritize resources and how to sustain the project's profitability.",
+    stage: "desarrollo",
+    newOnly: true,
+    detail: {
+      text: [
+        "This discipline directs investments, sets priorities and evaluates where the greatest opportunities to generate value exist.",
+      ],
+      blocks: [
+        {
+          label: "Includes",
+          items: ["General evaluation of the project's potential (profitability)."],
+        },
+        {
+          label: "Benefits",
+          items: [
+            "Greater clarity to invest.",
+            "Prioritization of resources.",
+            "Better decision-making.",
+          ],
+        },
+      ],
+      considerations: [
+        "A consultative analysis focused on finding the project's profitability.",
+      ],
+      cost: "Included within the schematic design service.",
+    },
+  },
+  {
+    slug: "arquitectura",
+    name: "Architecture",
+    tagline: "Design with purpose.",
+    description:
+      "Design with strategic grounding: schematic design, development, remodeling and supervision, where every spatial decision is also an investment decision.",
+    stage: "desarrollo",
+    newOnly: true,
+    detail: {
+      text: [
+        "Architecture defines how a space works, how it is experienced and how it responds to the project's needs.",
+        "Every architectural proposal is developed from the prior strategic analysis, seeking to improve functionality, strengthen the user experience and contribute to the project's overall value.",
+      ],
+      blocks: [
+        {
+          label: "Possible scope",
+          items: [
+            "Preliminary studies.",
+            "Architectural schematic design.",
+            "Remodeling and space optimization.",
+            "3D modeling.",
+            "Drawings and technical specifications.",
+            "Architectural supervision (optional).",
+            "Construction through strategic partners (optional).",
+          ],
+        },
+        {
+          label: "Benefits",
+          items: [
+            "Better use of space.",
+            "Greater functionality.",
+            "Better user experience.",
+            "Increased perceived value.",
+          ],
+        },
+      ],
+      considerations: [
+        "The scope depends on the needs and opportunities identified during the diagnosis.",
+        "Construction, materials, contractors, permits and paperwork are quoted separately.",
+      ],
+      cost: "According to the project's scope; quoted separately.",
+    },
+  },
+  {
+    slug: "diseno-de-iluminacion",
+    name: "Lighting design",
+    tagline: "Light designs the experience too.",
+    description:
+      "We define atmospheres and lighting criteria that transform the experience of space and bring the architecture to life.",
+    stage: "desarrollo",
+    newOnly: false,
+    detail: {
+      text: [
+        "Lighting directly influences the perception, functionality and atmosphere of a space.",
+        "Every lighting proposal is developed strategically to complement the architecture, strengthen the user experience and improve the perceived quality of the project.",
+      ],
+      blocks: [
+        {
+          label: "Possible scope",
+          items: [
+            "Lighting strategy and concept.",
+            "Design of atmospheres and ambiances.",
+            "Definition of lighting criteria.",
+            "Selection of fixtures and complementary solutions.",
+            "Recommendations for the project's implementation.",
+            "Strategic support during execution (optional).",
+          ],
+        },
+        {
+          label: "Benefits",
+          items: [
+            "More attractive spaces.",
+            "Greater visual comfort.",
+            "Increased perceived value.",
+            "Energy optimization.",
+            "Better user experience.",
+          ],
+        },
+      ],
+      considerations: [
+        "The purchase, supply and installation of fixtures are not included and are quoted separately.",
+      ],
+      cost: "According to the scope and complexity of the project.",
+    },
+  },
+  {
+    slug: "diseno-de-interiores",
+    name: "Interior design",
+    tagline: "Spaces speak before people do.",
+    description:
+      "We build the project's spatial narrative: materials, finishes and curation that give each space character and coherence.",
+    stage: "desarrollo",
+    newOnly: false,
+    detail: {
+      text: [
+        "Interior design turns functional spaces into experiences coherent with the project's identity and goals.",
+        "Every decision seeks to strengthen the user experience, improve perceived quality and contribute to the property's overall value.",
+      ],
+      blocks: [
+        {
+          label: "Possible scope",
+          items: [
+            "Concept and narrative of the project.",
+            "Interior design and spatial layout.",
+            "Moodboards and style development.",
+            "3D modeling and renders.",
+            "Selection of materials, finishes and colors.",
+            "Curation of furniture, decoration and accessories.",
+            "Support during the implementation of the concept.",
+          ],
+        },
+        {
+          label: "Benefits",
+          items: [
+            "Greater coherence between identity, design and experience.",
+            "Spaces with a character of their own.",
+            "Better experience for users and guests.",
+            "Increased perceived value.",
+            "Greater competitive differentiation.",
+            "More appeal for sale, rental or commercialization.",
+          ],
+        },
+      ],
+      considerations: [
+        "The purchase of materials, finishes, furniture, accessories and decorative elements is quoted separately.",
+      ],
+      cost: "According to the scope and complexity of the project.",
+    },
+  },
+  {
+    slug: "equipamiento-y-ambientacion",
+    name: "Furnishing & styling",
+    tagline: "Spaces are remembered for the experience they create.",
+    description:
+      "Curation of furniture, pieces and styling that complete the experience and reinforce the project's identity.",
+    stage: "desarrollo",
+    newOnly: false,
+    detail: {
+      text: [
+        "Furnishing and styling are the final step that turns a project into a complete space, functional and coherent with its identity.",
+        "We develop an integral proposal covering the selection of furniture, decoration, textiles, accessories and styling elements, aligned with the architectural concept and the user's needs.",
+        "As part of this discipline we bring in Budaya, our brand specialized in furnishing and styling for residential, commercial and hospitality projects under a single design philosophy.",
+      ],
+      blocks: [
+        {
+          label: "Possible scope",
+          items: [
+            "Integral selection of furniture and decoration.",
+            "Furnishing for residential, commercial and hospitality projects.",
+            "Styling of interior and exterior spaces.",
+            "Selection of textiles, bed linen, towels and accessories.",
+            "Integration of Budaya products.",
+            "Support during procurement and implementation.",
+          ],
+        },
+        {
+          label: "Benefits",
+          items: [
+            "Spaces coherent with the project's identity.",
+            "Greater comfort and functionality for the user.",
+            "Increased perceived value of the development.",
+            "Better experience for residents, guests or clients.",
+            "Budget optimization through a strategic selection of furnishing.",
+          ],
+        },
+      ],
+      considerations: [
+        "Furniture, decoration, textiles, transport and installation are quoted independently according to the project's scope.",
+        "Delivery times depend on the availability, manufacturing or import of each product.",
+      ],
+      cost: "According to the scope, level of furnishing and complexity of the project.",
+    },
+  },
+  {
+    slug: "proteccion-de-identidad",
+    name: "Brand protection",
+    tagline: "A valuable brand must also be protected.",
+    description:
+      "We protect and organize the project's brand: visual identity, registration and positioning so the asset grows with backing.",
+    stage: "identidad",
+    newOnly: false,
+    detail: {
+      text: [
+        "A project's identity is not only built: it must also be safeguarded.",
+        "This discipline legally protects the elements that make up the brand identity, strengthening its legal security and preserving its value as a strategic asset.",
+        "Proper protection reduces risks, reinforces exclusivity and gives stronger backing to the brand's future growth.",
+      ],
+      blocks: [
+        {
+          label: "Possible scope",
+          items: [
+            "Protection and exclusive right to use the brand.",
+            "Protection against third parties.",
+            "Positioning.",
+            "Visual identity.",
+            "Brand communication.",
+            "The brand as a strategic asset.",
+            "International projection of the brand.",
+          ],
+        },
+        {
+          label: "Includes",
+          items: [
+            "Initial meeting.",
+            "Preliminary analysis.",
+            "Application and filing.",
+            "Nice classification.",
+            "Publication of the edict.",
+            "Support throughout the process.",
+          ],
+        },
+        {
+          label: "Benefits",
+          items: [
+            "Greater differentiation.",
+            "More consistent communication.",
+            "Greater perceived value.",
+            "A stronger connection with the audience.",
+            "Clear foundations for future positioning actions.",
+          ],
+        },
+      ],
+      considerations: [
+        "The scope does not include legal proceedings should oppositions to the registration application arise.",
+      ],
+      cost: "According to the scope and complexity of the project.",
+    },
+  },
+  {
+    slug: "fotografia-profesional",
+    name: "Professional photography",
+    tagline: "The first impression happens before the first visit.",
+    description:
+      "Architectural and hospitality photography with visual direction, so the project looks like what it is and communicates its value.",
+    stage: "identidad",
+    newOnly: false,
+    detail: {
+      text: [
+        "In most cases people get to know a project through an image long before experiencing it physically.",
+        "That is why professional photography does not merely document spaces: its goal is to communicate experiences, highlight attributes and convey the project's value. We do not photograph spaces; we photograph the experience of being there.",
+      ],
+      blocks: [
+        {
+          label: "Possible scope",
+          items: [
+            "Architectural photography.",
+            "Interior photography.",
+            "Hospitality and tourism photography.",
+            "Photographic direction and production.",
+            "Professional image editing.",
+          ],
+        },
+        {
+          label: "Packages",
+          items: [
+            "Essential — for compact studios: 15 images.",
+            "Atmosphere — for houses and amenities: 25 images.",
+            "Vision — for villas, vacation rentals and high-end architecture: 40 images.",
+          ],
+        },
+        {
+          label: "Benefits",
+          items: [
+            "Greater perceived value.",
+            "Better presentation of the project.",
+            "Professional visual material.",
+            "Coherence between project, identity and communication.",
+          ],
+        },
+      ],
+      considerations: [
+        "Travel within the GAM is included. For projects outside this area, travel costs are quoted separately.",
+        "The photo shoot takes place once the project's physical work is finished, so the images reflect its best version.",
+      ],
+      cost: "The investment for each package is detailed in the proposal.",
+    },
+  },
+  {
+    slug: "marketing-digital",
+    name: "Digital marketing",
+    tagline: "A great project needs a strategy capable of making it visible.",
+    description:
+      "Communication strategy, content and campaigns to make the project visible and connect it with its market.",
+    stage: "identidad",
+    newOnly: false,
+    detail: {
+      text: [
+        "Creating an excellent space is not enough: the market needs to know about it.",
+        "Digital marketing communicates the project's value, strengthens its positioning and connects it with the right audience. More than producing posts, we build communication coherent with the identity and the experience the project represents.",
+      ],
+      blocks: [
+        {
+          label: "Possible scope",
+          items: [
+            "Digital communication strategy.",
+            "Content planning.",
+            "Brand positioning.",
+            "Social media management.",
+            "Digital communication campaigns.",
+            "Analysis and strategic optimization.",
+          ],
+        },
+        {
+          label: "Packages",
+          items: [
+            "Start — for projects beginning their digital presence.",
+            "Growth — for projects seeking to consolidate their presence.",
+            "Signature — the integral communication solution.",
+          ],
+        },
+        {
+          label: "Benefits",
+          items: [
+            "Greater visibility.",
+            "More coherent communication.",
+            "A stronger brand.",
+            "Greater trust and recognition.",
+            "Better digital positioning.",
+          ],
+        },
+      ],
+      considerations: [
+        "Travel within the GAM is included. For projects outside this area, travel costs are quoted separately.",
+      ],
+      cost: "The investment for each package is detailed in the proposal.",
+    },
+  },
+  {
+    slug: "automatizacion-y-movilidad",
+    name: "Automation & Mobility",
+    tagline: "Technology that improves today's experience and prepares projects for the future.",
+    description:
+      "Technology that simplifies operations and improves experience: automation, smart control and electric mobility that add value to the project.",
+    stage: "tecnologia",
+    newOnly: false,
+    detail: {
+      text: [
+        "The best technological solutions are the ones that go unnoticed: they do not add complexity, they make every space work more efficiently, comfortably and intuitively.",
+        "Automation and electric mobility create spaces ready for new ways of living, working and moving, always according to the characteristics and goals of each development.",
+      ],
+      blocks: [
+        {
+          label: "Possible scope",
+          items: [
+            "Automation systems for lighting, climate control and other services.",
+            "Integration of smart home and smart building solutions.",
+            "Infrastructure for electric vehicle charging.",
+            "Energy efficiency assessment applied to the technological systems.",
+            "Recommendations to optimize the project's operation and maintenance.",
+            "Advice on technology selection.",
+          ],
+        },
+        {
+          label: "Benefits",
+          items: [
+            "Greater comfort and functionality.",
+            "Optimization of the project's operation.",
+            "Increased energy efficiency.",
+            "A project prepared for new technologies.",
+            "Greater perceived value and competitiveness.",
+            "A stronger long-term asset value.",
+          ],
+        },
+      ],
+      considerations: [
+        "The recommended solutions depend on the characteristics, scope and specific needs of each project.",
+        "The purchase of equipment, systems, licenses, infrastructure, specialized installation and commissioning are quoted independently.",
+      ],
+      cost: "According to the scope and complexity of the project.",
+    },
+  },
+];
 
 export const en: Dictionary = {
   meta: {
@@ -41,6 +554,7 @@ export const en: Dictionary = {
       noProperty: "There is no property yet",
       hasProperty: "The property already exists",
       running: "Project already operating",
+      allServices: "All Our Services",
       open: "Open services menu",
     },
     menuLabel: "Navigation menu",
@@ -136,6 +650,7 @@ export const en: Dictionary = {
     scenarioStartLabel: "Starting point",
     scenarioFirstStepLabel: "First step",
     scenarioRouteLabel: "Route",
+    scenarioLink: "See service",
     considerationsLabel: "Considerations",
     considerationsIntro:
       "Proposals developed by 19.89 are structured in a personalized way to respond to the characteristics and goals of each project. For this reason:",
@@ -192,15 +707,14 @@ export const en: Dictionary = {
       start: "There is intent to invest, but the asset has not been purchased yet.",
       firstStep: "Asset selection",
       firstStepText:
-        "We evaluate opportunities aligned with the goals, budget and vision of the project: location, context, development potential and risks.",
+        "We evaluate opportunities aligned with the project's goals, budget and vision: location, context, development potential and risks.",
       route: [
         "Asset selection",
         "Project development",
         "Identity and positioning",
         "Automation and mobility",
       ],
-      href: "/proyecto-desde-cero",
-      linkLabel: "See the process",
+      serviceSlug: "seleccion-de-activos",
     },
     {
       icon: "property",
@@ -215,8 +729,7 @@ export const en: Dictionary = {
         "Identity and positioning",
         "Automation and mobility",
       ],
-      href: "/proyecto-desde-cero",
-      linkLabel: "See the process",
+      serviceSlug: "analisis-financiero",
     },
     {
       icon: "built",
@@ -228,12 +741,11 @@ export const en: Dictionary = {
         "We analyze the starting point and move straight into project development with a defined roadmap.",
       route: [
         "Strategic diagnosis",
-        "19.89 Value Index",
+        "Project development",
         "Roadmap of priorities",
         "Evolution",
       ],
-      href: "/proyecto-ya-construido",
-      linkLabel: "See the diagnosis",
+      serviceSlug: "diagnostico-estrategico",
     },
   ],
 
@@ -268,217 +780,8 @@ export const en: Dictionary = {
     both: "New Project · Built Project",
     newOnly: "New Project only",
   },
-  disciplines: [
-    {
-      slug: "seleccion-de-activos",
-      name: "Asset selection",
-      tagline: "The best investment starts with choosing well.",
-      description: "We evaluate real estate opportunities before buying: location, context, development potential and risks, so the investment starts with the right property.",
-      stage: "asesoria",
-      newOnly: true,
-      detail: {
-        text: "Before investing we weigh the available opportunities against the profile, the budget and the vision of the project. The goal is not to find a property, but the right property for what is meant to be built.",
-        includes: [
-          "Understanding the investment profile and the project's objectives.",
-          "Identifying opportunities aligned with that vision.",
-          "Assessing location, context and development potential.",
-          "Identifying the risks and limitations of each option.",
-          "Strategic recommendations to support the decision.",
-        ],
-        outcome: "A purchase decision backed by criteria, with the opportunities and risks on the table before signing.",
-      },
-    },
-    {
-      slug: "diagnostico-estrategico",
-      name: "Strategic diagnosis",
-      tagline: "We measure first. We invest after.",
-      description: "We analyze the current state of an existing project to identify opportunities, priorities and a clear development route before investing.",
-      stage: "asesoria",
-      newOnly: false,
-      detail: {
-        text: "When the property already exists or the project is already running, the starting point is to understand it. We analyze how it works today, where it is leaving value on the table and which actions have the greatest impact before committing resources.",
-        includes: [
-          "Analysis of the current state of the property or the operating project.",
-          "Reading of the context and the market it competes in.",
-          "Identification of strengths, gaps and opportunities for improvement.",
-          "Prioritization of interventions by impact and investment.",
-          "A staged development roadmap.",
-        ],
-        outcome: "Clarity on where to invest first and why, with a roadmap that allows contracting as a whole or in stages.",
-      },
-    },
-    {
-      slug: "analisis-financiero",
-      name: "Strategic financial analysis",
-      tagline: "Investing better starts with understanding the project's potential.",
-      description: "We guide investment with financial criteria: where the greatest value potential lies, how to prioritize resources and how to sustain the project's profitability.",
-      stage: "desarrollo",
-      newOnly: true,
-      detail: {
-        text: "Design and investment are decided together. We translate the project's decisions into numbers to understand where the greatest value potential lies and how to sustain profitability over time.",
-        includes: [
-          "Structure of the project's investment and costs.",
-          "Development scenarios and their effect on return.",
-          "Prioritization of resources by value potential.",
-          "Criteria to sustain profitability during operation.",
-          "Staging of the disbursement.",
-        ],
-        outcome: "A project that holds up both on the drawings and in the numbers.",
-      },
-    },
-    {
-      slug: "arquitectura",
-      name: "Architecture",
-      tagline: "Design with strategic grounding, from schematic design to the built work.",
-      description: "Design with strategic grounding: schematic design, development, remodeling and supervision, where every spatial decision is also an investment decision.",
-      stage: "desarrollo",
-      newOnly: true,
-      detail: {
-        text: "We design with strategic grounding: every spatial decision is also an investment decision. We stay with the project from schematic design through construction.",
-        includes: [
-          "Schematic design and development of the architectural concept.",
-          "Drawings and technical documentation of the project.",
-          "Remodeling and extensions of existing properties.",
-          "Coordination with the project's other disciplines.",
-          "Supervision during construction.",
-        ],
-        outcome: "Functional spaces, coherent with the project's identity and built as designed.",
-      },
-    },
-    {
-      slug: "diseno-de-iluminacion",
-      name: "Lighting design",
-      tagline: "Atmospheres that transform the experience of space.",
-      description: "We define atmospheres and lighting criteria that transform the experience of space and bring the architecture to life.",
-      stage: "desarrollo",
-      newOnly: false,
-      detail: {
-        text: "Light defines how a space is perceived and how it makes people feel. We treat lighting as a tool for experience and value, not as the last detail of the build.",
-        includes: [
-          "Lighting concept and atmosphere for each space.",
-          "Selection of fixtures, color temperatures and intensities.",
-          "Integration of light with the architecture and the interiors.",
-          "Control, scene and energy efficiency criteria.",
-          "Support during installation and final adjustment.",
-        ],
-        outcome: "Spaces people remember, and architecture that reads well at any hour of the day.",
-      },
-    },
-    {
-      slug: "diseno-de-interiores",
-      name: "Interior design",
-      tagline: "Spatial narrative, materials and curation with intent.",
-      description: "We build the project's spatial narrative: materials, finishes and curation that give each space character and coherence.",
-      stage: "desarrollo",
-      newOnly: false,
-      detail: {
-        text: "Interior design builds the project's narrative: what the space says, the materials it says it with, and how it is lived from the inside.",
-        includes: [
-          "Interior concept and spatial narrative.",
-          "Palette of materials, finishes and color.",
-          "Layout, circulation and use of each space.",
-          "Detailing of built-in furniture and bespoke solutions.",
-          "Coordination with lighting, furnishing and construction.",
-        ],
-        outcome: "Spaces with character and coherence, aligned with the identity and with the experience the project wants to create.",
-      },
-    },
-    {
-      slug: "equipamiento-y-ambientacion",
-      name: "Furnishing & styling",
-      tagline: "Pieces and ambiance that complete the experience.",
-      description: "Curation of furniture, pieces and styling that complete the experience and reinforce the project's identity.",
-      stage: "desarrollo",
-      newOnly: false,
-      detail: {
-        text: "Through Budaya, 19.89's Furnishing & Styling brand, we complete the project with the pieces that finally give it character.",
-        includes: [
-          "Curation of furniture and pieces for each space.",
-          "Textiles, decoration, tableware and accessories.",
-          "Decorative lighting and art pieces.",
-          "Styling and final installation of the spaces.",
-          "Coordination of schedules, suppliers and deliveries.",
-        ],
-        outcome: "A project handed over ready to be lived in and photographed, not merely built.",
-      },
-    },
-    {
-      slug: "proteccion-de-identidad",
-      name: "Brand protection",
-      tagline: "A protected brand is an asset that grows.",
-      description: "We protect and organize the project's brand: visual identity, registration and positioning so the asset grows with backing.",
-      stage: "identidad",
-      newOnly: false,
-      detail: {
-        text: "A project's brand is part of its value. Organizing and protecting it avoids future conflicts and lets the asset grow with backing.",
-        includes: [
-          "Definition and organization of the visual identity.",
-          "Brand manual and application criteria.",
-          "Review of availability and risks in the use of the name.",
-          "Support throughout the registration process.",
-          "Guidelines to sustain the identity over time.",
-        ],
-        outcome: "A consistent, protected brand able to sustain the project's positioning.",
-      },
-    },
-    {
-      slug: "fotografia-profesional",
-      name: "Professional photography",
-      tagline: "The project deserves to look like what it is.",
-      description: "Architectural and hospitality photography with visual direction, so the project looks like what it is and communicates its value.",
-      stage: "identidad",
-      newOnly: false,
-      detail: {
-        text: "A project communicates through images. Architectural and hospitality photography turns the design work into material that can publish, sell and position.",
-        includes: [
-          "Visual direction and shot plan for the project.",
-          "Architectural photography of interiors and exteriors.",
-          "Ambiance, detail and experience photography.",
-          "Production and styling of each scene.",
-          "Editing and delivery in the formats the project needs.",
-        ],
-        outcome: "An image library of its own, coherent with the identity and ready for campaigns, press and sales channels.",
-      },
-    },
-    {
-      slug: "marketing-digital",
-      name: "Digital marketing",
-      tagline: "A great project needs to be visible.",
-      description: "Communication strategy, content and campaigns to make the project visible and connect it with its market.",
-      stage: "identidad",
-      newOnly: false,
-      detail: {
-        text: "A great project needs to be visible to the right market. We define what is communicated, to whom and through which channels.",
-        includes: [
-          "Communication strategy and key messages.",
-          "Definition of audiences and priority channels.",
-          "Content plan aligned with the project's identity.",
-          "Digital campaigns and results tracking.",
-          "Adjustments based on the performance of each action.",
-        ],
-        outcome: "A project present where its market looks for it, with consistent and measurable communication.",
-      },
-    },
-    {
-      slug: "automatizacion-y-movilidad",
-      name: "Automation & Mobility",
-      tagline: "Innovation that simplifies operations and adds value.",
-      description: "Technology that simplifies operations and improves experience: automation, smart control and electric mobility that add value to the project.",
-      stage: "tecnologia",
-      newOnly: false,
-      detail: {
-        text: "The best technological solutions are the ones that go unnoticed: they do not add complexity, they make the space work better.",
-        includes: [
-          "Automation and smart control of the spaces.",
-          "Electric mobility solutions.",
-          "Technologies focused on comfort and efficiency.",
-          "Tools to optimize the project's operation.",
-          "Opportunities for innovation and differentiation.",
-        ],
-        outcome: "More comfort for users, a more efficient operation and a project ready for what comes next.",
-      },
-    },
-  ],
+  // Fichas completas de cada disciplina (ver DisciplineEntry en es.ts).
+  disciplines,
 
   fromZero: {
     metaTitle: "New Project — The best investment starts with the right property",
@@ -784,10 +1087,10 @@ export const en: Dictionary = {
   ],
 
   disciplinesPage: {
-    metaTitle: "Strategic disciplines — Tools that integrate into every project",
+    metaTitle: "All our services — The disciplines of the 19.89 Strategy",
     metaDescription:
       "Asset selection, diagnosis, financial analysis, architecture, lighting, interiors, identity, photography, marketing, automation and mobility: modules of the 19.89 Strategy.",
-    heroEyebrow: "Disciplines",
+    heroEyebrow: "All our services",
     heroTitle: "Tools that integrate into every project.",
     heroSubtitle:
       "Specialized tools that integrate according to the needs of each project. None operates in isolation: they all respond to the 19.89 Strategy.",
@@ -795,8 +1098,8 @@ export const en: Dictionary = {
     modalLabel: "Discipline detail",
     modalClose: "Close",
     modalPillar: "Integrates into",
-    includesLabel: "What it includes",
-    outcomeLabel: "What it achieves",
+    considerationsLabel: "Considerations",
+    costLabel: "Investment",
     moreLabel: "+ info",
   },
 

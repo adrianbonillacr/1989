@@ -11,17 +11,18 @@ type Discipline = {
   stage: string;
   newOnly: boolean;
   detail: {
-    text: string;
-    includes: readonly string[];
-    outcome: string;
+    text: readonly string[];
+    blocks: readonly { label: string; items: readonly string[] }[];
+    considerations: readonly string[];
+    cost: string;
   };
 };
 
 type Labels = {
   stageLabels: Record<string, string>;
   pathTags: { both: string; newOnly: string };
-  includesLabel: string;
-  outcomeLabel: string;
+  considerationsLabel: string;
+  costLabel: string;
   moreLabel: string;
 };
 
@@ -129,39 +130,59 @@ export default function DisciplineAccordion({
 
                 {expanded && (
                   <>
-                    <p className={`mt-4 font-light leading-[1.75] ${desc}`}>
-                      {d.detail.text}
-                    </p>
+                    {d.detail.text.map((paragraph) => (
+                      <p key={paragraph} className={`mt-4 font-light leading-[1.75] ${desc}`}>
+                        {paragraph}
+                      </p>
+                    ))}
 
-                    <p
-                      className={`mt-8 text-[0.62rem] font-medium uppercase tracking-[0.28em] ${label}`}
-                    >
-                      {labels.includesLabel}
-                    </p>
-                    <ul role="list" className="mt-4 space-y-2.5">
-                      {d.detail.includes.map((item) => (
-                        <li
-                          key={item}
-                          className={`flex items-start gap-3 text-[0.95rem] font-light leading-[1.6] ${desc}`}
+                    {d.detail.blocks.map((block) => (
+                      <div key={block.label}>
+                        <p
+                          className={`mt-8 text-[0.62rem] font-medium uppercase tracking-[0.28em] ${label}`}
                         >
-                          <span
-                            aria-hidden="true"
-                            className="mt-2 h-[0.3rem] w-[0.3rem] shrink-0 rounded-full bg-earth"
-                          />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
+                          {block.label}
+                        </p>
+                        <ul role="list" className="mt-4 space-y-2.5">
+                          {block.items.map((item) => (
+                            <li
+                              key={item}
+                              className={`flex items-start gap-3 text-[0.95rem] font-light leading-[1.6] ${desc}`}
+                            >
+                              <span
+                                aria-hidden="true"
+                                className="mt-2 h-[0.3rem] w-[0.3rem] shrink-0 rounded-full bg-earth"
+                              />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
 
                     <p
                       className={`mt-8 text-[0.62rem] font-medium uppercase tracking-[0.28em] ${label}`}
                     >
-                      {labels.outcomeLabel}
+                      {labels.considerationsLabel}
+                    </p>
+                    {d.detail.considerations.map((item) => (
+                      <p
+                        key={item}
+                        className={`mt-3 text-[0.9rem] font-light leading-[1.7] ${desc}`}
+                      >
+                        {item}
+                      </p>
+                    ))}
+
+                    <p
+                      className={`mt-8 text-[0.62rem] font-medium uppercase tracking-[0.28em] ${label}`}
+                    >
+                      {labels.costLabel}
                     </p>
                     <p
                       className={`mt-3 border-l border-earth pl-5 font-light leading-[1.75] ${dark ? "text-white" : "text-ink"}`}
                     >
-                      {d.detail.outcome}
+                      {d.detail.cost}
                     </p>
                   </>
                 )}

@@ -69,6 +69,7 @@ export default function Navbar({ lang, t }: { lang: Lang; t: NavDict }) {
         { href: `/${lang}/proyecto-desde-cero`, label: t.servicesMenu.noProperty },
         { href: `/${lang}/proyecto-desde-cero#etapa-1`, label: t.servicesMenu.hasProperty },
         { href: `/${lang}/proyecto-ya-construido`, label: t.servicesMenu.running },
+        { href: `/${lang}/disciplinas`, label: t.servicesMenu.allServices },
       ],
     },
     { href: `/${lang}/budaya`, label: t.budaya },

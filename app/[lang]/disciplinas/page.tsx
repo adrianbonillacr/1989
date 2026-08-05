@@ -50,8 +50,8 @@ export default async function DisciplinasPage({ params }: { params: Params }) {
             labels={{
               stageLabels: t.stageLabels,
               pathTags: t.pathTags,
-              includesLabel: d.includesLabel,
-              outcomeLabel: d.outcomeLabel,
+              considerationsLabel: d.considerationsLabel,
+              costLabel: d.costLabel,
               moreLabel: d.moreLabel,
             }}
             expanded
