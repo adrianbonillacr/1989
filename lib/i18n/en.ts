@@ -579,9 +579,9 @@ export const en: Dictionary = {
 
   home: {
     heroEyebrow: "Architecture studio — Costa Rica",
-    heroTitle: "Architecture and investment with value.",
+    heroTitle: "Architecture, Light and Hospitality.",
     heroSubtitle:
-      "We develop, transform and position real estate projects with strategy, design and a long-term vision.",
+      "The most memorable spaces are not remembered for their architecture alone. They are remembered for how they made people feel.",
     pathsEyebrow: "Two paths to create value",
     pathsTitle:
       "Every project is at a different moment. That is why we work along two clear paths.",

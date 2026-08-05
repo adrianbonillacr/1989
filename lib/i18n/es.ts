@@ -604,9 +604,9 @@ export const es = {
 
   home: {
     heroEyebrow: "Estudio de arquitectura — Costa Rica",
-    heroTitle: "Arquitectura e inversión con valor.",
+    heroTitle: "Arquitectura, Luz y Hospitalidad.",
     heroSubtitle:
-      "Desarrollamos, transformamos y posicionamos proyectos inmobiliarios con estrategia, diseño y visión de largo plazo.",
+      "Los espacios más memorables no se recuerdan únicamente por su arquitectura. Se recuerdan por cómo hicieron sentir a las personas.",
     // Sin uso desde 05/08/2026: se retiraron del inicio las secciones
     // "Dos caminos", "Estrategia 19.89" (con "¿Por qué comenzar…?") y
     // "El Valor de 19.89". Los textos se conservan por si vuelven.
