@@ -60,14 +60,14 @@ export default function Navbar({ lang, t }: { lang: Lang; t: NavDict }) {
   // portada: dos arrancan en el proceso desde cero y el tercero en el
   // diagnóstico del proyecto que ya opera.
   const navItems: NavItem[] = [
-    { href: `/${lang}/quienes-somos`, label: t.about },
     { href: `/${lang}`, label: t.home },
+    { href: `/${lang}/quienes-somos`, label: t.about },
     {
       href: `/${lang}/disciplinas`,
       label: t.services,
       children: [
         { href: `/${lang}/proyecto-desde-cero`, label: t.servicesMenu.noProperty },
-        { href: `/${lang}/proyecto-desde-cero#etapa-1`, label: t.servicesMenu.hasProperty },
+        { href: `/${lang}/proyecto-desde-cero#etapa-2`, label: t.servicesMenu.hasProperty },
         { href: `/${lang}/proyecto-ya-construido`, label: t.servicesMenu.running },
         { href: `/${lang}/disciplinas`, label: t.servicesMenu.allServices },
       ],

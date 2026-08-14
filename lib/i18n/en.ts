@@ -799,7 +799,7 @@ export const en: Dictionary = {
     stage1Text:
       "This stage helps understand whether the client already owns a property or needs support selecting the right asset.",
     assetSelection: {
-      option: "Option A · There is no property yet",
+      option: "There is no property yet",
       title: "Asset selection",
       description:
         "We evaluate opportunities aligned with the project's goals, budget and vision to support decision-making before investing.",
@@ -821,6 +821,8 @@ export const en: Dictionary = {
       feeNote:
         "Detailed in the proposal according to scope. If the project's development continues with 19.89 Arquitectura, they may be credited partially or in full within the comprehensive contract, under agreed conditions.",
     },
+    // Unused since 14/08/2026: the "Option B · Strategic diagnosis" card was
+    // removed from Stage 1. Kept in case it comes back.
     diagnosis: {
       option: "Option B · A property already exists",
       title: "Strategic diagnosis",

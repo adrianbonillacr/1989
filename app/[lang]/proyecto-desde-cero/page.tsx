@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import CtaBanner from "@/components/CtaBanner";
 import DisciplineTabs from "@/components/DisciplineTabs";
 import InteriorHero from "@/components/InteriorHero";
@@ -58,9 +57,9 @@ export default async function ProyectoDesdeCeroPage({ params }: { params: Params
       {/* INTRO */}
       <section className="section-pad bg-mist">
         <div className="container-site">
-          <Reveal className="mx-auto max-w-3xl text-center">
-            <SectionHeader eyebrow={z.introEyebrow} align="center" />
-            <p className="mx-auto mt-10 max-w-[58ch] text-[clamp(1.15rem,2.2vw,1.5rem)] font-light leading-[1.6] text-ink">
+          <Reveal>
+            <SectionHeader eyebrow={z.introEyebrow} />
+            <p className="mt-10 max-w-[58ch] text-[clamp(1.15rem,2.2vw,1.5rem)] font-light leading-[1.6] text-ink">
               {z.introText}
             </p>
           </Reveal>
@@ -91,10 +90,10 @@ export default async function ProyectoDesdeCeroPage({ params }: { params: Params
             </p>
           </Reveal>
 
-          <div className="mt-14 grid gap-8 lg:grid-cols-2">
-            {/* Card A · Selección de activos */}
+          <div className="mt-14">
+            {/* Selección de activos */}
             <Reveal>
-              <article className="flex h-full flex-col border border-stone/40 p-8 lg:p-10">
+              <article className="flex h-full max-w-3xl flex-col border border-stone/40 p-8 lg:p-10">
                 <p className="text-[0.66rem] font-medium uppercase tracking-[0.26em] text-stone">
                   {z.assetSelection.option}
                 </p>
@@ -123,33 +122,6 @@ export default async function ProyectoDesdeCeroPage({ params }: { params: Params
                   </p>
                 </div>
               </article>
-            </Reveal>
-
-            {/* Card B · Diagnóstico estratégico — toda la card es clicable */}
-            <Reveal delay={120}>
-              <Link
-                href={`/${lang}/proyecto-ya-construido`}
-                className="group flex h-full flex-col border border-stone/40 bg-mist/40 p-8 transition-colors duration-300 hover:bg-mist/70 lg:p-10"
-              >
-                <p className="text-[0.66rem] font-medium uppercase tracking-[0.26em] text-stone">
-                  {z.diagnosis.option}
-                </p>
-                <h3 className="mt-4 text-2xl font-semibold text-ink transition-colors duration-300 group-hover:text-earth">
-                  {z.diagnosis.title}
-                </h3>
-                <p className="mt-4 max-w-[52ch] font-light leading-[1.7] text-charcoal">
-                  {z.diagnosis.description}
-                </p>
-                <span className="mt-auto inline-flex items-center gap-3 pt-8 text-[0.8rem] font-normal uppercase tracking-[0.14em] text-earth">
-                  {z.diagnosis.link}
-                  <span
-                    aria-hidden="true"
-                    className="transition-transform duration-300 group-hover:translate-x-1.5"
-                  >
-                    →
-                  </span>
-                </span>
-              </Link>
             </Reveal>
           </div>
         </div>
@@ -348,9 +320,9 @@ export default async function ProyectoDesdeCeroPage({ params }: { params: Params
       {/* DEL ANÁLISIS A LA ACCIÓN */}
       <section className="section-pad bg-white">
         <div className="container-site">
-          <Reveal className="mx-auto max-w-3xl text-center">
-            <SectionHeader eyebrow={z.closingEyebrow} align="center" />
-            <p className="mx-auto mt-10 max-w-[56ch] text-[clamp(1.15rem,2.2vw,1.5rem)] font-light leading-[1.6] text-ink">
+          <Reveal>
+            <SectionHeader eyebrow={z.closingEyebrow} />
+            <p className="mt-10 max-w-[56ch] text-[clamp(1.15rem,2.2vw,1.5rem)] font-light leading-[1.6] text-ink">
               {z.closingText}
             </p>
           </Reveal>

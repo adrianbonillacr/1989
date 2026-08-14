@@ -27,9 +27,9 @@ export default async function ProyectoYaConstruidoPage({ params }: { params: Par
       {/* INTRO */}
       <section className="section-pad bg-mist">
         <div className="container-site">
-          <Reveal className="mx-auto max-w-3xl text-center">
-            <SectionHeader eyebrow={b.introEyebrow} align="center" />
-            <p className="mx-auto mt-10 max-w-[56ch] text-[clamp(1.15rem,2.2vw,1.5rem)] font-light leading-[1.6] text-ink">
+          <Reveal>
+            <SectionHeader eyebrow={b.introEyebrow} />
+            <p className="mt-10 max-w-[56ch] text-[clamp(1.15rem,2.2vw,1.5rem)] font-light leading-[1.6] text-ink">
               {b.introText}
             </p>
           </Reveal>
@@ -160,8 +160,8 @@ export default async function ProyectoYaConstruidoPage({ params }: { params: Par
             </div>
           </Reveal>
 
-          <Reveal className="mx-auto mt-20 max-w-3xl text-center">
-            <p className="mx-auto max-w-[56ch] text-[clamp(1.05rem,2vw,1.35rem)] font-light leading-[1.6] text-ink">
+          <Reveal className="mt-20">
+            <p className="max-w-[56ch] text-[clamp(1.05rem,2vw,1.35rem)] font-light leading-[1.6] text-ink">
               {b.closingText}
             </p>
           </Reveal>

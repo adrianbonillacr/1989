@@ -836,7 +836,7 @@ export const es = {
     stage1Text:
       "Esta etapa permite entender si el cliente ya cuenta con una propiedad o si necesita apoyo para seleccionar el activo correcto.",
     assetSelection: {
-      option: "Opción A · Aún no existe una propiedad",
+      option: "Aún no existe una propiedad",
       title: "Selección de activos",
       description:
         "Evaluamos oportunidades alineadas con los objetivos, presupuesto y visión del proyecto para facilitar la toma de decisiones antes de invertir.",
@@ -858,6 +858,8 @@ export const es = {
       feeNote:
         "Se detallan en la propuesta según el alcance. En caso de continuar el desarrollo del proyecto con 19.89 Arquitectura, podrán reconocerse parcial o totalmente dentro del contrato integral, según condiciones acordadas.",
     },
+    // Sin uso desde 14/08/2026: se retiró de la Etapa 1 la tarjeta "Opción B ·
+    // Diagnóstico estratégico". El texto se conserva por si vuelve.
     diagnosis: {
       option: "Opción B · Ya existe una propiedad",
       title: "Diagnóstico estratégico",
