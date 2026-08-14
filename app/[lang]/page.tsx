@@ -230,7 +230,11 @@ export default async function HomePage({ params }: { params: Params }) {
                     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-mist text-earth">
                       <RoadmapIcon name={scenario.icon as RoadmapIconName} className="h-5 w-5" />
                     </span>
-                    <span className="text-[0.62rem] font-medium uppercase tracking-[0.28em] text-earth">
+                    {/* Tamaño escalonado para que "Proyecto Construido" entre en
+                        una línea: 0.7rem en 1 columna, 0.66rem en el tramo de 3
+                        columnas angosto (lg) y 0.72rem desde xl, que es donde
+                        sobra ancho. */}
+                    <span className="text-[0.7rem] font-medium uppercase tracking-[0.28em] text-earth lg:text-[0.66rem] xl:text-[0.72rem]">
                       {scenario.tag}
                     </span>
                   </div>
