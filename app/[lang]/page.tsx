@@ -115,7 +115,9 @@ export default async function HomePage({ params }: { params: Params }) {
       {/* ¿QUÉ ANALIZAMOS? */}
       <section className="section-pad bg-mist">
         <div className="container-site">
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
+          {/* Todo apilado: el encabezado y la lista van uno debajo del otro,
+              no en paralelo. */}
+          <div className="grid gap-12">
             <Reveal>
               <SectionHeader eyebrow={t.home.analyzeEyebrow} title={t.home.analyzeTitle} />
               <p className="mt-6 max-w-[52ch] font-light leading-[1.7] text-charcoal">
