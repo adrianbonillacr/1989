@@ -122,12 +122,17 @@ export default async function HomePage({ params }: { params: Params }) {
                 {t.home.analyzeText}
               </p>
             </Reveal>
+            {/* Columnas CSS, no grilla: la secuencia (etapa 1 → 4) se lee de
+                arriba abajo por columna en vez de en zigzag, y cada ítem ocupa
+                solo su alto. Con `grid-cols-2` las filas se comparten entre
+                columnas, así que un ítem de dos líneas abría un hueco en la
+                columna de al lado. */}
             <Reveal delay={120}>
-              <ul className="grid gap-x-10 gap-y-0 sm:grid-cols-2" role="list">
+              <ul className="sm:columns-2 sm:gap-x-10" role="list">
                 {t.analyzeItems.map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-3 border-b border-stone/40 py-3.5 text-[0.95rem] font-light leading-[1.6] text-ink"
+                    className="flex break-inside-avoid items-start gap-3 border-b border-stone/40 py-3.5 text-[0.95rem] font-light leading-[1.6] text-ink"
                   >
                     <span
                       aria-hidden="true"
