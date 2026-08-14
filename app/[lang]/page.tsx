@@ -126,22 +126,28 @@ export default async function HomePage({ params }: { params: Params }) {
                 arriba abajo por columna en vez de en zigzag, y cada ítem ocupa
                 solo su alto. Con `grid-cols-2` las filas se comparten entre
                 columnas, así que un ítem de dos líneas abría un hueco en la
-                columna de al lado. */}
+                columna de al lado.
+
+                Numerada porque a dos columnas el orden seguía siendo ambiguo:
+                sin marca no se distingue si la lista baja o cruza. Mismo
+                tratamiento que el "Recorrido" de las tarjetas de escenario. */}
             <Reveal delay={120}>
-              <ul className="sm:columns-2 sm:gap-x-10" role="list">
-                {t.analyzeItems.map((item) => (
+              <ol className="sm:columns-2 sm:gap-x-10" role="list">
+                {t.analyzeItems.map((item, i) => (
                   <li
                     key={item}
-                    className="flex break-inside-avoid items-start gap-3 border-b border-stone/40 py-3.5 text-[0.95rem] font-light leading-[1.6] text-ink"
+                    className="flex break-inside-avoid items-baseline gap-3 border-b border-stone/40 py-3.5 text-[0.95rem] font-light leading-[1.6] text-ink"
                   >
                     <span
                       aria-hidden="true"
-                      className="mt-2 h-[0.3rem] w-[0.3rem] shrink-0 rounded-full bg-earth"
-                    />
+                      className="w-5 shrink-0 text-[0.7rem] font-medium text-earth"
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                     {item}
                   </li>
                 ))}
-              </ul>
+              </ol>
             </Reveal>
           </div>
           <Reveal className="mt-14">
