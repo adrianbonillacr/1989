@@ -122,17 +122,13 @@ export default async function HomePage({ params }: { params: Params }) {
                 {t.home.analyzeText}
               </p>
             </Reveal>
-            {/* Columnas CSS, no grilla: la secuencia (etapa 1 → 4) se lee de
-                arriba abajo por columna en vez de en zigzag, y cada ítem ocupa
-                solo su alto. Con `grid-cols-2` las filas se comparten entre
-                columnas, así que un ítem de dos líneas abría un hueco en la
-                columna de al lado.
-
-                Numerada porque a dos columnas el orden seguía siendo ambiguo:
-                sin marca no se distingue si la lista baja o cruza. Mismo
-                tratamiento que el "Recorrido" de las tarjetas de escenario. */}
+            {/* Una sola columna en todos los tamaños. A dos columnas el orden
+                de lectura era ambiguo —el ojo cruza en vez de bajar— y ni
+                numerarla lo resolvía; en móvil, que siempre fue de una
+                columna, se entendía sin problema. La numeración se mantiene
+                para dejar la secuencia (etapa 1 → 4) explícita. */}
             <Reveal delay={120}>
-              <ol className="sm:columns-2 sm:gap-x-10" role="list">
+              <ol role="list">
                 {t.analyzeItems.map((item, i) => (
                   <li
                     key={item}
