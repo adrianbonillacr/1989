@@ -13,12 +13,24 @@ const disciplines: DisciplineEntry[] = [
       "We evaluate real estate opportunities before buying: location, context, development potential and risks, so the investment starts with the right property.",
     stage: "asesoria",
     newOnly: true,
+    group: "punto-de-partida",
     detail: {
       text: [
         "When the client has not yet acquired a property, this discipline evaluates opportunities aligned with the project's goals, budget and vision.",
         "Our aim is to bring judgment and analysis to support the decision before investing.",
       ],
       blocks: [
+        {
+          label: "Possible scope",
+          items: [
+            "Definition of the investment profile.",
+            "Search and screening of real estate opportunities.",
+            "Assessment of location and context.",
+            "Analysis of the asset's development potential.",
+            "Identification of risks and limitations.",
+            "Strategic recommendations before investing.",
+          ],
+        },
         {
           label: "Objectives",
           items: [
@@ -66,19 +78,30 @@ const disciplines: DisciplineEntry[] = [
     },
   },
   {
-    slug: "diagnostico-estrategico",
-    name: "Strategic diagnosis",
-    tagline: "We measure first. We invest after.",
+    slug: "consultoria-estrategica",
+    name: "Strategic consultancy",
+    tagline: "The starting point for better decisions.",
     description:
       "We analyze the current state of an existing project to identify opportunities, priorities and a clear development route before investing.",
     stage: "asesoria",
     newOnly: false,
+    group: "consultoria",
     detail: {
       text: [
         "When the property already exists or the project is already running, the starting point is to understand it. Before investing, remodeling or adding new disciplines it is essential to grasp how it works, what its strengths are and where the greatest opportunities lie.",
         "The result makes clear where to invest first and which actions can create the greatest impact.",
       ],
       blocks: [
+        {
+          label: "Possible scope",
+          items: [
+            "Technical visit to the project.",
+            "Integral analysis of how it currently works.",
+            "Strategic analysis by assessed area.",
+            "Preparation of the 19.89 Executive Report.",
+            "Meeting to present the results.",
+          ],
+        },
         {
           label: "What we look for during the consultancy",
           items: [
@@ -92,9 +115,12 @@ const disciplines: DisciplineEntry[] = [
         {
           label: "Deliverables",
           items: [
-            "19.89 Value Index with the five dimensions measured.",
-            "Roadmap with intervention priorities.",
-            "Staged recommendations by urgency, impact and budget.",
+            "19.89 Executive Report developed for the project.",
+            "Observations by assessed area.",
+            "Main opportunities detected.",
+            "Strategic recommendations.",
+            "19.89 Strategic Roadmap.",
+            "Disciplines recommended for implementation.",
           ],
         },
         {
@@ -120,11 +146,22 @@ const disciplines: DisciplineEntry[] = [
       "We guide investment with financial criteria: where the greatest value potential lies, how to prioritize resources and how to sustain the project's profitability.",
     stage: "desarrollo",
     newOnly: true,
+    group: "punto-de-partida",
     detail: {
       text: [
         "This discipline directs investments, sets priorities and evaluates where the greatest opportunities to generate value exist.",
       ],
       blocks: [
+        {
+          label: "Possible scope",
+          items: [
+            "General evaluation of the project's profitability potential.",
+            "Guidance of investment toward the areas of greatest value.",
+            "Prioritization of resources by impact.",
+            "Investment scenarios by scope and stages.",
+            "Recommendations to sustain profitability over the long term.",
+          ],
+        },
         {
           label: "Includes",
           items: ["General evaluation of the project's potential (profitability)."],
@@ -152,6 +189,7 @@ const disciplines: DisciplineEntry[] = [
       "Design with strategic grounding: schematic design, development, remodeling and supervision, where every spatial decision is also an investment decision.",
     stage: "desarrollo",
     newOnly: true,
+    group: "disciplinas",
     detail: {
       text: [
         "Architecture defines how a space works, how it is experienced and how it responds to the project's needs.",
@@ -181,7 +219,7 @@ const disciplines: DisciplineEntry[] = [
         },
       ],
       considerations: [
-        "The scope depends on the needs and opportunities identified during the diagnosis.",
+        "The scope depends on the needs and opportunities identified during the consultancy.",
         "Construction, materials, contractors, permits and paperwork are quoted separately.",
       ],
       cost: "According to the project's scope; quoted separately.",
@@ -195,6 +233,7 @@ const disciplines: DisciplineEntry[] = [
       "We define atmospheres and lighting criteria that transform the experience of space and bring the architecture to life.",
     stage: "desarrollo",
     newOnly: false,
+    group: "disciplinas",
     detail: {
       text: [
         "Lighting directly influences the perception, functionality and atmosphere of a space.",
@@ -237,6 +276,7 @@ const disciplines: DisciplineEntry[] = [
       "We build the project's spatial narrative: materials, finishes and curation that give each space character and coherence.",
     stage: "desarrollo",
     newOnly: false,
+    group: "disciplinas",
     detail: {
       text: [
         "Interior design turns functional spaces into experiences coherent with the project's identity and goals.",
@@ -281,6 +321,7 @@ const disciplines: DisciplineEntry[] = [
       "Curation of furniture, pieces and styling that complete the experience and reinforce the project's identity.",
     stage: "desarrollo",
     newOnly: false,
+    group: "disciplinas",
     detail: {
       text: [
         "Furnishing and styling are the final step that turns a project into a complete space, functional and coherent with its identity.",
@@ -325,6 +366,7 @@ const disciplines: DisciplineEntry[] = [
       "We protect and organize the project's brand: visual identity, registration and positioning so the asset grows with backing.",
     stage: "identidad",
     newOnly: false,
+    group: "disciplinas",
     detail: {
       text: [
         "A project's identity is not only built: it must also be safeguarded.",
@@ -380,6 +422,7 @@ const disciplines: DisciplineEntry[] = [
       "Architectural and hospitality photography with visual direction, so the project looks like what it is and communicates its value.",
     stage: "identidad",
     newOnly: false,
+    group: "disciplinas",
     detail: {
       text: [
         "In most cases people get to know a project through an image long before experiencing it physically.",
@@ -429,6 +472,7 @@ const disciplines: DisciplineEntry[] = [
       "Communication strategy, content and campaigns to make the project visible and connect it with its market.",
     stage: "identidad",
     newOnly: false,
+    group: "disciplinas",
     detail: {
       text: [
         "Creating an excellent space is not enough: the market needs to know about it.",
@@ -479,6 +523,7 @@ const disciplines: DisciplineEntry[] = [
       "Technology that simplifies operations and improves experience: automation, smart control and electric mobility that add value to the project.",
     stage: "tecnologia",
     newOnly: false,
+    group: "disciplinas",
     detail: {
       text: [
         "The best technological solutions are the ones that go unnoticed: they do not add complexity, they make every space work more efficiently, comfortably and intuitively.",
@@ -596,7 +641,7 @@ export const en: Dictionary = {
     path2Tagline: "We measure first. We invest after.",
     path2Description:
       "For those who already own a property or an operating project and want to identify improvement opportunities, prioritize investments and increase its value.",
-    path2Link: "See the diagnosis",
+    path2Link: "See the consultancy",
     strategyEyebrow: "19.89 Strategy",
     strategyTitle: "A way of working that leads to better decisions.",
     strategyText:
@@ -613,19 +658,30 @@ export const en: Dictionary = {
     whyText3:
       "The 19.89 Strategy exists to guide those decisions from the start and turn each investment into an opportunity to create greater value.",
 
+    // Design with purpose (PDF p4) — opens the home page, after the hero
+    purposeEyebrow: "Design with purpose",
+    purposeTitle: "The best projects begin long before design.",
+    purposeParagraphs: [
+      "At 19.89 they begin with a clear vision, a well-defined strategy and the conviction that architecture, light and hospitality have the power to transform the way people live a space.",
+      "That is why we see every project as an opportunity to create value through design, strengthening its identity, enriching the user experience and guiding every decision with an integral vision.",
+    ],
+    purposeHighlight:
+      "Our commitment is to develop authentic, functional and memorable projects that generate value, inspire connections and stand the test of time.",
+
     // How we work (PDF p5)
     processEyebrow: "How we work",
-    processTitle: "A process that accompanies from the first decision to consolidation.",
+    processTitle: "The best projects do not happen by chance.",
     processIntro:
-      "Our process accompanies the client from the first decision to the consolidation of the project, integrating analysis, design, experience and positioning under a single strategic vision.",
+      "They are the result of strategic decisions made at the right moment. Our process accompanies the client from understanding the project through to its consolidation, integrating strategy, architecture, design and experience under a single vision.",
 
     // What we analyze (PDF p6)
-    analyzeEyebrow: "What we analyze",
-    analyzeTitle: "Every project is different.",
+    analyzeEyebrow: "What we analyze in each project",
+    analyzeTitle:
+      "Every project begins with an integral understanding of its context, its goals and its potential.",
     analyzeText:
-      "That is why we evaluate only those aspects capable of generating value and contributing to the project's goals. Among them:",
+      "Our analysis identifies the areas with the greatest capacity to generate value, optimize the user experience and strengthen the project's identity. Depending on each case, we evaluate aspects related to:",
     analyzeNote:
-      "Rather than evaluating disciplines independently, we seek to understand how they work together to strengthen the project and maximize its potential from the start.",
+      "Each of these areas is part of a single strategic vision. Rather than analyzing disciplines in isolation, we understand how they interact with one another to develop coherent, functional projects, ready to stand out in the market.",
 
     // The Value of 19.89 (PDF p7)
     valueEyebrow: "The Value of 19.89",
@@ -638,7 +694,7 @@ export const en: Dictionary = {
       "Our commitment is to bring judgment, direction and an integral vision to develop projects with identity, differentiation and long-term value.",
 
     // Roadmap · From analysis to action (PDF p25-26)
-    roadmapEyebrow: "From analysis to action",
+    roadmapEyebrow: "Roadmap · From analysis to action",
     roadmapTitle: "The next step is turning strategy into results.",
     roadmapIntro:
       "Now that we know the project's goals and have defined a strategy for its development, the next step is to plan its implementation in an orderly way, aligned with the priorities that were set.",
@@ -672,21 +728,21 @@ export const en: Dictionary = {
     { number: "03", title: "We plan", description: "We develop a strategic roadmap that defines the path for the project's evolution." },
     { number: "04", title: "We develop", description: "We implement the disciplines needed to turn the strategy into results." },
     { number: "05", title: "We position", description: "We build a solid identity and a commercial presence aligned with the project's value." },
-    { number: "06", title: "We evolve", description: "We accompany the project's growth with a long-term vision and new opportunities for improvement." },
+    { number: "06", title: "We evolve", description: "We accompany the project's growth through a long-term vision and new opportunities for improvement." },
   ],
 
   // Aspects evaluated within the strategy (PDF v2, p6 · What we analyze)
   analyzeItems: [
-    "Asset selection (when there is no property yet).",
+    "Asset selection.",
     "Strategic financial analysis.",
     "Architecture.",
     "Lighting design.",
     "Interior design.",
-    "Furnishing and styling.",
+    "Furnishing & styling (Budaya).",
     "Brand protection.",
     "Professional photography.",
     "Digital marketing.",
-    "Automation and electric mobility.",
+    "Automation & electric mobility.",
   ],
 
   // Implementation roadmap (PDF v2, p26 · From analysis to action).
@@ -736,16 +792,16 @@ export const en: Dictionary = {
       tag: "Built Project",
       title: "The project is already operating",
       start: "The property is running and the goal is to increase its value and differentiation.",
-      firstStep: "Strategic diagnosis",
+      firstStep: "Strategic consultancy",
       firstStepText:
         "We analyze the starting point and move straight into project development with a defined roadmap.",
       route: [
-        "Strategic diagnosis",
+        "Strategic consultancy",
         "Project development",
         "Roadmap of priorities",
         "Evolution",
       ],
-      serviceSlug: "diagnostico-estrategico",
+      serviceSlug: "consultoria-estrategica",
     },
   ],
 
@@ -757,7 +813,7 @@ export const en: Dictionary = {
   ],
 
   homeDisciplines: [
-    { name: "Investment advisory", description: "Asset selection and strategic diagnosis of the starting point." },
+    { name: "Investment advisory", description: "Asset selection and strategic consultancy of the starting point." },
     { name: "Strategic financial analysis", description: "Directs investment toward the greatest potential for value." },
     { name: "Architecture", description: "Design, schematic design, remodeling and supervision." },
     { name: "Lighting design", description: "Atmospheres, lighting criteria and fixture selection." },
@@ -773,7 +829,7 @@ export const en: Dictionary = {
     asesoria: "Stage 1 · Investment advisory",
     desarrollo: "Stage 2 · Project development",
     identidad: "Stage 3 · Identity and positioning",
-    tecnologia: "Stage 4 · Automation & Mobility",
+    tecnologia: "Stage 4 · Technology at the service of the user",
   },
 
   pathTags: {
@@ -821,14 +877,14 @@ export const en: Dictionary = {
       feeNote:
         "Detailed in the proposal according to scope. If the project's development continues with 19.89 Arquitectura, they may be credited partially or in full within the comprehensive contract, under agreed conditions.",
     },
-    // Unused since 14/08/2026: the "Option B · Strategic diagnosis" card was
+    // Unused since 14/08/2026: the "Option B · Strategic consultancy" card was
     // removed from Stage 1. Kept in case it comes back.
-    diagnosis: {
+    consultation: {
       option: "Option B · A property already exists",
-      title: "Strategic diagnosis",
+      title: "Strategic consultancy",
       description:
         "When the client already owns a property, we move to the strategic analysis of the project to identify opportunities, priorities and a development route.",
-      link: "See the strategic diagnosis",
+      link: "See the strategic consultancy",
     },
     stage2Eyebrow: "Stage 2 · Project development",
     stage2Title: "The strategy becomes a project.",
@@ -944,7 +1000,7 @@ export const en: Dictionary = {
           "Professional visual material.",
           "Coherence between project, identity and communication.",
         ],
-        note: "Production takes place once the physical interventions are finished, so the images reflect the project at its best. The package is defined by project type and detailed in the proposal.",
+        note: "Production takes place once the physical interventions are finished, so the images reflect the project at its best. The work is organised into three packages —Essential, Atmosphere and Vision—, detailed below.",
       },
       {
         label: "Digital marketing",
@@ -966,74 +1022,124 @@ export const en: Dictionary = {
           "More trust and recognition.",
           "Better digital positioning.",
         ],
-        note: "The work is organised into ongoing support packages, detailed below.",
+        note: "The work is organised into three ongoing support packages —Start, Growth and Signature—, detailed below.",
       },
     ],
-    marketing: {
-      label: "Digital marketing",
-      intro:
-        "A great project needs a strategy capable of making it visible. Creating an excellent space is not enough; the market needs to know it.",
-      scopeLabel: "Scope",
-      scope: [
-        "Digital communication strategy.",
-        "Content planning.",
-        "Brand positioning.",
-        "Social media management.",
-        "Digital communication campaigns.",
-        "Analysis and strategic optimization.",
-      ],
-      packageLabel: "Package",
-      includesLabel: "Includes",
-      pricingNote:
-        "The investment for each package is detailed in the proposal, according to the project's needs and stage.",
-      travelNote:
-        "Travel within the Greater Metropolitan Area (GAM) is included. For projects outside this area, travel costs are quoted separately.",
-    },
-    packages: [
+    // Labels shared by both package tables in the stage.
+    packagesLabel: "Package",
+    packagesIncludesLabel: "Includes",
+    /**
+     * Packages per service (PDF p19 · Photography and p20 · Digital marketing).
+     * Each discipline has its own: the photography packages (Essential,
+     * Atmosphere, Vision) do not apply to marketing or the other way round,
+     * which is why they are separated and labelled by service.
+     */
+    packageSets: [
       {
-        name: "Start",
-        positioning: "Designed for projects starting their digital presence.",
-        includes: [
-          "Initial creative meeting.",
-          "Basic content strategy.",
-          "1 professional photography session.",
-          "2 edited reels.",
-          "Bank of edited images.",
-          "Content ready to publish.",
+        service: "Professional photography",
+        intro:
+          "The first impression happens before the first visit. The package is chosen according to the type of project and the number of spaces to cover.",
+        packages: [
+          {
+            name: "Essential",
+            positioning: "For compact studio-type projects.",
+            includes: [
+              "15 images.",
+              "Façade, entrance and living room.",
+              "Social areas, kitchen and bathroom.",
+              "Main bedroom.",
+              "Details and atmosphere.",
+            ],
+            featured: false,
+          },
+          {
+            name: "Atmosphere",
+            positioning: "For house and amenity projects.",
+            includes: [
+              "25 images.",
+              "Façade and exteriors.",
+              "Living room, social areas, kitchen and dining room.",
+              "Bedrooms and bathrooms.",
+              "Amenities.",
+              "Details and atmosphere.",
+            ],
+            featured: true,
+          },
+          {
+            name: "Vision",
+            positioning: "For villas, vacation rentals and high-end architecture.",
+            includes: [
+              "40 images.",
+              "Façades and exteriors.",
+              "Social areas, kitchen and dining room.",
+              "Bedrooms and bathrooms.",
+              "Amenities.",
+              "Architectural details.",
+              "Atmosphere and experience.",
+            ],
+            featured: false,
+          },
         ],
-        featured: false,
+        notes: [
+          "The photographic production takes place once the project's physical works are complete, so the images reflect its best version.",
+        ],
       },
       {
-        name: "Growth",
-        positioning: "Designed for projects seeking to consolidate their presence.",
-        includes: [
-          "Basic content strategy.",
-          "Creative direction.",
-          "1 professional photography session.",
-          "5 edited reels.",
-          "Bank of professional photographs.",
-          "Visual communication guide.",
-          "Content ready to publish.",
+        service: "Digital marketing",
+        intro:
+          "A great project needs a strategy capable of making it visible. Creating an excellent space is not enough; the market needs to know it.",
+        packages: [
+          {
+            name: "Start",
+            positioning: "Designed for projects starting their digital presence.",
+            includes: [
+              "Initial creative meeting.",
+              "Basic content strategy.",
+              "1 professional photography session.",
+              "2 edited reels.",
+              "Bank of edited images.",
+              "Content ready to publish.",
+            ],
+            featured: false,
+          },
+          {
+            name: "Growth",
+            positioning: "Designed for projects seeking to consolidate their presence.",
+            includes: [
+              "Basic content strategy.",
+              "Creative direction.",
+              "1 professional photography session.",
+              "5 edited reels.",
+              "Bank of professional photographs.",
+              "Visual communication guide.",
+              "Content ready to publish.",
+            ],
+            featured: true,
+          },
+          {
+            name: "Signature",
+            positioning: "The comprehensive communication solution.",
+            includes: [
+              "Brand strategy.",
+              "Comprehensive creative direction.",
+              "Premium audiovisual production.",
+              "Professional photography.",
+              "Corporate or promotional video.",
+              "Reels for campaigns.",
+              "Aerial drone footage.",
+              "Complete library of images and videos for 1 to 3 months.",
+            ],
+            featured: false,
+          },
         ],
-        featured: true,
-      },
-      {
-        name: "Signature",
-        positioning: "The comprehensive communication solution.",
-        includes: [
-          "Brand strategy.",
-          "Comprehensive creative direction.",
-          "Premium audiovisual production.",
-          "Professional photography.",
-          "Corporate or promotional video.",
-          "Reels for campaigns.",
-          "Aerial drone footage.",
-          "Complete library of images and videos for 1 to 3 months.",
-        ],
-        featured: false,
+        notes: [] as string[],
       },
     ],
-    stage4Eyebrow: "Stage 4 · Automation & Mobility",
+    packagesPricingNote:
+      "The investment for each package is detailed in the proposal, according to the project's needs and stage.",
+    packagesTravelNote:
+      "Travel within the Greater Metropolitan Area (GAM) is included. For projects outside this area, travel costs are quoted separately.",
+    stage4Eyebrow: "Stage 4 · Technology at the service of the user",
     stage4Title:
       "Innovation that improves the experience, simplifies operations and adds value to the project.",
     stage4Text:
@@ -1056,7 +1162,7 @@ export const en: Dictionary = {
     ],
     stage4Result:
       "Technology stops being an accessory and becomes a tool that simplifies daily life, improves people's experience and strengthens the project's long-term value.",
-    closingEyebrow: "From analysis to action",
+    closingEyebrow: "Roadmap · From analysis to action",
     closingText:
       "Each recommendation seeks to direct resources toward the actions with the greatest potential for impact and value creation. Engagement can be comprehensive or by stages, according to the priorities and goals defined.",
     ctaTitle: "The best investment starts with the right property.",
@@ -1064,17 +1170,17 @@ export const en: Dictionary = {
   },
 
   built: {
-    metaTitle: "Built Project — Strategic Project Diagnosis",
+    metaTitle: "Built Project — Strategic Project Consultancy",
     metaDescription:
       "A strategic consultancy to understand the current state of a property, identify improvement opportunities and guide future investment decisions.",
     heroEyebrow: "Built Project",
     heroTitle: "We measure first. We invest after.",
     heroSubtitle:
       "A strategic consultancy to understand the current state of a property, identify improvement opportunities and guide future investment decisions.",
-    introEyebrow: "Strategic Project Diagnosis",
+    introEyebrow: "Strategic Project Consultancy",
     introText:
-      "The Strategic Project Diagnosis is designed to understand how an existing property works, detect improvement opportunities and establish a clear strategy to increase its experience, differentiation and long-term value.",
-    whyEyebrow: "Stage 1 · Strategic diagnosis",
+      "The Strategic Project Consultancy is designed to understand how an existing property works, detect improvement opportunities and establish a clear strategy to increase its experience, differentiation and long-term value.",
+    whyEyebrow: "Stage 1 · Strategic consultancy",
     whyTitle: "The best decisions are made when there is clarity.",
     whyText:
       "Before investing, remodeling or implementing new disciplines, it is essential to understand how the project works, what its strengths are and where the greatest improvement opportunities lie.",
@@ -1089,13 +1195,13 @@ export const en: Dictionary = {
     indexEyebrow: "Stage 2 · 19.89 Value Index",
     indexTitle: "Five dimensions to understand where to invest first.",
     indexText:
-      "The result of the diagnosis shows where to invest first and which actions can generate the greatest impact.",
+      "The result of the consultancy shows where to invest first and which actions can generate the greatest impact.",
     indexNote:
-      "Visual example — the real measurement is built during each project's diagnosis",
+      "Visual example — the real measurement is built during each project's consultancy",
     roadmapEyebrow: "Stage 3 · Project Roadmap",
     roadmapTitle: "Clear priorities, ordered investment.",
     roadmapText:
-      "After the diagnosis, a roadmap with clear priorities is defined. This roadmap allows the disciplines to be engaged comprehensively or by stages according to urgency, impact and budget.",
+      "After the consultancy, a roadmap with clear priorities is defined. This roadmap allows the disciplines to be engaged comprehensively or by stages according to urgency, impact and budget.",
     roadmapStagesLabel: "Recommended next stages",
     roadmapStages: [
       { number: "01", title: "Project development", description: "We implement the recommended disciplines according to their priority and impact on value." },
@@ -1107,7 +1213,7 @@ export const en: Dictionary = {
       "Each recommendation seeks to direct resources toward the actions with the greatest potential for impact and value creation. Engagement can be comprehensive or by stages, according to the priorities and goals defined.",
     ctaTitlePart1: "We measure first.",
     ctaTitlePart2: "We invest after.",
-    ctaButton: "I want to diagnose my project",
+    ctaButton: "I want a consultancy for my project",
   },
 
   valueDims: [
@@ -1138,8 +1244,8 @@ export const en: Dictionary = {
     path2Label: "Path 02",
     path2Title: "Built Project",
     path2Text:
-      "Strategic Diagnosis, 19.89 Value Index and a roadmap that orders investment priorities.",
-    path2Link: "See the diagnosis",
+      "Strategic Consultancy, 19.89 Value Index and a roadmap that orders investment priorities.",
+    path2Link: "See the consultancy",
   },
 
   principles: [
@@ -1154,7 +1260,7 @@ export const en: Dictionary = {
   disciplinesPage: {
     metaTitle: "All our services — The disciplines of the 19.89 Strategy",
     metaDescription:
-      "Asset selection, diagnosis, financial analysis, architecture, lighting, interiors, identity, photography, marketing, automation and mobility: modules of the 19.89 Strategy.",
+      "Asset selection, consultancy, financial analysis, architecture, lighting, interiors, identity, photography, marketing, automation and mobility: modules of the 19.89 Strategy.",
     heroEyebrow: "All our services",
     heroTitle: "Tools that integrate into every project.",
     heroSubtitle:
@@ -1212,15 +1318,25 @@ export const en: Dictionary = {
       "Each project is an opportunity to integrate architecture, light and hospitality into a single vision, where every design decision adds value, strengthens the identity of the place and enriches the user experience.",
       "We aim to develop projects that transcend trends and remain relevant over time, creating authentic, functional and memorable spaces with a positive impact both for those who inhabit them and for those who visit them.",
     ],
-    claimTitle: "Architecture. Light. Hospitality.",
-    claimText:
-      "Three disciplines. One vision. Designing spaces that go beyond aesthetics to become memorable experiences.",
     teamEyebrow: "Meet the team",
     teamTitle: "Behind every project there is a team with a shared vision.",
     teamText:
       "Architecture, lighting, interior design and communication working together from the first decision to the positioning of the project. Each discipline contributes criteria so that design also responds to experience and value.",
-    teamPhotoAlt: (i: number) => `19.89 Arquitectura team — portrait ${i}`,
+    teamPhotoAlt: (name: string) => `${name} — 19.89 Arquitectura team`,
     teamPhotoLabel: "19.89 Team",
+    teamOpenLabel: "Read bio",
+    teamModalLabel: "Bio",
+    teamModalClose: "Close",
+    teamBioPending: "Bio coming soon.",
+    teamMembers: [
+      { slug: "luisk-salas", name: "LuisK Salas", role: "", bio: [] as string[] },
+      { slug: "jorge-salas", name: "Jorge Salas", role: "", bio: [] as string[] },
+      { slug: "aaron-fonseca", name: "Aarón Fonseca", role: "", bio: [] as string[] },
+      { slug: "alonso-aguirre", name: "Alonso Aguirre", role: "", bio: [] as string[] },
+      { slug: "jeancarlo-amores", name: "Jeancarlo Amores", role: "", bio: [] as string[] },
+      { slug: "matias-gutierrez", name: "Matías Gutiérrez Salas", role: "", bio: [] as string[] },
+      { slug: "stephannie-tenorio", name: "Stephannie Tenorio", role: "", bio: [] as string[] },
+    ],
   },
 
   budaya: {
@@ -1286,7 +1402,7 @@ export const en: Dictionary = {
     heroText:
       "Whether you are starting an investment or looking to raise the value of an existing property, we can help you define the next step with clarity.",
     routeNew: "I want to develop a new project",
-    routeBuilt: "I want to diagnose a built property",
+    routeBuilt: "I want a consultancy for my built property",
     directTitle: "Direct contact",
     emailLabel: "Email",
     instagramLabel: "Instagram",

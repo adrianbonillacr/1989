@@ -24,20 +24,17 @@ export const siteImages = {
 };
 
 /**
- * Retratos del equipo (Quiénes Somos) — 3:4 vertical, mínimo 1200px de ancho.
- * TODO: fotos reales en /public/images/equipo/retrato-01.jpg … 04.jpg
+ * Retrato del equipo (Quiénes Somos) — 3:4 vertical, 1200×1600.
+ * El `slug` es el de cada ficha en `about.teamMembers` del diccionario.
  */
-export const teamPortraits = Array.from(
-  { length: 4 },
-  (_, i) => `/images/equipo/retrato-${String(i + 1).padStart(2, "0")}.jpg`,
-);
+export const teamPortrait = (slug: string) => `/images/equipo/${slug}.jpg`;
 
 /**
- * Galería de Budaya (equipamiento y ambientación).
- * TODO: fotos reales en /public/images/budaya/01.jpg … 06.jpg
+ * Galería de Budaya (equipamiento y ambientación): fotos entregadas por el
+ * cliente en "Insumos - Assets/Assets - Budaya", optimizadas a JPG ≤2000px.
  */
 export const budayaGallery = Array.from(
-  { length: 6 },
+  { length: 34 },
   (_, i) => `/images/budaya/${String(i + 1).padStart(2, "0")}.jpg`,
 );
 

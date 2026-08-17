@@ -3,6 +3,9 @@
 import { useEffect, useId, useState } from "react";
 import Link from "next/link";
 
+/** Orden de lectura de los tres bloques de la lista de servicios. */
+const GROUP_ORDER = ["consultoria", "punto-de-partida", "disciplinas"];
+
 type Discipline = {
   slug: string;
   name: string;
@@ -10,6 +13,7 @@ type Discipline = {
   description: string;
   stage: string;
   newOnly: boolean;
+  group: string;
   detail: {
     text: readonly string[];
     blocks: readonly { label: string; items: readonly string[] }[];
@@ -81,16 +85,26 @@ export default function DisciplineAccordion({
     : "border-stone/40 text-charcoal";
   const label = dark ? "text-stone" : "text-stone";
 
+  // La lista se lee en tres bloques: consultoría, punto de partida y el resto
+  // de las disciplinas. En la landing de Servicios cada bloque se separa del
+  // anterior con aire para que se distingan de un vistazo.
+  const ordered = [...items].sort(
+    (a, b) => GROUP_ORDER.indexOf(a.group) - GROUP_ORDER.indexOf(b.group),
+  );
+
   return (
     <ul role="list" className={`border-t ${line}`}>
-      {items.map((d) => {
+      {ordered.map((d, i) => {
         const open = openSlug === d.slug;
         const panelId = `${baseId}-${d.slug}`;
+        const startsGroup = i > 0 && ordered[i - 1].group !== d.group;
         return (
           <li
             key={d.slug}
             id={expanded ? d.slug : undefined}
-            className={`border-b scroll-mt-24 ${line}`}
+            className={`border-b scroll-mt-24 ${line}${
+              expanded && startsGroup ? " mt-16" : ""
+            }`}
           >
             <button
               type="button"

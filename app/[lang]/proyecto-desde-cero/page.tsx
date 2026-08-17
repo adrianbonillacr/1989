@@ -197,66 +197,85 @@ export default async function ProyectoDesdeCeroPage({ params }: { params: Params
             />
           </Reveal>
 
-          {/* Paquetes de marketing (sin montos: la inversión se detalla en la propuesta) */}
-          <Reveal className="mt-16">
-            <p className="text-[0.66rem] font-medium uppercase tracking-[0.26em] text-stone">
-              {z.marketing.label}
-            </p>
-            <p className="mt-5 max-w-[42ch] text-xl font-light leading-[1.55] text-ink">
-              {z.marketing.intro}
-            </p>
-          </Reveal>
-
-          <div className="mt-14 grid gap-8 lg:grid-cols-3">
-            {z.packages.map((pkg, i) => (
-              <Reveal key={pkg.name} delay={i * 100}>
-                <article
-                  className={`relative flex h-full flex-col border p-8 ${
-                    pkg.featured ? "border-earth" : "border-stone/40"
-                  }`}
-                >
-                  {pkg.featured && (
-                    <span
-                      aria-hidden="true"
-                      className="absolute inset-x-0 top-0 h-0.5 bg-earth"
-                    />
-                  )}
-                  <p className="text-[0.66rem] font-medium uppercase tracking-[0.26em] text-stone">
-                    {z.marketing.packageLabel}
-                  </p>
-                  <h3 className="mt-2 text-2xl font-semibold uppercase tracking-[0.08em] text-ink">
-                    {pkg.name}
-                  </h3>
-                  <p className="mt-3 font-light leading-[1.6] text-charcoal">
-                    {pkg.positioning}
-                  </p>
-                  <div className="mt-6 border-t border-stone/40 pt-6">
-                    <ListLabel>{z.marketing.includesLabel}</ListLabel>
-                    <ul className="space-y-2.5" role="list">
-                      {pkg.includes.map((item) => (
-                        <li key={item} className="flex items-baseline gap-3">
-                          <span
-                            aria-hidden="true"
-                            className="h-[0.32rem] w-[0.32rem] shrink-0 bg-earth"
-                          />
-                          <span className="text-[0.9rem] font-light leading-[1.6] text-charcoal">
-                            {item}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </article>
+          {/* Paquetes (sin montos: la inversión se detalla en la propuesta).
+              Cada servicio tiene los suyos —fotografía y marketing no comparten
+              paquetes—, así que cada tabla va rotulada con su disciplina. */}
+          {z.packageSets.map((set) => (
+            <div key={set.service} className="mt-20 border-t border-stone/40 pt-14">
+              <Reveal>
+                <p className="text-[0.66rem] font-medium uppercase tracking-[0.26em] text-stone">
+                  {set.service}
+                </p>
+                <p className="mt-5 max-w-[46ch] text-xl font-light leading-[1.55] text-ink">
+                  {set.intro}
+                </p>
               </Reveal>
-            ))}
-          </div>
 
-          <Reveal className="mt-8">
+              <div className="mt-12 grid gap-8 lg:grid-cols-3">
+                {set.packages.map((pkg, i) => (
+                  <Reveal key={pkg.name} delay={i * 100}>
+                    <article
+                      className={`relative flex h-full flex-col border p-8 ${
+                        pkg.featured ? "border-earth" : "border-stone/40"
+                      }`}
+                    >
+                      {pkg.featured && (
+                        <span
+                          aria-hidden="true"
+                          className="absolute inset-x-0 top-0 h-0.5 bg-earth"
+                        />
+                      )}
+                      <p className="text-[0.66rem] font-medium uppercase tracking-[0.26em] text-stone">
+                        {z.packagesLabel}
+                      </p>
+                      <h3 className="mt-2 text-2xl font-semibold uppercase tracking-[0.08em] text-ink">
+                        {pkg.name}
+                      </h3>
+                      <p className="mt-3 font-light leading-[1.6] text-charcoal">
+                        {pkg.positioning}
+                      </p>
+                      <div className="mt-6 border-t border-stone/40 pt-6">
+                        <ListLabel>{z.packagesIncludesLabel}</ListLabel>
+                        <ul className="space-y-2.5" role="list">
+                          {pkg.includes.map((item) => (
+                            <li key={item} className="flex items-baseline gap-3">
+                              <span
+                                aria-hidden="true"
+                                className="h-[0.32rem] w-[0.32rem] shrink-0 bg-earth"
+                              />
+                              <span className="text-[0.9rem] font-light leading-[1.6] text-charcoal">
+                                {item}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </article>
+                  </Reveal>
+                ))}
+              </div>
+
+              {set.notes.length > 0 && (
+                <Reveal className="mt-8">
+                  {set.notes.map((note) => (
+                    <p
+                      key={note}
+                      className="max-w-[68ch] text-[0.82rem] font-light leading-[1.7] text-charcoal"
+                    >
+                      {note}
+                    </p>
+                  ))}
+                </Reveal>
+              )}
+            </div>
+          ))}
+
+          <Reveal className="mt-10">
             <p className="max-w-[68ch] text-[0.82rem] font-light leading-[1.7] text-charcoal">
-              {z.marketing.pricingNote}
+              {z.packagesPricingNote}
             </p>
             <p className="mt-3 max-w-[68ch] text-[0.82rem] font-light leading-[1.7] text-charcoal">
-              {z.marketing.travelNote}
+              {z.packagesTravelNote}
             </p>
           </Reveal>
         </div>

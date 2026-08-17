@@ -58,7 +58,7 @@ export default function Navbar({ lang, t }: { lang: Lang; t: NavDict }) {
 
   // Los tres puntos de partida del submenú son los mismos escenarios de la
   // portada: dos arrancan en el proceso desde cero y el tercero en el
-  // diagnóstico del proyecto que ya opera.
+  // consultoría del proyecto que ya opera.
   const navItems: NavItem[] = [
     { href: `/${lang}`, label: t.home },
     { href: `/${lang}/quienes-somos`, label: t.about },

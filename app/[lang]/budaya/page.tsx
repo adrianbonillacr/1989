@@ -161,16 +161,23 @@ export default async function BudayaPage({ params }: { params: Params }) {
             />
           </Reveal>
 
-          <div className="mt-12 grid gap-4 sm:gap-6 md:grid-cols-2">
+          {/* Galería completa entregada por el cliente. La primera imagen abre
+              a lo ancho y el resto va en retícula de tres columnas; el ritmo
+              lo marca el alto alterno de cada fila. */}
+          <div className="mt-12 grid gap-4 sm:gap-6 md:grid-cols-3">
             {budayaGallery.slice(3).map((src, i) => (
-              <Reveal key={src} delay={i * 90} className={i === 0 ? "md:row-span-2" : ""}>
+              <Reveal
+                key={src}
+                delay={(i % 3) * 90}
+                className={i === 0 ? "md:col-span-2" : ""}
+              >
                 <BrandImage
                   src={src}
                   alt={b.galleryAlt(i + 4)}
-                  tone={i === 0 ? "earth" : i === 1 ? "stone" : "charcoal"}
+                  tone={(["earth", "stone", "charcoal"] as const)[i % 3]}
                   label={b.galleryLabel}
-                  className={`w-full ${i === 0 ? "aspect-[3/4] md:h-full" : "aspect-[4/3]"}`}
-                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className={`w-full ${i === 0 ? "aspect-[16/10]" : "aspect-[4/5]"}`}
+                  sizes="(min-width: 768px) 33vw, 100vw"
                 />
               </Reveal>
             ))}

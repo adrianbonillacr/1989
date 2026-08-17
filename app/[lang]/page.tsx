@@ -68,7 +68,7 @@ export default async function HomePage({ params }: { params: Params }) {
           </div>
         </div>
         <a
-          href="#como-trabajamos"
+          href="#proposito"
           className="absolute bottom-10 left-6 flex items-center gap-4 text-[0.65rem] font-normal uppercase tracking-[0.3em] text-mist transition-colors duration-300 hover:text-white md:left-10"
         >
           {t.common.discover}
@@ -82,6 +82,34 @@ export default async function HomePage({ params }: { params: Params }) {
         >
           20 26.
         </span>
+      </section>
+
+      {/* DISEÑAMOS CON PROPÓSITO — primer bloque después de la bienvenida */}
+      <section id="proposito" className="section-pad scroll-mt-20 bg-mist">
+        <div className="container-site">
+          <Reveal>
+            <SectionHeader
+              eyebrow={t.home.purposeEyebrow}
+              title={t.home.purposeTitle}
+              titleClassName="max-w-[24ch]"
+            />
+          </Reveal>
+          <Reveal className="mt-12">
+            <div className="grid gap-6">
+              {t.home.purposeParagraphs.map((paragraph) => (
+                <p
+                  key={paragraph}
+                  className="max-w-[62ch] font-light leading-[1.75] text-charcoal"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+            <p className="mt-12 max-w-[62ch] border-l border-earth pl-6 text-[clamp(1.15rem,2.2vw,1.5rem)] font-light leading-[1.6] text-ink">
+              {t.home.purposeHighlight}
+            </p>
+          </Reveal>
+        </div>
       </section>
 
       {/* ¿CÓMO TRABAJAMOS? — las seis etapas del proceso */}

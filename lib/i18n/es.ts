@@ -12,6 +12,14 @@
  * Los honorarios concretos del dossier no se publican: como en el resto del
  * sitio, la inversión se remite a la propuesta.
  */
+/**
+ * Bloques en que se agrupa la lista de servicios. El orden del arreglo manda
+ * el orden de lectura y, en la landing de Servicios, cada bloque se separa
+ * del siguiente con aire para que se lean como tres tramos distintos.
+ */
+export const disciplineGroups = ["consultoria", "punto-de-partida", "disciplinas"] as const;
+export type DisciplineGroup = (typeof disciplineGroups)[number];
+
 export type DisciplineEntry = {
   slug: string;
   name: string;
@@ -19,6 +27,7 @@ export type DisciplineEntry = {
   description: string;
   stage: string;
   newOnly: boolean;
+  group: DisciplineGroup;
   detail: {
     text: string[];
     blocks: { label: string; items: string[] }[];
@@ -36,12 +45,24 @@ const disciplines: DisciplineEntry[] = [
       "Evaluamos oportunidades inmobiliarias antes de comprar: ubicación, contexto, potencial de desarrollo y riesgos, para que la inversión comience con la propiedad correcta.",
     stage: "asesoria",
     newOnly: true,
+    group: "punto-de-partida",
     detail: {
       text: [
         "Cuando el cliente aún no ha adquirido una propiedad, esta disciplina permite evaluar oportunidades alineadas con los objetivos, el presupuesto y la visión del proyecto.",
         "Nuestro objetivo es aportar criterio y análisis para facilitar la toma de decisiones antes de invertir.",
       ],
       blocks: [
+        {
+          label: "Alcances posibles",
+          items: [
+            "Definición del perfil de inversión.",
+            "Búsqueda y filtrado de oportunidades inmobiliarias.",
+            "Evaluación de ubicación y contexto.",
+            "Análisis del potencial de desarrollo del activo.",
+            "Identificación de riesgos y limitaciones.",
+            "Recomendaciones estratégicas antes de invertir.",
+          ],
+        },
         {
           label: "Objetivos",
           items: [
@@ -89,19 +110,30 @@ const disciplines: DisciplineEntry[] = [
     },
   },
   {
-    slug: "diagnostico-estrategico",
-    name: "Diagnóstico estratégico",
-    tagline: "Medimos primero. Invertimos después.",
+    slug: "consultoria-estrategica",
+    name: "Consultoría estratégica",
+    tagline: "El punto de partida para tomar mejores decisiones.",
     description:
       "Analizamos el estado actual de un proyecto existente para identificar oportunidades, prioridades y una ruta clara de desarrollo antes de invertir.",
     stage: "asesoria",
     newOnly: false,
+    group: "consultoria",
     detail: {
       text: [
         "Cuando la propiedad ya existe o el proyecto ya opera, el punto de partida es entenderlo. Antes de invertir, remodelar o implementar nuevas disciplinas es fundamental comprender cómo funciona, cuáles son sus fortalezas y dónde están las mayores oportunidades de mejora.",
         "El resultado permite entender dónde invertir primero y qué acciones pueden generar mayor impacto.",
       ],
       blocks: [
+        {
+          label: "Alcances posibles",
+          items: [
+            "Visita técnica al proyecto.",
+            "Análisis integral del funcionamiento actual.",
+            "Análisis estratégico por áreas evaluadas.",
+            "Elaboración del Informe Ejecutivo 19.89.",
+            "Reunión de presentación de resultados.",
+          ],
+        },
         {
           label: "Qué buscamos durante la consultoría",
           items: [
@@ -115,9 +147,12 @@ const disciplines: DisciplineEntry[] = [
         {
           label: "Entregables",
           items: [
-            "Índice de Valor 19.89 con las cinco dimensiones medidas.",
-            "Hoja de ruta con prioridades de intervención.",
-            "Recomendaciones por etapas, según urgencia, impacto y presupuesto.",
+            "Informe Ejecutivo 19.89 desarrollado para el proyecto.",
+            "Observaciones por áreas evaluadas.",
+            "Principales oportunidades detectadas.",
+            "Recomendaciones estratégicas.",
+            "Roadmap Estratégico 19.89.",
+            "Disciplinas recomendadas para la implementación.",
           ],
         },
         {
@@ -143,11 +178,22 @@ const disciplines: DisciplineEntry[] = [
       "Orientamos la inversión con criterio financiero: dónde existe mayor potencial de valor, cómo priorizar recursos y cómo sostener la rentabilidad del proyecto.",
     stage: "desarrollo",
     newOnly: true,
+    group: "punto-de-partida",
     detail: {
       text: [
         "Esta disciplina permite orientar las inversiones, establecer prioridades y evaluar dónde existen mayores oportunidades para generar valor.",
       ],
       blocks: [
+        {
+          label: "Alcances posibles",
+          items: [
+            "Evaluación general del potencial de rentabilidad del proyecto.",
+            "Orientación de la inversión hacia las áreas de mayor valor.",
+            "Priorización de recursos según impacto.",
+            "Escenarios de inversión por alcance y etapas.",
+            "Recomendaciones para sostener la rentabilidad a largo plazo.",
+          ],
+        },
         {
           label: "Incluye",
           items: ["Evaluación general del potencial del proyecto (rentabilidad)."],
@@ -175,6 +221,7 @@ const disciplines: DisciplineEntry[] = [
       "Diseño con fundamento estratégico: anteproyecto, desarrollo, remodelaciones y supervisión, donde cada decisión espacial responde también a una decisión de inversión.",
     stage: "desarrollo",
     newOnly: true,
+    group: "disciplinas",
     detail: {
       text: [
         "La arquitectura define cómo funciona un espacio, cómo se experimenta y cómo responde a las necesidades del proyecto.",
@@ -204,7 +251,7 @@ const disciplines: DisciplineEntry[] = [
         },
       ],
       considerations: [
-        "El alcance dependerá de las necesidades y oportunidades identificadas durante el diagnóstico.",
+        "El alcance dependerá de las necesidades y oportunidades identificadas durante la consultoría.",
         "La construcción, los materiales, los contratistas, los permisos y los trámites se cotizan por separado.",
       ],
       cost: "Según el alcance del proyecto; se cotiza por separado.",
@@ -218,6 +265,7 @@ const disciplines: DisciplineEntry[] = [
       "Definimos atmósferas y criterios lumínicos que transforman la experiencia del espacio y ponen en valor la arquitectura.",
     stage: "desarrollo",
     newOnly: false,
+    group: "disciplinas",
     detail: {
       text: [
         "La iluminación influye directamente en la percepción, la funcionalidad y la atmósfera de un espacio.",
@@ -260,6 +308,7 @@ const disciplines: DisciplineEntry[] = [
       "Construimos la narrativa espacial del proyecto: materiales, acabados y curaduría que dan carácter y coherencia a cada ambiente.",
     stage: "desarrollo",
     newOnly: false,
+    group: "disciplinas",
     detail: {
       text: [
         "El diseño de interiores transforma espacios funcionales en experiencias coherentes con la identidad y los objetivos del proyecto.",
@@ -304,6 +353,7 @@ const disciplines: DisciplineEntry[] = [
       "Curaduría de mobiliario, piezas y styling que completan la experiencia y refuerzan la identidad del proyecto.",
     stage: "desarrollo",
     newOnly: false,
+    group: "disciplinas",
     detail: {
       text: [
         "El equipamiento y la ambientación son el paso final para transformar un proyecto en un espacio completo, funcional y coherente con su identidad.",
@@ -348,6 +398,7 @@ const disciplines: DisciplineEntry[] = [
       "Protegemos y ordenamos la marca del proyecto: identidad visual, registro y posicionamiento para que el activo crezca con respaldo.",
     stage: "identidad",
     newOnly: false,
+    group: "disciplinas",
     detail: {
       text: [
         "La identidad de un proyecto no solo se construye: también debe resguardarse.",
@@ -403,6 +454,7 @@ const disciplines: DisciplineEntry[] = [
       "Fotografía arquitectónica y hotelera con dirección visual, para que el proyecto se vea como lo que es y comunique su valor.",
     stage: "identidad",
     newOnly: false,
+    group: "disciplinas",
     detail: {
       text: [
         "En la mayoría de los casos las personas conocen un proyecto a través de una imagen mucho antes de experimentarlo físicamente.",
@@ -452,6 +504,7 @@ const disciplines: DisciplineEntry[] = [
       "Estrategia de comunicación, contenido y campañas para hacer visible el proyecto y conectarlo con su mercado.",
     stage: "identidad",
     newOnly: false,
+    group: "disciplinas",
     detail: {
       text: [
         "No basta con crear un excelente espacio: el mercado necesita conocerlo.",
@@ -502,6 +555,7 @@ const disciplines: DisciplineEntry[] = [
       "Tecnología que simplifica la operación y mejora la experiencia: automatización, control inteligente y movilidad eléctrica que suman valor al proyecto.",
     stage: "tecnologia",
     newOnly: false,
+    group: "disciplinas",
     detail: {
       text: [
         "Las mejores soluciones tecnológicas son las que pasan desapercibidas: no añaden complejidad, hacen que cada espacio funcione de forma más eficiente, cómoda e intuitiva.",
@@ -624,7 +678,7 @@ export const es = {
     path2Tagline: "Medimos primero. Invertimos después.",
     path2Description:
       "Para quienes ya tienen una propiedad o proyecto en funcionamiento y quieren identificar oportunidades de mejora, priorizar inversiones y aumentar su valor.",
-    path2Link: "Ver diagnóstico",
+    path2Link: "Ver consultoría",
     strategyEyebrow: "Estrategia 19.89",
     strategyTitle: "Una forma de trabajar para tomar mejores decisiones.",
     strategyText:
@@ -642,20 +696,32 @@ export const es = {
 
     // — fin del bloque sin uso —
 
+    // Diseñamos con Propósito (PDF p4) — abre el inicio, después del hero
+    purposeEyebrow: "Diseñamos con propósito",
+    purposeTitle:
+      "Los mejores proyectos comienzan mucho antes del diseño.",
+    purposeParagraphs: [
+      "En 19.89 comienzan con una visión clara, una estrategia bien definida y la convicción de que la arquitectura, la luz y la hospitalidad tienen el poder de transformar la forma en que las personas viven un espacio.",
+      "Por eso entendemos cada proyecto como una oportunidad para crear valor a través del diseño, fortaleciendo su identidad, enriqueciendo la experiencia del usuario y acompañando cada decisión con una visión integral.",
+    ],
+    purposeHighlight:
+      "Nuestro compromiso es desarrollar proyectos auténticos, funcionales y memorables que generen valor, inspiren conexiones y trasciendan el tiempo.",
+
     // ¿Cómo trabajamos? (PDF p5)
     processEyebrow: "¿Cómo trabajamos?",
     processTitle:
-      "Un proceso que acompaña de la primera decisión a la consolidación.",
+      "Los mejores proyectos no surgen por casualidad.",
     processIntro:
-      "Nuestro proceso acompaña al cliente desde la primera decisión hasta la consolidación del proyecto, integrando análisis, diseño, experiencia y posicionamiento bajo una misma visión estratégica.",
+      "Son el resultado de decisiones estratégicas tomadas en el momento adecuado. Nuestro proceso acompaña al cliente desde la comprensión del proyecto hasta su consolidación, integrando estrategia, arquitectura, diseño y experiencia bajo una misma visión.",
 
     // ¿Qué analizamos? (PDF p6)
-    analyzeEyebrow: "¿Qué analizamos?",
-    analyzeTitle: "Cada proyecto es diferente.",
+    analyzeEyebrow: "¿Qué analizamos en cada proyecto?",
+    analyzeTitle:
+      "Cada proyecto comienza con una comprensión integral de su contexto, sus objetivos y su potencial.",
     analyzeText:
-      "Por eso evaluamos únicamente aquellos aspectos capaces de generar valor y contribuir al cumplimiento de sus objetivos. Entre ellos:",
+      "Nuestro análisis identifica aquellas áreas con mayor capacidad para generar valor, optimizar la experiencia del usuario y fortalecer la identidad del proyecto. Dependiendo de cada caso, evaluamos aspectos relacionados con:",
     analyzeNote:
-      "Más que evaluar disciplinas de forma independiente, buscamos comprender cómo trabajan en conjunto para fortalecer el proyecto y maximizar su potencial desde el inicio.",
+      "Cada una de estas áreas forma parte de una misma visión estratégica. Más que analizar disciplinas de forma aislada, entendemos cómo interactúan entre sí para desarrollar proyectos coherentes, funcionales y preparados para diferenciarse en el mercado.",
 
     // El Valor de 19.89 (PDF p7) — sin uso desde 05/08/2026 (sección retirada)
     valueEyebrow: "El Valor de 19.89",
@@ -669,7 +735,7 @@ export const es = {
       "Nuestro compromiso es aportar criterio, dirección y una visión integral para desarrollar proyectos con identidad, diferenciación y valor a largo plazo.",
 
     // Roadmap · Del análisis a la acción (PDF p25-26)
-    roadmapEyebrow: "Del análisis a la acción",
+    roadmapEyebrow: "Roadmap · Del análisis a la acción",
     roadmapTitle: "El siguiente paso es convertir la estrategia en resultados.",
     roadmapIntro:
       "Ahora que conocemos los objetivos del proyecto y hemos definido una estrategia para su desarrollo, el siguiente paso consiste en planificar su implementación de forma ordenada y alineada con las prioridades establecidas.",
@@ -704,21 +770,21 @@ export const es = {
     { number: "03", title: "Planificamos", description: "Desarrollamos una hoja de ruta estratégica que define el camino para la evolución del proyecto." },
     { number: "04", title: "Desarrollamos", description: "Implementamos las disciplinas necesarias para transformar la estrategia en resultados." },
     { number: "05", title: "Posicionamos", description: "Construimos una identidad sólida y una presencia comercial alineada con el valor del proyecto." },
-    { number: "06", title: "Evolucionamos", description: "Acompañamos el crecimiento del proyecto con una visión de largo plazo y nuevas oportunidades de mejora." },
+    { number: "06", title: "Evolucionamos", description: "Acompañamos el crecimiento del proyecto mediante una visión de largo plazo y nuevas oportunidades de mejora." },
   ],
 
   // Aspectos que se evalúan en la estrategia (PDF v2, p6 · ¿Qué analizamos?)
   analyzeItems: [
-    "Selección de activos (cuando aún no existe una propiedad).",
+    "Selección de activos.",
     "Análisis financiero estratégico.",
     "Arquitectura.",
     "Diseño de iluminación.",
     "Diseño de interiores.",
-    "Equipamiento y ambientación.",
+    "Equipamiento & ambientación (Budaya).",
     "Protección de identidad.",
     "Fotografía profesional.",
     "Marketing digital.",
-    "Automatización y movilidad eléctrica.",
+    "Automatización & movilidad eléctrica.",
   ],
 
   // Roadmap de implementación (PDF v2, p26 · Del análisis a la acción).
@@ -770,16 +836,16 @@ export const es = {
       tag: "Proyecto Construido",
       title: "El proyecto ya está en funcionamiento",
       start: "La propiedad opera y se busca aumentar su valor y diferenciación.",
-      firstStep: "Diagnóstico estratégico",
+      firstStep: "Consultoría estratégica",
       firstStepText:
         "Analizamos el punto de partida y pasamos directo al desarrollo del proyecto con una hoja de ruta definida.",
       route: [
-        "Diagnóstico estratégico",
+        "Consultoría estratégica",
         "Desarrollo del proyecto",
         "Roadmap de prioridades",
         "Evolución",
       ],
-      serviceSlug: "diagnostico-estrategico",
+      serviceSlug: "consultoria-estrategica",
     },
   ],
 
@@ -791,7 +857,7 @@ export const es = {
   ],
 
   homeDisciplines: [
-    { name: "Asesoría de inversión", description: "Selección de activos y diagnóstico estratégico del punto de partida." },
+    { name: "Asesoría de inversión", description: "Selección de activos y consultoría estratégica del punto de partida." },
     { name: "Análisis financiero estratégico", description: "Orienta la inversión hacia donde existe mayor potencial de valor." },
     { name: "Arquitectura", description: "Diseño, anteproyecto, remodelaciones y supervisión." },
     { name: "Diseño de iluminación", description: "Atmósferas, criterios lumínicos y selección de luminarias." },
@@ -807,7 +873,7 @@ export const es = {
     asesoria: "Etapa 1 · Asesoría de inversión",
     desarrollo: "Etapa 2 · Desarrollo del proyecto",
     identidad: "Etapa 3 · Identidad y posicionamiento",
-    tecnologia: "Etapa 4 · Automatización y Movilidad",
+    tecnologia: "Etapa 4 · Tecnología al servicio del usuario",
   },
 
   // Disciplinas estratégicas. Selección de activos, Análisis financiero y
@@ -859,13 +925,13 @@ export const es = {
         "Se detallan en la propuesta según el alcance. En caso de continuar el desarrollo del proyecto con 19.89 Arquitectura, podrán reconocerse parcial o totalmente dentro del contrato integral, según condiciones acordadas.",
     },
     // Sin uso desde 14/08/2026: se retiró de la Etapa 1 la tarjeta "Opción B ·
-    // Diagnóstico estratégico". El texto se conserva por si vuelve.
-    diagnosis: {
+    // Consultoría estratégica". El texto se conserva por si vuelve.
+    consultation: {
       option: "Opción B · Ya existe una propiedad",
-      title: "Diagnóstico estratégico",
+      title: "Consultoría estratégica",
       description:
         "Cuando el cliente ya cuenta con una propiedad, pasamos al análisis estratégico del proyecto para identificar oportunidades, prioridades y ruta de desarrollo.",
-      link: "Ver diagnóstico estratégico",
+      link: "Ver consultoría estratégica",
     },
     stage2Eyebrow: "Etapa 2 · Desarrollo del proyecto",
     stage2Title: "La estrategia se convierte en proyecto.",
@@ -985,7 +1051,7 @@ export const es = {
           "Material visual profesional.",
           "Coherencia entre proyecto, identidad y comunicación.",
         ],
-        note: "La producción se realiza una vez finalizadas las intervenciones físicas, para que las imágenes reflejen la mejor versión del proyecto. El paquete se define según el tipo de proyecto y se detalla en la propuesta.",
+        note: "La producción se realiza una vez finalizadas las intervenciones físicas, para que las imágenes reflejen la mejor versión del proyecto. El trabajo se organiza en tres paquetes —Esencial, Atmósfera y Visión—, detallados más abajo.",
       },
       {
         label: "Marketing digital",
@@ -1007,74 +1073,124 @@ export const es = {
           "Mayor confianza y reconocimiento.",
           "Mejor posicionamiento digital.",
         ],
-        note: "El trabajo se organiza en paquetes de acompañamiento continuo, detallados más abajo.",
+        note: "El trabajo se organiza en tres paquetes de acompañamiento continuo —Start, Growth y Signature—, detallados más abajo.",
       },
     ],
-    marketing: {
-      label: "Marketing digital",
-      intro:
-        "Un gran proyecto necesita una estrategia capaz de hacerlo visible. No basta con crear un excelente espacio; el mercado necesita conocerlo.",
-      scopeLabel: "Alcances",
-      scope: [
-        "Estrategia de comunicación digital.",
-        "Planificación de contenido.",
-        "Posicionamiento de marca.",
-        "Gestión de redes sociales.",
-        "Campañas de comunicación digital.",
-        "Análisis y optimización estratégica.",
-      ],
-      packageLabel: "Paquete",
-      includesLabel: "Incluye",
-      pricingNote:
-        "La inversión de cada paquete se detalla en la propuesta, según las necesidades y la etapa del proyecto.",
-      travelNote:
-        "Los traslados dentro de la GAM están incluidos. Para proyectos fuera de esta zona, los costos de desplazamiento se cotizarán por separado.",
-    },
-    packages: [
+    // Rótulos comunes a las dos tablas de paquetes de la etapa.
+    packagesLabel: "Paquete",
+    packagesIncludesLabel: "Incluye",
+    /**
+     * Paquetes por servicio (PDF p19 · Fotografía y p20 · Marketing digital).
+     * Cada disciplina tiene los suyos: los de fotografía (Esencial, Atmósfera,
+     * Visión) no aplican a marketing ni al revés, por eso van separados y
+     * rotulados con el servicio al que pertenecen.
+     */
+    packageSets: [
       {
-        name: "Start",
-        positioning: "Pensado para proyectos que inician su presencia digital.",
-        includes: [
-          "Reunión creativa inicial.",
-          "Estrategia básica de contenido.",
-          "1 sesión de fotografía profesional.",
-          "2 reels editados.",
-          "Banco de imágenes editadas.",
-          "Contenido listo para publicar.",
+        service: "Fotografía profesional",
+        intro:
+          "La primera impresión ocurre antes de la primera visita. El paquete se elige según el tipo de proyecto y la cantidad de espacios por cubrir.",
+        packages: [
+          {
+            name: "Esencial",
+            positioning: "Para proyectos tipo estudios compactos.",
+            includes: [
+              "15 imágenes.",
+              "Fachada, acceso y sala.",
+              "Áreas sociales, cocina y baño.",
+              "Habitación principal.",
+              "Detalles y atmósfera.",
+            ],
+            featured: false,
+          },
+          {
+            name: "Atmósfera",
+            positioning: "Para proyectos tipo casas y amenidades.",
+            includes: [
+              "25 imágenes.",
+              "Fachada y exteriores.",
+              "Sala, áreas sociales, cocina y comedor.",
+              "Habitaciones y baños.",
+              "Amenidades.",
+              "Detalles y atmósfera.",
+            ],
+            featured: true,
+          },
+          {
+            name: "Visión",
+            positioning: "Para proyectos tipo villas, alquiler vacacional y alta arquitectura.",
+            includes: [
+              "40 imágenes.",
+              "Fachadas y exteriores.",
+              "Áreas sociales, cocina y comedor.",
+              "Habitaciones y baños.",
+              "Amenidades.",
+              "Detalles arquitectónicos.",
+              "Atmósfera y experiencia.",
+            ],
+            featured: false,
+          },
         ],
-        featured: false,
+        notes: [
+          "La producción fotográfica se realiza una vez finalizadas las intervenciones físicas del proyecto, para que las imágenes reflejen su mejor versión.",
+        ],
       },
       {
-        name: "Growth",
-        positioning: "Diseñado para proyectos que buscan consolidar su presencia.",
-        includes: [
-          "Estrategia básica de contenido.",
-          "Dirección creativa.",
-          "1 sesión de fotografía profesional.",
-          "5 reels editados.",
-          "Banco de fotografías profesionales.",
-          "Guía de comunicación visual.",
-          "Contenido listo para publicar.",
+        service: "Marketing digital",
+        intro:
+          "Un gran proyecto necesita una estrategia capaz de hacerlo visible. No basta con crear un excelente espacio; el mercado necesita conocerlo.",
+        packages: [
+          {
+            name: "Start",
+            positioning: "Pensado para proyectos que inician su presencia digital.",
+            includes: [
+              "Reunión creativa inicial.",
+              "Estrategia básica de contenido.",
+              "1 sesión de fotografía profesional.",
+              "2 reels editados.",
+              "Banco de imágenes editadas.",
+              "Contenido listo para publicar.",
+            ],
+            featured: false,
+          },
+          {
+            name: "Growth",
+            positioning: "Diseñado para proyectos que buscan consolidar su presencia.",
+            includes: [
+              "Estrategia básica de contenido.",
+              "Dirección creativa.",
+              "1 sesión de fotografía profesional.",
+              "5 reels editados.",
+              "Banco de fotografías profesionales.",
+              "Guía de comunicación visual.",
+              "Contenido listo para publicar.",
+            ],
+            featured: true,
+          },
+          {
+            name: "Signature",
+            positioning: "La solución integral de comunicación.",
+            includes: [
+              "Estrategia de marca.",
+              "Dirección creativa integral.",
+              "Producción audiovisual premium.",
+              "Fotografía profesional.",
+              "Video corporativo o promocional.",
+              "Reels para campañas.",
+              "Toma aérea con drone.",
+              "Biblioteca completa de imágenes y videos para 1 a 3 meses.",
+            ],
+            featured: false,
+          },
         ],
-        featured: true,
-      },
-      {
-        name: "Signature",
-        positioning: "La solución integral de comunicación.",
-        includes: [
-          "Estrategia de marca.",
-          "Dirección creativa integral.",
-          "Producción audiovisual premium.",
-          "Fotografía profesional.",
-          "Video corporativo o promocional.",
-          "Reels para campañas.",
-          "Toma aérea con drone.",
-          "Biblioteca completa de imágenes y videos para 1 a 3 meses.",
-        ],
-        featured: false,
+        notes: [],
       },
     ],
-    stage4Eyebrow: "Etapa 4 · Automatización y Movilidad",
+    packagesPricingNote:
+      "La inversión de cada paquete se detalla en la propuesta, según las necesidades y la etapa del proyecto.",
+    packagesTravelNote:
+      "Los traslados dentro de la GAM están incluidos. Para proyectos fuera de esta zona, los costos de desplazamiento se cotizarán por separado.",
+    stage4Eyebrow: "Etapa 4 · Tecnología al servicio del usuario",
     stage4Title:
       "Innovación que mejora la experiencia, simplifica la operación y aporta valor al proyecto.",
     stage4Text:
@@ -1097,7 +1213,7 @@ export const es = {
     ],
     stage4Result:
       "La tecnología deja de ser un complemento para convertirse en una herramienta que simplifica el día a día, mejora la experiencia de las personas y fortalece el valor del proyecto a largo plazo.",
-    closingEyebrow: "Del análisis a la acción",
+    closingEyebrow: "Roadmap · Del análisis a la acción",
     closingText:
       "Cada recomendación busca orientar los recursos hacia aquellas acciones con mayor potencial de impacto y generación de valor. La contratación puede realizarse de forma integral o por etapas, según las prioridades y objetivos definidos.",
     ctaTitle: "La mejor inversión comienza con la propiedad correcta.",
@@ -1105,17 +1221,17 @@ export const es = {
   },
 
   built: {
-    metaTitle: "Proyecto Construido — Diagnóstico Estratégico del Proyecto",
+    metaTitle: "Proyecto Construido — Consultoría Estratégica del Proyecto",
     metaDescription:
       "Consultoría estratégica para comprender el estado actual de una propiedad, identificar oportunidades de mejora y orientar futuras decisiones de inversión.",
     heroEyebrow: "Proyecto Construido",
     heroTitle: "Medimos primero. Invertimos después.",
     heroSubtitle:
       "Una consultoría estratégica para comprender el estado actual de una propiedad, identificar oportunidades de mejora y orientar futuras decisiones de inversión.",
-    introEyebrow: "Diagnóstico Estratégico del Proyecto",
+    introEyebrow: "Consultoría Estratégica del Proyecto",
     introText:
-      "El Diagnóstico Estratégico del Proyecto está diseñado para comprender cómo funciona una propiedad existente, detectar oportunidades de mejora y establecer una estrategia clara para aumentar su experiencia, diferenciación y valor a largo plazo.",
-    whyEyebrow: "Etapa 1 · Diagnóstico Estratégico",
+      "La Consultoría Estratégica del Proyecto está diseñada para comprender cómo funciona una propiedad existente, detectar oportunidades de mejora y establecer una estrategia clara para aumentar su experiencia, diferenciación y valor a largo plazo.",
+    whyEyebrow: "Etapa 1 · Consultoría Estratégica",
     whyTitle: "Las mejores decisiones se toman cuando existe claridad.",
     whyText:
       "Antes de invertir, remodelar o implementar nuevas disciplinas, es fundamental comprender cómo funciona el proyecto, cuáles son sus fortalezas y dónde se encuentran las mayores oportunidades de mejora.",
@@ -1130,13 +1246,13 @@ export const es = {
     indexEyebrow: "Etapa 2 · Índice de Valor 19.89",
     indexTitle: "Cinco dimensiones para entender dónde invertir primero.",
     indexText:
-      "El resultado del diagnóstico permite entender dónde invertir primero y qué acciones pueden generar mayor impacto.",
+      "El resultado de la consultoría permite entender dónde invertir primero y qué acciones pueden generar mayor impacto.",
     indexNote:
-      "Ejemplo visual — la medición real se construye durante el diagnóstico de cada proyecto",
+      "Ejemplo visual — la medición real se construye durante la consultoría de cada proyecto",
     roadmapEyebrow: "Etapa 3 · Proyecto Roadmap",
     roadmapTitle: "Prioridades claras, inversión ordenada.",
     roadmapText:
-      "Después del diagnóstico, se define una hoja de ruta con prioridades claras. Esta hoja de ruta permite contratar las disciplinas de forma integral o por etapas según el nivel de urgencia, impacto y presupuesto.",
+      "Después de la consultoría, se define una hoja de ruta con prioridades claras. Esta hoja de ruta permite contratar las disciplinas de forma integral o por etapas según el nivel de urgencia, impacto y presupuesto.",
     roadmapStagesLabel: "Etapas posteriores recomendadas",
     roadmapStages: [
       { number: "01", title: "Desarrollo del proyecto", description: "Implementamos las disciplinas recomendadas según su prioridad e impacto en el valor." },
@@ -1148,7 +1264,7 @@ export const es = {
       "Cada recomendación busca orientar los recursos hacia aquellas acciones con mayor potencial de impacto y generación de valor. La contratación puede realizarse de forma integral o por etapas, según las prioridades y objetivos definidos.",
     ctaTitlePart1: "Medimos primero.",
     ctaTitlePart2: "Invertimos después.",
-    ctaButton: "Quiero diagnosticar mi proyecto",
+    ctaButton: "Quiero una consultoría de mi proyecto",
   },
 
   valueDims: [
@@ -1179,8 +1295,8 @@ export const es = {
     path2Label: "Camino 02",
     path2Title: "Proyecto Construido",
     path2Text:
-      "Diagnóstico Estratégico, Índice de Valor 19.89 y una hoja de ruta que ordena las prioridades de inversión.",
-    path2Link: "Ver diagnóstico",
+      "Consultoría Estratégica, Índice de Valor 19.89 y una hoja de ruta que ordena las prioridades de inversión.",
+    path2Link: "Ver consultoría",
   },
 
   principles: [
@@ -1195,7 +1311,7 @@ export const es = {
   disciplinesPage: {
     metaTitle: "Todos nuestros servicios — Las disciplinas de la Estrategia 19.89",
     metaDescription:
-      "Selección de activos, diagnóstico, análisis financiero, arquitectura, iluminación, interiores, identidad, fotografía, marketing, automatización y movilidad: módulos de la Estrategia 19.89.",
+      "Selección de activos, consultoría, análisis financiero, arquitectura, iluminación, interiores, identidad, fotografía, marketing, automatización y movilidad: módulos de la Estrategia 19.89.",
     heroEyebrow: "Todos nuestros servicios",
     heroTitle: "Herramientas que se integran a cada proyecto.",
     heroSubtitle:
@@ -1256,15 +1372,31 @@ export const es = {
       "Cada proyecto representa una oportunidad para integrar arquitectura, luz y hospitalidad en una misma visión, donde cada decisión de diseño aporta valor, fortalece la identidad del lugar y enriquece la experiencia del usuario.",
       "Aspiramos a desarrollar proyectos que trasciendan las tendencias y permanezcan vigentes con el paso del tiempo, creando espacios auténticos, funcionales y memorables que generen un impacto positivo tanto para quienes los habitan como para quienes los visitan.",
     ],
-    claimTitle: "Arquitectura. Luz. Hospitalidad.",
-    claimText:
-      "Tres disciplinas. Una misma visión. Diseñar espacios que trasciendan la estética para convertirse en experiencias memorables.",
     teamEyebrow: "Conocé el equipo",
     teamTitle: "Detrás de cada proyecto hay un equipo con una misma visión.",
     teamText:
       "Arquitectura, iluminación, interiorismo y comunicación trabajando juntos desde la primera decisión hasta el posicionamiento del proyecto. Cada disciplina aporta criterio para que el diseño responda también a la experiencia y al valor.",
-    teamPhotoAlt: (i: number) => `Equipo 19.89 Arquitectura — retrato ${i}`,
+    teamPhotoAlt: (name: string) => `${name} — equipo de 19.89 Arquitectura`,
     teamPhotoLabel: "Equipo 19.89",
+    /** Rótulos de la ventana emergente con la biografía de cada persona. */
+    teamOpenLabel: "Ver biografía",
+    teamModalLabel: "Biografía",
+    teamModalClose: "Cerrar",
+    /**
+     * `bio` queda vacío hasta que el cliente entregue los textos: mientras
+     * tanto la ventana emergente muestra `teamBioPending` en su lugar.
+     * El orden del arreglo es el pedido por el cliente (LuisK y Jorge primero).
+     */
+    teamBioPending: "Biografía en preparación.",
+    teamMembers: [
+      { slug: "luisk-salas", name: "LuisK Salas", role: "", bio: [] as string[] },
+      { slug: "jorge-salas", name: "Jorge Salas", role: "", bio: [] as string[] },
+      { slug: "aaron-fonseca", name: "Aarón Fonseca", role: "", bio: [] as string[] },
+      { slug: "alonso-aguirre", name: "Alonso Aguirre", role: "", bio: [] as string[] },
+      { slug: "jeancarlo-amores", name: "Jeancarlo Amores", role: "", bio: [] as string[] },
+      { slug: "matias-gutierrez", name: "Matías Gutiérrez Salas", role: "", bio: [] as string[] },
+      { slug: "stephannie-tenorio", name: "Stephannie Tenorio", role: "", bio: [] as string[] },
+    ],
   },
 
   // Budaya — Equipamiento & Ambientación (texto entregado por el cliente)
@@ -1333,7 +1465,7 @@ export const es = {
     heroText:
       "Ya sea que estés iniciando una inversión o buscando elevar el valor de una propiedad existente, podemos ayudarte a definir el siguiente paso con claridad.",
     routeNew: "Quiero desarrollar un proyecto nuevo",
-    routeBuilt: "Quiero diagnosticar una propiedad construida",
+    routeBuilt: "Quiero una consultoría de mi propiedad construida",
     directTitle: "Contacto directo",
     emailLabel: "Correo",
     instagramLabel: "Instagram",

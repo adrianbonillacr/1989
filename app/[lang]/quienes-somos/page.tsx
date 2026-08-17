@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import BrandImage from "@/components/BrandImage";
 import CtaBanner from "@/components/CtaBanner";
 import InteriorHero from "@/components/InteriorHero";
 import Reveal from "@/components/Reveal";
 import SectionHeader from "@/components/SectionHeader";
+import TeamGallery from "@/components/TeamGallery";
 import { getDict, isLang, type Lang } from "@/lib/i18n";
-import { teamPortraits } from "@/lib/images";
 
 type Params = Promise<{ lang: string }>;
 
@@ -100,26 +99,7 @@ export default async function QuienesSomosPage({ params }: { params: Params }) {
         </div>
       </section>
 
-      {/* ARQUITECTURA. LUZ. HOSPITALIDAD. */}
-      <section className="section-pad bg-ink text-white">
-        <div className="container-site">
-          <Reveal className="mx-auto max-w-3xl text-center">
-            <div className="flex items-center justify-center gap-4">
-              <span aria-hidden="true" className="h-px w-16 bg-stone/40" />
-              <span aria-hidden="true" className="h-[0.4rem] w-[0.4rem] rounded-full bg-stone" />
-              <span aria-hidden="true" className="h-px w-16 bg-stone/40" />
-            </div>
-            <p className="mt-10 text-[clamp(2rem,4.4vw,3.2rem)] font-semibold leading-[1.15]">
-              {a.claimTitle}
-            </p>
-            <p className="mx-auto mt-8 max-w-[52ch] text-[clamp(1.05rem,2vw,1.35rem)] font-light leading-[1.6] text-mist">
-              {a.claimText}
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* CONOCÉ EL EQUIPO — 4 espacios de foto (3:4) */}
+      {/* CONOCÉ EL EQUIPO — cada retrato abre su biografía en una ventana */}
       <section className="section-pad bg-mist">
         <div className="container-site">
           <Reveal>
@@ -133,20 +113,22 @@ export default async function QuienesSomosPage({ params }: { params: Params }) {
             </p>
           </Reveal>
 
-          <div className="mt-14 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
-            {teamPortraits.map((src, i) => (
-              <Reveal key={src} delay={i * 90}>
-                <BrandImage
-                  src={src}
-                  alt={a.teamPhotoAlt(i + 1)}
-                  tone={i % 2 === 0 ? "earth" : "stone"}
-                  label={a.teamPhotoLabel}
-                  className="aspect-[3/4] w-full"
-                  sizes="(min-width: 1024px) 25vw, 50vw"
-                />
-              </Reveal>
-            ))}
-          </div>
+          <Reveal className="mt-14">
+            {/* El alt se resuelve acá: a un componente de cliente no se le
+                pueden pasar funciones del diccionario. */}
+            <TeamGallery
+              members={a.teamMembers.map((member) => ({
+                ...member,
+                alt: a.teamPhotoAlt(member.name),
+              }))}
+              labels={{
+                openLabel: a.teamOpenLabel,
+                modalLabel: a.teamModalLabel,
+                closeLabel: a.teamModalClose,
+                bioPending: a.teamBioPending,
+              }}
+            />
+          </Reveal>
         </div>
       </section>
 
