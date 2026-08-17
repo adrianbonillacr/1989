@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { ReactNode } from "react";
 
-type FilterId = "todos" | "arquitectura" | "iluminacion";
+type FilterId = "todos" | "arquitectura" | "iluminacion" | "equipamiento";
 
 /**
  * Tabs de filtro sin recarga. Los cards (server components) llegan como
@@ -16,8 +16,13 @@ export default function PortfolioFilter({
   groupLabel,
 }: {
   children: ReactNode;
-  /** Etiquetas traducidas para: todos, arquitectura, iluminacion. */
-  labels: { todos: string; arquitectura: string; iluminacion: string };
+  /** Etiquetas traducidas para: todos, arquitectura, iluminacion, equipamiento. */
+  labels: {
+    todos: string;
+    arquitectura: string;
+    iluminacion: string;
+    equipamiento: string;
+  };
   groupLabel: string;
 }) {
   const [active, setActive] = useState<FilterId>("todos");
@@ -25,6 +30,7 @@ export default function PortfolioFilter({
     { id: "todos", label: labels.todos },
     { id: "arquitectura", label: labels.arquitectura },
     { id: "iluminacion", label: labels.iluminacion },
+    { id: "equipamiento", label: labels.equipamiento },
   ];
 
   return (

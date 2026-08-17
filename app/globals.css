@@ -79,7 +79,8 @@
 /* Filtro del portafolio (sin recarga): los cards traen data-categories y el
    contenedor data-filter; se ocultan los que no coinciden. */
 [data-filter="arquitectura"] [data-categories]:not([data-categories~="arquitectura"]),
-[data-filter="iluminacion"] [data-categories]:not([data-categories~="iluminacion"]) {
+[data-filter="iluminacion"] [data-categories]:not([data-categories~="iluminacion"]),
+[data-filter="equipamiento"] [data-categories]:not([data-categories~="equipamiento"]) {
   display: none;
 }
 

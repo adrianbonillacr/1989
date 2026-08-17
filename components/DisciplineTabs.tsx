@@ -2,6 +2,13 @@
 
 import { useId, useRef, useState } from "react";
 
+type Package = {
+  name: string;
+  positioning: string;
+  includes: readonly string[];
+  featured: boolean;
+};
+
 type Card = {
   label: string;
   title: string;
@@ -10,6 +17,19 @@ type Card = {
   scope?: readonly string[];
   benefits: readonly string[];
   note: string;
+  /**
+   * Paquetes de esta disciplina. Van dentro de su propia ficha —no en un
+   * bloque suelto al final de la etapa— porque los de fotografía y los de
+   * marketing no son intercambiables.
+   */
+  packages?: readonly Package[];
+  /** Notas al pie propias del bloque de paquetes. */
+  packageNotes?: readonly string[];
+};
+
+type PackageLabels = {
+  packageLabel: string;
+  includesLabel: string;
 };
 
 /** La fila de pestañas se reparte según cuántas disciplinas tenga la etapa. */
@@ -55,12 +75,15 @@ export default function DisciplineTabs({
   cards,
   benefitsLabel,
   scopeLabel,
+  packageLabels,
   ariaLabel,
 }: {
   cards: readonly Card[];
   benefitsLabel: string;
   /** Rótulo de la lista de alcances, cuando las fichas los traen. */
   scopeLabel?: string;
+  /** Rótulos del bloque de paquetes, cuando alguna ficha los trae. */
+  packageLabels?: PackageLabels;
   /** Nombre de la etapa, para que el lector de pantalla ubique la fila. */
   ariaLabel: string;
 }) {
@@ -162,6 +185,65 @@ export default function DisciplineTabs({
           )}
           <BulletList label={benefitsLabel} items={card.benefits} />
         </div>
+
+        {/* Paquetes de esta disciplina, dentro de su propia ficha */}
+        {card.packages && packageLabels && (
+          <div className="mt-10 border-t border-stone/40 pt-10">
+            <div className="grid gap-6 lg:grid-cols-3">
+              {card.packages.map((pkg) => (
+                <article
+                  key={pkg.name}
+                  className={`relative flex h-full flex-col border p-6 ${
+                    pkg.featured ? "border-earth" : "border-stone/40"
+                  }`}
+                >
+                  {pkg.featured && (
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-x-0 top-0 h-0.5 bg-earth"
+                    />
+                  )}
+                  <p className="text-[0.62rem] font-medium uppercase tracking-[0.26em] text-stone">
+                    {packageLabels.packageLabel}
+                  </p>
+                  <h4 className="mt-2 text-xl font-semibold uppercase tracking-[0.08em] text-ink">
+                    {pkg.name}
+                  </h4>
+                  <p className="mt-3 text-[0.9rem] font-light leading-[1.6] text-charcoal">
+                    {pkg.positioning}
+                  </p>
+                  <div className="mt-5 border-t border-stone/40 pt-5">
+                    <p className="mb-3 text-[0.62rem] font-medium uppercase tracking-[0.26em] text-earth">
+                      {packageLabels.includesLabel}
+                    </p>
+                    <ul className="space-y-2" role="list">
+                      {pkg.includes.map((item) => (
+                        <li key={item} className="flex items-baseline gap-3">
+                          <span
+                            aria-hidden="true"
+                            className="h-[0.32rem] w-[0.32rem] shrink-0 bg-earth"
+                          />
+                          <span className="text-[0.85rem] font-light leading-[1.6] text-charcoal">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              ))}
+            </div>
+            {card.packageNotes?.map((note) => (
+              <p
+                key={note}
+                className="mt-6 max-w-[68ch] text-[0.82rem] font-light leading-[1.7] text-charcoal"
+              >
+                {note}
+              </p>
+            ))}
+          </div>
+        )}
+
         <p className="mt-8 border-t border-stone/40 pt-5 text-[0.82rem] font-light leading-[1.7] text-charcoal">
           {card.note}
         </p>

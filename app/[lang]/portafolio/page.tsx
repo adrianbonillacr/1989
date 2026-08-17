@@ -4,7 +4,7 @@ import PortfolioFilter from "@/components/PortfolioFilter";
 import ProjectCard, { projectTone } from "@/components/ProjectCard";
 import Reveal from "@/components/Reveal";
 import { getDict, isLang, type Lang } from "@/lib/i18n";
-import { kahwiFeaturedCover, projects } from "@/lib/projects";
+import { budayaCover, kahwiFeaturedCover, projects } from "@/lib/projects";
 
 type Params = Promise<{ lang: string }>;
 
@@ -36,6 +36,7 @@ export default async function PortafolioPage({ params }: { params: Params }) {
                 todos: t.portfolio.filterAll,
                 arquitectura: t.portfolio.filterArchitecture,
                 iluminacion: t.portfolio.filterLighting,
+                equipamiento: t.portfolio.filterFurnishing,
               }}
               groupLabel={t.portfolio.filterGroupLabel}
             >
@@ -61,9 +62,14 @@ export default async function PortafolioPage({ params }: { params: Params }) {
                           ? "(min-width: 1184px) 1104px, 100vw"
                           : "(min-width: 768px) 50vw, 100vw"
                       }
-                      // Misma portada destacada de Kahwi que el inicio
+                      // Kahwi reusa la portada destacada del inicio; Budaya
+                      // toma una foto de su propia galería.
                       coverSrc={
-                        project.slug === "kahwi" ? kahwiFeaturedCover : undefined
+                        project.slug === "kahwi"
+                          ? kahwiFeaturedCover
+                          : project.slug === "budaya"
+                            ? budayaCover
+                            : undefined
                       }
                     />
                   </div>

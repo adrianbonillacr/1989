@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import BrandImage from "@/components/BrandImage";
 import CtaBanner from "@/components/CtaBanner";
 import InteriorHero from "@/components/InteriorHero";
+import PhotoGallery from "@/components/PhotoGallery";
 import Reveal from "@/components/Reveal";
 import SectionHeader from "@/components/SectionHeader";
 import { getDict, isLang, type Lang } from "@/lib/i18n";
@@ -80,12 +81,12 @@ export default async function BudayaPage({ params }: { params: Params }) {
             </Reveal>
           </div>
 
-          {/* Espacios de foto 01–03 */}
+          {/* Tres fotos de apertura; el resto vive en la galería de más abajo */}
           <div className="mt-16 grid gap-4 sm:gap-6 md:grid-cols-3">
-            {budayaGallery.slice(0, 3).map((src, i) => (
-              <Reveal key={src} delay={i * 90}>
+            {budayaGallery.slice(0, 3).map((image, i) => (
+              <Reveal key={image.src} delay={i * 90}>
                 <BrandImage
-                  src={src}
+                  src={image.src}
                   alt={b.galleryAlt(i + 1)}
                   tone={i === 1 ? "earth" : "stone"}
                   label={b.galleryLabel}
@@ -111,15 +112,19 @@ export default async function BudayaPage({ params }: { params: Params }) {
                 {b.processTitle}
               </p>
             </Reveal>
-            <Reveal delay={120}>
+            {/* El ancho de columna se define una sola vez, en el contenedor:
+                si cada párrafo lleva su propio `max-w` en `ch`, el destacado
+                —que va en cuerpo mayor— arma una columna más ancha y los
+                bordes derechos se desalinean al cambiar el tamaño de letra. */}
+            <Reveal delay={120} className="max-w-[58ch]">
               <div className="space-y-6">
                 {b.processParagraphs.map((paragraph) => (
-                  <p key={paragraph} className="max-w-[58ch] font-light leading-[1.75] text-charcoal">
+                  <p key={paragraph} className="font-light leading-[1.75] text-charcoal">
                     {paragraph}
                   </p>
                 ))}
               </div>
-              <p className="mt-10 max-w-[52ch] border-l border-earth pl-6 text-[clamp(1.1rem,2vw,1.35rem)] font-light leading-[1.6] text-ink">
+              <p className="mt-10 border-l border-earth pl-6 text-[clamp(1.1rem,2vw,1.35rem)] font-light leading-[1.6] text-ink">
                 {b.processHighlight}
               </p>
             </Reveal>
@@ -161,27 +166,26 @@ export default async function BudayaPage({ params }: { params: Params }) {
             />
           </Reveal>
 
-          {/* Galería completa entregada por el cliente. La primera imagen abre
-              a lo ancho y el resto va en retícula de tres columnas; el ritmo
-              lo marca el alto alterno de cada fila. */}
-          <div className="mt-12 grid gap-4 sm:gap-6 md:grid-cols-3">
-            {budayaGallery.slice(3).map((src, i) => (
-              <Reveal
-                key={src}
-                delay={(i % 3) * 90}
-                className={i === 0 ? "md:col-span-2" : ""}
-              >
-                <BrandImage
-                  src={src}
-                  alt={b.galleryAlt(i + 4)}
-                  tone={(["earth", "stone", "charcoal"] as const)[i % 3]}
-                  label={b.galleryLabel}
-                  className={`w-full ${i === 0 ? "aspect-[16/10]" : "aspect-[4/5]"}`}
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                />
-              </Reveal>
-            ))}
-          </div>
+          {/* Galería completa entregada por el cliente: cada foto conserva su
+              proporción —el material mezcla verticales y horizontales— y se
+              amplía al tocarla. */}
+          <Reveal className="mt-12">
+            {/* Los alt se resuelven acá: a un componente de cliente no se le
+                pueden pasar funciones del diccionario. */}
+            <PhotoGallery
+              images={budayaGallery.slice(3).map((image, i) => ({
+                ...image,
+                alt: b.galleryAlt(i + 4),
+              }))}
+              labels={{
+                openLabel: b.galleryOpenLabel,
+                closeLabel: b.galleryCloseLabel,
+                previousLabel: t.portfolio.previous,
+                nextLabel: t.portfolio.next,
+                counterTemplate: b.galleryCounterTemplate,
+              }}
+            />
+          </Reveal>
         </div>
       </section>
 

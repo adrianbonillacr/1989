@@ -654,6 +654,7 @@ export const es = {
   categories: {
     arquitectura: "Arquitectura",
     iluminacion: "Iluminación",
+    equipamiento: "Equipamiento y ambientación",
   },
 
   home: {
@@ -1051,6 +1052,50 @@ export const es = {
           "Material visual profesional.",
           "Coherencia entre proyecto, identidad y comunicación.",
         ],
+        packages: [
+            {
+              name: "Esencial",
+              positioning: "Para proyectos tipo estudios compactos.",
+              includes: [
+                "15 imágenes.",
+                "Fachada, acceso y sala.",
+                "Áreas sociales, cocina y baño.",
+                "Habitación principal.",
+                "Detalles y atmósfera.",
+              ],
+              featured: false,
+            },
+            {
+              name: "Atmósfera",
+              positioning: "Para proyectos tipo casas y amenidades.",
+              includes: [
+                "25 imágenes.",
+                "Fachada y exteriores.",
+                "Sala, áreas sociales, cocina y comedor.",
+                "Habitaciones y baños.",
+                "Amenidades.",
+                "Detalles y atmósfera.",
+              ],
+              featured: true,
+            },
+            {
+              name: "Visión",
+              positioning: "Para proyectos tipo villas, alquiler vacacional y alta arquitectura.",
+              includes: [
+                "40 imágenes.",
+                "Fachadas y exteriores.",
+                "Áreas sociales, cocina y comedor.",
+                "Habitaciones y baños.",
+                "Amenidades.",
+                "Detalles arquitectónicos.",
+                "Atmósfera y experiencia.",
+              ],
+              featured: false,
+            },
+          ],
+        packageNotes: [
+            "La producción fotográfica se realiza una vez finalizadas las intervenciones físicas del proyecto, para que las imágenes reflejen su mejor versión.",
+          ],
         note: "La producción se realiza una vez finalizadas las intervenciones físicas, para que las imágenes reflejen la mejor versión del proyecto. El trabajo se organiza en tres paquetes —Esencial, Atmósfera y Visión—, detallados más abajo.",
       },
       {
@@ -1073,6 +1118,50 @@ export const es = {
           "Mayor confianza y reconocimiento.",
           "Mejor posicionamiento digital.",
         ],
+        packages: [
+            {
+              name: "Start",
+              positioning: "Pensado para proyectos que inician su presencia digital.",
+              includes: [
+                "Reunión creativa inicial.",
+                "Estrategia básica de contenido.",
+                "1 sesión de fotografía profesional.",
+                "2 reels editados.",
+                "Banco de imágenes editadas.",
+                "Contenido listo para publicar.",
+              ],
+              featured: false,
+            },
+            {
+              name: "Growth",
+              positioning: "Diseñado para proyectos que buscan consolidar su presencia.",
+              includes: [
+                "Estrategia básica de contenido.",
+                "Dirección creativa.",
+                "1 sesión de fotografía profesional.",
+                "5 reels editados.",
+                "Banco de fotografías profesionales.",
+                "Guía de comunicación visual.",
+                "Contenido listo para publicar.",
+              ],
+              featured: true,
+            },
+            {
+              name: "Signature",
+              positioning: "La solución integral de comunicación.",
+              includes: [
+                "Estrategia de marca.",
+                "Dirección creativa integral.",
+                "Producción audiovisual premium.",
+                "Fotografía profesional.",
+                "Video corporativo o promocional.",
+                "Reels para campañas.",
+                "Toma aérea con drone.",
+                "Biblioteca completa de imágenes y videos para 1 a 3 meses.",
+              ],
+              featured: false,
+            },
+          ],
         note: "El trabajo se organiza en tres paquetes de acompañamiento continuo —Start, Growth y Signature—, detallados más abajo.",
       },
     ],
@@ -1085,107 +1174,6 @@ export const es = {
      * Visión) no aplican a marketing ni al revés, por eso van separados y
      * rotulados con el servicio al que pertenecen.
      */
-    packageSets: [
-      {
-        service: "Fotografía profesional",
-        intro:
-          "La primera impresión ocurre antes de la primera visita. El paquete se elige según el tipo de proyecto y la cantidad de espacios por cubrir.",
-        packages: [
-          {
-            name: "Esencial",
-            positioning: "Para proyectos tipo estudios compactos.",
-            includes: [
-              "15 imágenes.",
-              "Fachada, acceso y sala.",
-              "Áreas sociales, cocina y baño.",
-              "Habitación principal.",
-              "Detalles y atmósfera.",
-            ],
-            featured: false,
-          },
-          {
-            name: "Atmósfera",
-            positioning: "Para proyectos tipo casas y amenidades.",
-            includes: [
-              "25 imágenes.",
-              "Fachada y exteriores.",
-              "Sala, áreas sociales, cocina y comedor.",
-              "Habitaciones y baños.",
-              "Amenidades.",
-              "Detalles y atmósfera.",
-            ],
-            featured: true,
-          },
-          {
-            name: "Visión",
-            positioning: "Para proyectos tipo villas, alquiler vacacional y alta arquitectura.",
-            includes: [
-              "40 imágenes.",
-              "Fachadas y exteriores.",
-              "Áreas sociales, cocina y comedor.",
-              "Habitaciones y baños.",
-              "Amenidades.",
-              "Detalles arquitectónicos.",
-              "Atmósfera y experiencia.",
-            ],
-            featured: false,
-          },
-        ],
-        notes: [
-          "La producción fotográfica se realiza una vez finalizadas las intervenciones físicas del proyecto, para que las imágenes reflejen su mejor versión.",
-        ],
-      },
-      {
-        service: "Marketing digital",
-        intro:
-          "Un gran proyecto necesita una estrategia capaz de hacerlo visible. No basta con crear un excelente espacio; el mercado necesita conocerlo.",
-        packages: [
-          {
-            name: "Start",
-            positioning: "Pensado para proyectos que inician su presencia digital.",
-            includes: [
-              "Reunión creativa inicial.",
-              "Estrategia básica de contenido.",
-              "1 sesión de fotografía profesional.",
-              "2 reels editados.",
-              "Banco de imágenes editadas.",
-              "Contenido listo para publicar.",
-            ],
-            featured: false,
-          },
-          {
-            name: "Growth",
-            positioning: "Diseñado para proyectos que buscan consolidar su presencia.",
-            includes: [
-              "Estrategia básica de contenido.",
-              "Dirección creativa.",
-              "1 sesión de fotografía profesional.",
-              "5 reels editados.",
-              "Banco de fotografías profesionales.",
-              "Guía de comunicación visual.",
-              "Contenido listo para publicar.",
-            ],
-            featured: true,
-          },
-          {
-            name: "Signature",
-            positioning: "La solución integral de comunicación.",
-            includes: [
-              "Estrategia de marca.",
-              "Dirección creativa integral.",
-              "Producción audiovisual premium.",
-              "Fotografía profesional.",
-              "Video corporativo o promocional.",
-              "Reels para campañas.",
-              "Toma aérea con drone.",
-              "Biblioteca completa de imágenes y videos para 1 a 3 meses.",
-            ],
-            featured: false,
-          },
-        ],
-        notes: [],
-      },
-    ],
     packagesPricingNote:
       "La inversión de cada paquete se detalla en la propuesta, según las necesidades y la etapa del proyecto.",
     packagesTravelNote:
@@ -1428,6 +1416,7 @@ export const es = {
       "Vajilla, cristalería y accesorios de mesa.",
       "Iluminación decorativa.",
       "Arte y elementos de ambientación.",
+      "Acompañamiento durante la adquisición e implementación.",
     ],
     processEyebrow: "Nuestro Proceso",
     processTitle:
@@ -1448,6 +1437,9 @@ export const es = {
     galleryEyebrow: "Ambientes",
     galleryTitle: "Piezas, texturas y detalles que completan la experiencia.",
     galleryAlt: (i: number) => `Budaya — equipamiento y ambientación (imagen ${i})`,
+    galleryOpenLabel: "Ampliar",
+    galleryCloseLabel: "Cerrar",
+    galleryCounterTemplate: "{current} de {total}",
     galleryLabel: "Budaya",
     closingTitle: "Diseñamos ambientes. Creamos experiencias.",
     closingText:
@@ -1496,6 +1488,7 @@ export const es = {
     filterAll: "Todos",
     filterArchitecture: "Arquitectura",
     filterLighting: "Iluminación",
+    filterFurnishing: "Equipamiento",
     filterGroupLabel: "Filtrar proyectos",
     previous: "Anterior",
     next: "Siguiente",

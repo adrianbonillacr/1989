@@ -620,6 +620,7 @@ export const en: Dictionary = {
   categories: {
     arquitectura: "Architecture",
     iluminacion: "Lighting",
+    equipamiento: "Furnishing & styling",
   },
 
   home: {
@@ -1000,6 +1001,50 @@ export const en: Dictionary = {
           "Professional visual material.",
           "Coherence between project, identity and communication.",
         ],
+        packages: [
+            {
+              name: "Essential",
+              positioning: "For compact studio-type projects.",
+              includes: [
+                "15 images.",
+                "Façade, entrance and living room.",
+                "Social areas, kitchen and bathroom.",
+                "Main bedroom.",
+                "Details and atmosphere.",
+              ],
+              featured: false,
+            },
+            {
+              name: "Atmosphere",
+              positioning: "For house and amenity projects.",
+              includes: [
+                "25 images.",
+                "Façade and exteriors.",
+                "Living room, social areas, kitchen and dining room.",
+                "Bedrooms and bathrooms.",
+                "Amenities.",
+                "Details and atmosphere.",
+              ],
+              featured: true,
+            },
+            {
+              name: "Vision",
+              positioning: "For villas, vacation rentals and high-end architecture.",
+              includes: [
+                "40 images.",
+                "Façades and exteriors.",
+                "Social areas, kitchen and dining room.",
+                "Bedrooms and bathrooms.",
+                "Amenities.",
+                "Architectural details.",
+                "Atmosphere and experience.",
+              ],
+              featured: false,
+            },
+          ],
+        packageNotes: [
+            "The photographic production takes place once the project's physical works are complete, so the images reflect its best version.",
+          ],
         note: "Production takes place once the physical interventions are finished, so the images reflect the project at its best. The work is organised into three packages —Essential, Atmosphere and Vision—, detailed below.",
       },
       {
@@ -1022,6 +1067,50 @@ export const en: Dictionary = {
           "More trust and recognition.",
           "Better digital positioning.",
         ],
+        packages: [
+            {
+              name: "Start",
+              positioning: "Designed for projects starting their digital presence.",
+              includes: [
+                "Initial creative meeting.",
+                "Basic content strategy.",
+                "1 professional photography session.",
+                "2 edited reels.",
+                "Bank of edited images.",
+                "Content ready to publish.",
+              ],
+              featured: false,
+            },
+            {
+              name: "Growth",
+              positioning: "Designed for projects seeking to consolidate their presence.",
+              includes: [
+                "Basic content strategy.",
+                "Creative direction.",
+                "1 professional photography session.",
+                "5 edited reels.",
+                "Bank of professional photographs.",
+                "Visual communication guide.",
+                "Content ready to publish.",
+              ],
+              featured: true,
+            },
+            {
+              name: "Signature",
+              positioning: "The comprehensive communication solution.",
+              includes: [
+                "Brand strategy.",
+                "Comprehensive creative direction.",
+                "Premium audiovisual production.",
+                "Professional photography.",
+                "Corporate or promotional video.",
+                "Reels for campaigns.",
+                "Aerial drone footage.",
+                "Complete library of images and videos for 1 to 3 months.",
+              ],
+              featured: false,
+            },
+          ],
         note: "The work is organised into three ongoing support packages —Start, Growth and Signature—, detailed below.",
       },
     ],
@@ -1034,107 +1123,6 @@ export const en: Dictionary = {
      * Atmosphere, Vision) do not apply to marketing or the other way round,
      * which is why they are separated and labelled by service.
      */
-    packageSets: [
-      {
-        service: "Professional photography",
-        intro:
-          "The first impression happens before the first visit. The package is chosen according to the type of project and the number of spaces to cover.",
-        packages: [
-          {
-            name: "Essential",
-            positioning: "For compact studio-type projects.",
-            includes: [
-              "15 images.",
-              "Façade, entrance and living room.",
-              "Social areas, kitchen and bathroom.",
-              "Main bedroom.",
-              "Details and atmosphere.",
-            ],
-            featured: false,
-          },
-          {
-            name: "Atmosphere",
-            positioning: "For house and amenity projects.",
-            includes: [
-              "25 images.",
-              "Façade and exteriors.",
-              "Living room, social areas, kitchen and dining room.",
-              "Bedrooms and bathrooms.",
-              "Amenities.",
-              "Details and atmosphere.",
-            ],
-            featured: true,
-          },
-          {
-            name: "Vision",
-            positioning: "For villas, vacation rentals and high-end architecture.",
-            includes: [
-              "40 images.",
-              "Façades and exteriors.",
-              "Social areas, kitchen and dining room.",
-              "Bedrooms and bathrooms.",
-              "Amenities.",
-              "Architectural details.",
-              "Atmosphere and experience.",
-            ],
-            featured: false,
-          },
-        ],
-        notes: [
-          "The photographic production takes place once the project's physical works are complete, so the images reflect its best version.",
-        ],
-      },
-      {
-        service: "Digital marketing",
-        intro:
-          "A great project needs a strategy capable of making it visible. Creating an excellent space is not enough; the market needs to know it.",
-        packages: [
-          {
-            name: "Start",
-            positioning: "Designed for projects starting their digital presence.",
-            includes: [
-              "Initial creative meeting.",
-              "Basic content strategy.",
-              "1 professional photography session.",
-              "2 edited reels.",
-              "Bank of edited images.",
-              "Content ready to publish.",
-            ],
-            featured: false,
-          },
-          {
-            name: "Growth",
-            positioning: "Designed for projects seeking to consolidate their presence.",
-            includes: [
-              "Basic content strategy.",
-              "Creative direction.",
-              "1 professional photography session.",
-              "5 edited reels.",
-              "Bank of professional photographs.",
-              "Visual communication guide.",
-              "Content ready to publish.",
-            ],
-            featured: true,
-          },
-          {
-            name: "Signature",
-            positioning: "The comprehensive communication solution.",
-            includes: [
-              "Brand strategy.",
-              "Comprehensive creative direction.",
-              "Premium audiovisual production.",
-              "Professional photography.",
-              "Corporate or promotional video.",
-              "Reels for campaigns.",
-              "Aerial drone footage.",
-              "Complete library of images and videos for 1 to 3 months.",
-            ],
-            featured: false,
-          },
-        ],
-        notes: [] as string[],
-      },
-    ],
     packagesPricingNote:
       "The investment for each package is detailed in the proposal, according to the project's needs and stage.",
     packagesTravelNote:
@@ -1366,6 +1354,7 @@ export const en: Dictionary = {
       "Tableware, glassware and table accessories.",
       "Decorative lighting.",
       "Art and styling elements.",
+      "Support during purchasing and implementation.",
     ],
     processEyebrow: "Our process",
     processTitle: "Every element has a purpose within the project's story.",
@@ -1385,6 +1374,9 @@ export const en: Dictionary = {
     galleryEyebrow: "Environments",
     galleryTitle: "Pieces, textures and details that complete the experience.",
     galleryAlt: (i: number) => `Budaya — furnishing and styling (image ${i})`,
+    galleryOpenLabel: "Enlarge",
+    galleryCloseLabel: "Close",
+    galleryCounterTemplate: "{current} of {total}",
     galleryLabel: "Budaya",
     closingTitle: "We design environments. We create experiences.",
     closingText:
@@ -1433,6 +1425,7 @@ export const en: Dictionary = {
     filterAll: "All",
     filterArchitecture: "Architecture",
     filterLighting: "Lighting",
+    filterFurnishing: "Furnishing",
     filterGroupLabel: "Filter projects",
     previous: "Previous",
     next: "Next",

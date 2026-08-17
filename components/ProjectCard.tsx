@@ -35,7 +35,7 @@ export default function ProjectCard({
 }) {
   return (
     <Link
-      href={`/${lang}/portafolio/${project.slug}`}
+      href={project.href ? `/${lang}/${project.href}` : `/${lang}/portafolio/${project.slug}`}
       className="group relative block overflow-hidden"
     >
       <BrandImage

@@ -6,12 +6,12 @@ import CtaBanner from "@/components/CtaBanner";
 import Reveal from "@/components/Reveal";
 import { getDict, isLang, type Lang } from "@/lib/i18n";
 import { projectImages, type ImageTone } from "@/lib/images";
-import { getProject, projects } from "@/lib/projects";
+import { caseStudies, getProject } from "@/lib/projects";
 
 type Params = Promise<{ lang: string; slug: string }>;
 
 export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
+  return caseStudies.map((project) => ({ slug: project.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
@@ -36,11 +36,13 @@ export default async function ProjectPage({ params }: { params: Params }) {
   const lang = rawLang as Lang;
   const t = getDict(lang);
   const project = getProject(slug);
-  if (!project) notFound();
+  // Budaya aparece en el portafolio pero su card lleva a la página de la
+  // marca: acá no tiene ficha propia.
+  if (!project || project.href) notFound();
 
-  const index = projects.findIndex((p) => p.slug === project.slug);
-  const prev = projects[(index - 1 + projects.length) % projects.length];
-  const next = projects[(index + 1) % projects.length];
+  const index = caseStudies.findIndex((p) => p.slug === project.slug);
+  const prev = caseStudies[(index - 1 + caseStudies.length) % caseStudies.length];
+  const next = caseStudies[(index + 1) % caseStudies.length];
   const gallery = projectImages(project.slug).gallery;
   const categoryText = project.categories.map((c) => t.categories[c]).join(" · ");
   const excerpt = t.projectExcerpts[project.slug];
