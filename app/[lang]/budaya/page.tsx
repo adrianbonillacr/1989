@@ -38,7 +38,7 @@ export default async function BudayaPage({ params }: { params: Params }) {
           </Reveal>
 
           <Reveal className="mt-12">
-            <div className="grid gap-x-16 gap-y-6 lg:grid-cols-2">
+            <div className="grid gap-6">
               {b.introParagraphs.map((paragraph) => (
                 <p key={paragraph} className="max-w-[58ch] font-light leading-[1.75] text-charcoal">
                   {paragraph}
@@ -52,7 +52,7 @@ export default async function BudayaPage({ params }: { params: Params }) {
       {/* ¿QUÉ HACEMOS? — primeras 3 fotos */}
       <section className="section-pad bg-mist">
         <div className="container-site">
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
+          <div className="grid gap-10">
             <Reveal>
               <SectionHeader
                 eyebrow={b.scopeEyebrow}
@@ -101,7 +101,7 @@ export default async function BudayaPage({ params }: { params: Params }) {
       {/* NUESTRO PROCESO */}
       <section className="section-pad bg-white">
         <div className="container-site">
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
+          <div className="grid gap-10">
             <Reveal>
               <SectionHeader
                 eyebrow={b.processEyebrow}
@@ -139,7 +139,7 @@ export default async function BudayaPage({ params }: { params: Params }) {
             />
           </Reveal>
           <Reveal className="mt-12">
-            <div className="grid gap-x-16 gap-y-6 lg:grid-cols-2">
+            <div className="grid gap-6">
               {b.hospitalityParagraphs.map((paragraph) => (
                 <p key={paragraph} className="max-w-[58ch] font-light leading-[1.75] text-mist">
                   {paragraph}

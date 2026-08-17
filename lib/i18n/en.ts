@@ -901,10 +901,73 @@ export const en: Dictionary = {
     stage3Title: "A great project deserves an identity capable of communicating its value.",
     stage3Text:
       "Once the strategy is defined and the physical interventions are developed, a new stage begins: building the project's identity, narrative and presence. In the 19.89 Strategy, brand protection, photography and digital marketing are not understood as independent actions. They are tools that communicate, position and strengthen everything that has already been built.",
-    identityDisciplines: [
-      "Brand protection",
-      "Professional photography",
-      "Digital marketing",
+    scopeLabel: "Scope",
+    identityCards: [
+      {
+        label: "Brand protection",
+        title: "A valuable brand must also be protected.",
+        description:
+          "A project's identity is not only built, it must also be safeguarded. We legally protect the elements that make up the brand identity to strengthen its legal security, reduce risk and preserve its value as a strategic asset.",
+        scope: [
+          "Protection and exclusive right to use the brand.",
+          "Protection against third parties.",
+          "Positioning.",
+          "Visual identity.",
+          "Brand communication.",
+          "The brand as a strategic asset.",
+          "International projection of the brand.",
+        ],
+        benefits: [
+          "Greater differentiation.",
+          "More consistent communication.",
+          "Higher perceived value.",
+          "A stronger connection with the audience.",
+          "Clear ground for future positioning work.",
+        ],
+        note: "Includes the initial meeting, preliminary analysis, filing and submission, Nice classification, publication of the edict and support throughout the process. Legal proceedings are not covered if oppositions to the application are filed.",
+      },
+      {
+        label: "Professional photography",
+        title: "The first impression happens before the first visit.",
+        description:
+          "In most cases people discover a project through an image long before they experience it physically. Photography is therefore not only about documenting spaces: it communicates experiences, highlights attributes and conveys the project's value. We do not photograph spaces, we photograph the experience of being there.",
+        scope: [
+          "Architectural photography.",
+          "Interior photography.",
+          "Hospitality and travel photography.",
+          "Photographic direction and production.",
+          "Professional image editing.",
+        ],
+        benefits: [
+          "Higher perceived value.",
+          "A better presentation of the project.",
+          "Professional visual material.",
+          "Coherence between project, identity and communication.",
+        ],
+        note: "Production takes place once the physical interventions are finished, so the images reflect the project at its best. The package is defined by project type and detailed in the proposal.",
+      },
+      {
+        label: "Digital marketing",
+        title: "A great project needs a strategy capable of making it visible.",
+        description:
+          "Creating an excellent space is not enough: the market needs to know it. Digital marketing communicates the project's value, strengthens its positioning and connects it with the right audience. More than publishing posts, we build communication that is coherent with the identity and the experience the project represents.",
+        scope: [
+          "Digital communication strategy.",
+          "Content planning.",
+          "Brand positioning.",
+          "Social media management.",
+          "Digital communication campaigns.",
+          "Analysis and strategic optimization.",
+        ],
+        benefits: [
+          "Greater visibility.",
+          "More coherent communication.",
+          "Stronger brand.",
+          "More trust and recognition.",
+          "Better digital positioning.",
+        ],
+        note: "The work is organised into ongoing support packages, detailed below.",
+      },
     ],
     marketing: {
       label: "Digital marketing",

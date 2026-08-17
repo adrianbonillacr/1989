@@ -46,9 +46,9 @@ export default async function ProyectoYaConstruidoPage({ params }: { params: Par
             >
               01
             </span>
-            <div className="grid gap-10 md:grid-cols-[1fr_1.5fr] md:gap-16">
+            <div className="grid gap-8">
               <SectionHeader eyebrow={b.whyEyebrow} title={b.whyTitle} />
-              <p className="max-w-[56ch] self-end text-lg font-light leading-[1.7] text-charcoal">
+              <p className="max-w-[56ch] text-lg font-light leading-[1.7] text-charcoal">
                 {b.whyText}
               </p>
             </div>
@@ -130,9 +130,9 @@ export default async function ProyectoYaConstruidoPage({ params }: { params: Par
             >
               03
             </span>
-            <div className="grid gap-10 md:grid-cols-[1fr_1.5fr] md:gap-16">
+            <div className="grid gap-8">
               <SectionHeader eyebrow={b.roadmapEyebrow} title={b.roadmapTitle} />
-              <p className="max-w-[56ch] self-end text-lg font-light leading-[1.7] text-charcoal">
+              <p className="max-w-[56ch] text-lg font-light leading-[1.7] text-charcoal">
                 {b.roadmapText}
               </p>
             </div>

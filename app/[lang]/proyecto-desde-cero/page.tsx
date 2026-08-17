@@ -187,37 +187,26 @@ export default async function ProyectoDesdeCeroPage({ params }: { params: Params
             </p>
           </Reveal>
 
+          {/* Cada disciplina de la etapa abre su propia ficha */}
           <Reveal className="mt-12">
-            <ul className="grid gap-px border border-stone/40 bg-stone/40 sm:grid-cols-3" role="list">
-              {z.identityDisciplines.map((name) => (
-                <li key={name} className="bg-white p-6">
-                  <span className="text-[0.9rem] font-medium leading-snug text-ink">
-                    {name}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <DisciplineTabs
+              cards={z.identityCards}
+              benefitsLabel={z.benefitsLabel}
+              scopeLabel={z.scopeLabel}
+              ariaLabel={z.stage3Eyebrow}
+            />
           </Reveal>
 
-          {/* Marketing digital */}
+          {/* Paquetes de marketing (sin montos: la inversión se detalla en la propuesta) */}
           <Reveal className="mt-16">
-            <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
-              <div>
-                <p className="text-[0.66rem] font-medium uppercase tracking-[0.26em] text-stone">
-                  {z.marketing.label}
-                </p>
-                <p className="mt-5 max-w-[42ch] text-xl font-light leading-[1.55] text-ink">
-                  {z.marketing.intro}
-                </p>
-              </div>
-              <div>
-                <ListLabel>{z.marketing.scopeLabel}</ListLabel>
-                <BrandList items={z.marketing.scope} />
-              </div>
-            </div>
+            <p className="text-[0.66rem] font-medium uppercase tracking-[0.26em] text-stone">
+              {z.marketing.label}
+            </p>
+            <p className="mt-5 max-w-[42ch] text-xl font-light leading-[1.55] text-ink">
+              {z.marketing.intro}
+            </p>
           </Reveal>
 
-          {/* Paquetes (sin montos: la inversión se detalla en la propuesta) */}
           <div className="mt-14 grid gap-8 lg:grid-cols-3">
             {z.packages.map((pkg, i) => (
               <Reveal key={pkg.name} delay={i * 100}>
@@ -300,7 +289,7 @@ export default async function ProyectoDesdeCeroPage({ params }: { params: Params
           </Reveal>
 
           <Reveal className="mt-12">
-            <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="grid gap-10">
               <div>
                 <ListLabel dark>{z.stage4EvaluationLabel}</ListLabel>
                 <BrandList items={z.stage4Evaluation} dark />

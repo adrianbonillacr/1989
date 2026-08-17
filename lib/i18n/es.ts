@@ -940,10 +940,75 @@ export const es = {
     stage3Title: "Un gran proyecto merece una identidad capaz de comunicar su valor.",
     stage3Text:
       "Una vez definida la estrategia y desarrolladas las intervenciones físicas, comienza una nueva etapa: construir la identidad, la narrativa y la presencia del proyecto. En la Estrategia 19.89, la protección de identidad, la fotografía y el marketing digital no se entienden como acciones independientes. Son herramientas que permiten comunicar, posicionar y fortalecer todo aquello que ya ha sido construido.",
-    identityDisciplines: [
-      "Protección de identidad",
-      "Fotografía profesional",
-      "Marketing digital",
+    // Las tres disciplinas de la etapa funcionan como pestañas, igual que en
+    // la etapa 2: al pulsar una se muestra su ficha debajo.
+    scopeLabel: "Alcances",
+    identityCards: [
+      {
+        label: "Protección de identidad",
+        title: "Una marca valiosa también debe estar protegida.",
+        description:
+          "La identidad de un proyecto no solo se construye, también debe resguardarse. Protegemos legalmente los elementos que conforman la identidad de marca para fortalecer su seguridad jurídica, reducir riesgos y preservar su valor como activo estratégico.",
+        scope: [
+          "Protección y derecho exclusivo de uso de la marca.",
+          "Protección frente a terceros.",
+          "Posicionamiento.",
+          "Identidad visual.",
+          "Comunicación de marca.",
+          "La marca como activo estratégico.",
+          "Proyección internacional de la marca.",
+        ],
+        benefits: [
+          "Mayor diferenciación.",
+          "Comunicación más consistente.",
+          "Mayor valor percibido.",
+          "Conexión más sólida con la audiencia.",
+          "Bases claras para futuras acciones de posicionamiento.",
+        ],
+        note: "Incluye reunión inicial, análisis preliminar, solicitud y presentación, clasificación Niza, publicación de edicto y acompañamiento durante todo el proceso. No cubre el trámite legal si se presentan oposiciones a la solicitud de inscripción.",
+      },
+      {
+        label: "Fotografía profesional",
+        title: "La primera impresión ocurre antes de la primera visita.",
+        description:
+          "En la mayoría de los casos las personas conocen un proyecto a través de una imagen mucho antes de experimentarlo físicamente. Por eso la fotografía no busca únicamente documentar espacios: comunica experiencias, destaca atributos y transmite el valor del proyecto. No fotografiamos espacios, fotografiamos la experiencia de estar allí.",
+        scope: [
+          "Fotografía arquitectónica.",
+          "Fotografía de interiores.",
+          "Fotografía hotelera y turística.",
+          "Dirección y producción fotográfica.",
+          "Edición profesional de imágenes.",
+        ],
+        benefits: [
+          "Mayor valor percibido.",
+          "Mejor presentación del proyecto.",
+          "Material visual profesional.",
+          "Coherencia entre proyecto, identidad y comunicación.",
+        ],
+        note: "La producción se realiza una vez finalizadas las intervenciones físicas, para que las imágenes reflejen la mejor versión del proyecto. El paquete se define según el tipo de proyecto y se detalla en la propuesta.",
+      },
+      {
+        label: "Marketing digital",
+        title: "Un gran proyecto necesita una estrategia capaz de hacerlo visible.",
+        description:
+          "No basta con crear un excelente espacio: el mercado necesita conocerlo. El marketing digital comunica el valor del proyecto, fortalece su posicionamiento y lo conecta con la audiencia adecuada. Más que generar publicaciones, construimos una comunicación coherente con la identidad y la experiencia que el proyecto representa.",
+        scope: [
+          "Estrategia de comunicación digital.",
+          "Planificación de contenido.",
+          "Posicionamiento de marca.",
+          "Gestión de redes sociales.",
+          "Campañas de comunicación digital.",
+          "Análisis y optimización estratégica.",
+        ],
+        benefits: [
+          "Mayor visibilidad.",
+          "Comunicación más coherente.",
+          "Fortalecimiento de marca.",
+          "Mayor confianza y reconocimiento.",
+          "Mejor posicionamiento digital.",
+        ],
+        note: "El trabajo se organiza en paquetes de acompañamiento continuo, detallados más abajo.",
+      },
     ],
     marketing: {
       label: "Marketing digital",

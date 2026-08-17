@@ -6,9 +6,42 @@ type Card = {
   label: string;
   title: string;
   description: string;
+  /** Alcances de la disciplina: opcional, no todas las etapas los detallan. */
+  scope?: readonly string[];
   benefits: readonly string[];
   note: string;
 };
+
+/** La fila de pestañas se reparte según cuántas disciplinas tenga la etapa. */
+const TABLIST_COLUMNS: Record<number, string> = {
+  2: "sm:grid-cols-2",
+  3: "sm:grid-cols-3",
+  4: "sm:grid-cols-2 lg:grid-cols-4",
+  5: "sm:grid-cols-2 lg:grid-cols-5",
+  6: "sm:grid-cols-2 lg:grid-cols-3",
+};
+
+/** Lista rotulada con el punto cuadrado de marca. */
+function BulletList({ label, items }: { label: string; items: readonly string[] }) {
+  return (
+    <div>
+      <p className="mb-4 text-[0.68rem] font-medium uppercase tracking-[0.26em] text-earth">
+        {label}
+      </p>
+      <ul className="space-y-3" role="list">
+        {items.map((item) => (
+          <li key={item} className="flex items-baseline gap-3">
+            <span
+              aria-hidden="true"
+              className="h-[0.32rem] w-[0.32rem] shrink-0 translate-y-[-0.1rem] bg-earth"
+            />
+            <span className="font-light leading-[1.65] text-charcoal">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 /**
  * Disciplinas de una etapa como pestañas: la fila de nombres selecciona
@@ -21,10 +54,13 @@ type Card = {
 export default function DisciplineTabs({
   cards,
   benefitsLabel,
+  scopeLabel,
   ariaLabel,
 }: {
   cards: readonly Card[];
   benefitsLabel: string;
+  /** Rótulo de la lista de alcances, cuando las fichas los traen. */
+  scopeLabel?: string;
   /** Nombre de la etapa, para que el lector de pantalla ubique la fila. */
   ariaLabel: string;
 }) {
@@ -61,7 +97,9 @@ export default function DisciplineTabs({
       <div
         role="tablist"
         aria-label={ariaLabel}
-        className="grid gap-px border border-stone/40 bg-stone/40 sm:grid-cols-2 lg:grid-cols-5"
+        className={`grid gap-px border border-stone/40 bg-stone/40 ${
+          TABLIST_COLUMNS[cards.length] ?? "sm:grid-cols-2 lg:grid-cols-5"
+        }`}
       >
         {cards.map((c, i) => {
           const selected = i === active;
@@ -115,26 +153,14 @@ export default function DisciplineTabs({
         <h3 className="mt-4 max-w-[28ch] text-2xl font-semibold leading-snug text-ink">
           {card.title}
         </h3>
-        <div className="mt-6 grid gap-10 lg:grid-cols-2">
+        <div className="mt-6 grid gap-8">
           <p className="max-w-[52ch] font-light leading-[1.7] text-charcoal">
             {card.description}
           </p>
-          <div>
-            <p className="mb-4 text-[0.68rem] font-medium uppercase tracking-[0.26em] text-earth">
-              {benefitsLabel}
-            </p>
-            <ul className="space-y-3" role="list">
-              {card.benefits.map((item) => (
-                <li key={item} className="flex items-baseline gap-3">
-                  <span
-                    aria-hidden="true"
-                    className="h-[0.32rem] w-[0.32rem] shrink-0 translate-y-[-0.1rem] bg-earth"
-                  />
-                  <span className="font-light leading-[1.65] text-charcoal">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {card.scope && scopeLabel && (
+            <BulletList label={scopeLabel} items={card.scope} />
+          )}
+          <BulletList label={benefitsLabel} items={card.benefits} />
         </div>
         <p className="mt-8 border-t border-stone/40 pt-5 text-[0.82rem] font-light leading-[1.7] text-charcoal">
           {card.note}

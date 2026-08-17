@@ -38,7 +38,7 @@ export default async function QuienesSomosPage({ params }: { params: Params }) {
           </Reveal>
 
           <Reveal className="mt-12">
-            <div className="grid gap-x-16 gap-y-6 lg:grid-cols-2">
+            <div className="grid gap-6">
               {a.introParagraphs.map((paragraph) => (
                 <p key={paragraph} className="max-w-[58ch] font-light leading-[1.75] text-charcoal">
                   {paragraph}
@@ -55,7 +55,7 @@ export default async function QuienesSomosPage({ params }: { params: Params }) {
       {/* ESPECIALISTAS EN HOSPITALITY */}
       <section className="section-pad bg-mist">
         <div className="container-site">
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
+          <div className="grid gap-10">
             <Reveal>
               <SectionHeader
                 eyebrow={a.hospitalityEyebrow}
@@ -79,7 +79,7 @@ export default async function QuienesSomosPage({ params }: { params: Params }) {
       {/* DISEÑAMOS CON PROPÓSITO */}
       <section className="section-pad bg-white">
         <div className="container-site">
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
+          <div className="grid gap-10">
             <Reveal>
               <SectionHeader
                 eyebrow={a.purposeEyebrow}
