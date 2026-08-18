@@ -5,8 +5,8 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import type { GalleryImage } from "@/lib/images";
 
-/** Foto con su texto alternativo ya resuelto en el servidor. */
-export type GalleryPhoto = GalleryImage & { alt: string };
+/** Foto con su texto alternativo y su pie ya resueltos en el servidor. */
+export type GalleryPhoto = GalleryImage & { alt: string; caption: string };
 
 type Labels = {
   openLabel: string;
@@ -114,6 +114,9 @@ export default function PhotoGallery({
               quality={82}
               className="h-auto w-full transition-transform duration-[600ms] ease-out group-hover:scale-[1.03]"
             />
+            <span className="mt-3 block text-[0.82rem] font-light leading-[1.5] text-charcoal transition-colors duration-300 group-hover:text-earth">
+              {image.caption}
+            </span>
           </button>
         ))}
       </div>
@@ -127,10 +130,15 @@ export default function PhotoGallery({
             className="fixed inset-0 z-50 flex flex-col bg-ink/95"
             onClick={close}
           >
-            <div className="flex items-center justify-between gap-4 px-5 py-4 sm:px-8">
-              <p className="text-[0.68rem] font-medium uppercase tracking-[0.24em] text-stone">
-                {counter(open.index + 1)}
-              </p>
+            <div className="flex items-center justify-between gap-6 px-5 py-4 sm:px-8">
+              <div className="min-w-0">
+                <p className="text-[0.68rem] font-medium uppercase tracking-[0.24em] text-stone">
+                  {counter(open.index + 1)}
+                </p>
+                <p className="mt-1.5 truncate font-light leading-[1.5] text-mist">
+                  {open.image.caption}
+                </p>
+              </div>
               <button
                 ref={closeRef}
                 type="button"

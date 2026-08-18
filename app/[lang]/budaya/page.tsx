@@ -174,6 +174,7 @@ export default async function BudayaPage({ params }: { params: Params }) {
               images={budayaGallery.slice(3).map((image, i) => ({
                 ...image,
                 alt: b.galleryAlt(i + 4),
+                caption: b.galleryCaptions[i + 3],
               }))}
               labels={{
                 openLabel: b.galleryOpenLabel,
