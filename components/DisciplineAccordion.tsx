@@ -114,7 +114,7 @@ export default function DisciplineAccordion({
               className="group flex w-full items-center gap-6 py-6 text-left"
             >
               <span className="min-w-0 flex-1">
-                <span className="block text-[0.6rem] font-medium uppercase tracking-[0.24em] text-stone">
+                <span className="block text-[0.72rem] font-medium uppercase tracking-[0.24em] text-stone">
                   {labels.stageLabels[d.stage]}
                 </span>
                 <span
