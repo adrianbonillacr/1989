@@ -1317,13 +1317,82 @@ export const en: Dictionary = {
     teamModalClose: "Close",
     teamBioPending: "Bio coming soon.",
     teamMembers: [
-      { slug: "luisk-salas", name: "LuisK Salas", role: "", bio: [] as string[] },
-      { slug: "jorge-salas", name: "Jorge Salas", role: "", bio: [] as string[] },
+      {
+        slug: "luisk-salas",
+        name: "Luis Carlos Salas Chaves",
+        role: "Founder & Creative Director",
+        credentials: "Architect | Lighting Designer | Hospitality Design",
+        bio: [
+          "Luis Carlos Salas is an architect and a specialist in Lighting Design from the Universitat Politècnica de Catalunya (UPC Barcelona). With more than 14 years of experience, he has built a career across hospitality, residential, commercial and industrial projects, integrating architecture, light and user experience to create spaces with identity, functionality and high perceived value.",
+          "Throughout his career he has taken part in architecture projects across the hospitality, residential, commercial and industrial sectors, consolidating an integral vision that combines design, functionality and strategy. In parallel, he has led the design and development of lighting projects for public institutions nationwide, as well as for private companies and developments, strengthening his ability to integrate light as a strategic element within architecture and user experience.",
+          "In 2017 he received the Sylvania Regional Award for Best Lighting Project, a recognition of excellence and innovation in lighting design across the region. In 2024 he was the author and exhibitor of the piece De Luz y De Color, presented at Mextrópoli, the International Architecture and City Festival held in Mexico City and one of Latin America's most important architecture gatherings.",
+          "As founder and creative director of 19.89 Arquitectura, he leads a firm specialised in architecture and lighting design for hospitality projects, complementing that vision with strategic services that accompany owners and investors from the initial evaluation of a project through to its consolidation, integrating architecture, lighting, interior design and strategy.",
+          "His philosophy starts from a clear premise: the best projects are born when design is complemented by a solid strategy and every decision contributes to creating value, differentiating the project and building memorable experiences.",
+        ] as string[],
+      },
+      {
+        slug: "jorge-salas",
+        name: "Jorge Andrés Salas Chaves",
+        role: "Founding Partner & Director of Strategy and Finance",
+        credentials: "Business Administration | MBA",
+        bio: [
+          "Jorge Andrés Salas holds a Master of Business Administration (MBA) from ADEN Business School and a degree in Business Administration with a focus on Finance from the Instituto Tecnológico de Costa Rica (TEC).",
+          "With 19 years of professional experience, he has led the strategy, development and consolidation of companies and projects across the automotive, architecture, hospitality and real estate development sectors, contributing a strategic vision aimed at generating sustainable value.",
+          "As a founding partner of 19.89 Arquitectura, he believes the most successful projects are born when exceptional design is complemented by a solid strategy and a long-term business vision. His commitment is to help develop projects that build trust, create value and last over time.",
+        ] as string[],
+      },
+      {
+        slug: "matias-gutierrez",
+        name: "Matías Gutiérrez Salas",
+        role: "Architecture Assistant",
+        credentials: "Civil Engineering student | Universidad de Costa Rica (UCR)",
+        bio: [
+          "Matías is a Civil Engineering student at the Universidad de Costa Rica (UCR) and part of the 19.89 Arquitectura team as an Architecture Assistant.",
+          "His work focuses on supporting project coordination, schedule planning, on-site data gathering and the follow-up of internal processes, contributing to the orderly and efficient development of each project. He also brings a civil engineering perspective that complements the design process and strengthens technical coordination within the firm.",
+          "As part of the 19.89 Arquitectura team, he accompanies projects from their earliest stages, helping each process unfold with organisation, attention to detail and an integral approach.",
+        ] as string[],
+      },
+      {
+        slug: "stephannie-tenorio",
+        name: "Stephannie Tenorio Barrios",
+        role: "Legal Director",
+        credentials:
+          "Attorney | Public Notary | Corporate Law and Legal Risk Prevention",
+        bio: [
+          "Stephannie Tenorio is an attorney and public notary with a law degree from Universidad de La Salle, a specialisation in Notarial and Registry Law from Universidad San José and a Master's in Conflict Resolution and Mediation from the Universidad Internacional Iberoamericana (UNINI).",
+          "With more than 15 years of professional experience across the public and private sectors, she has built a solid career now focused on corporate law, preventive counsel and legal risk management, supporting individuals, companies and projects in structuring commercial relationships and making decisions with legal certainty.",
+          "At 19.89 Arquitectura she contributes a strategic vision aimed at ensuring every project is developed on solid legal ground, providing legal support at each stage of the process and promoting decisions that minimise risk and strengthen trust among all parties.",
+        ] as string[],
+        quote:
+          "The best legal strategy is the one that anticipates risks before they turn into conflicts. My commitment is to help each project move forward with confidence and a solid legal foundation, from conception through to consolidation.",
+      },
+      {
+        slug: "alonso-aguirre",
+        name: "Alonso Aguirre Lépiz",
+        role: "Surveying Engineer",
+        credentials:
+          "Specialist in Territorial Development, Infrastructure and Real Estate Management",
+        bio: [
+          "Alonso Aguirre Lépiz is a Surveying Engineer from the Universidad Nacional de Costa Rica (UNA), with more than 14 years of experience in infrastructure, urban planning, cadastre and real estate development. Over his career he has taken part in the planning, design and execution of major public and private projects, including highways, bridges, viaducts, port terminals, hospitality developments and large-scale residential projects.",
+          "He leads the team specialised in surveying, cadastre, georeferencing, territorial analysis and technical management for real estate, hospitality and construction projects. His approach combines technical knowledge of the territory with a strategic vision that identifies opportunities, streamlines development processes and reduces risk from a project's earliest stages.",
+          "During his career he has held leadership roles as Head of Surveying, Head of the Technical Office and Project Manager, taking part in some of the country's most significant infrastructure works for institutions such as MOPT, CNC, the IDB and local governments. That experience has given him an integral understanding of construction processes, territorial regulation and the multidisciplinary coordination that highly complex projects require.",
+          "He has contributed to the consolidation of hospitality, residential and commercial projects, providing reliable technical information for decisions on property acquisition, feasibility studies, territorial planning, cadastres, subdivisions and land management.",
+          "His commitment is to help develop projects that generate sustainable value, integrating technical precision, knowledge of the territory and a vision oriented toward the orderly growth of each real estate investment.",
+        ] as string[],
+      },
+      {
+        slug: "adrian-bonilla",
+        name: "Adrián A. Bonilla",
+        role: "Audiovisual Director & Marketing Specialist",
+        credentials: "MSc. Advertising Design | Photography and videography",
+        bio: [
+          "Adrián Bonilla holds a degree in Advertising Design, with technical training in Graphic Design and a professional career developed since 2018 across agencies, brands and independent projects.",
+          "His experience combines a solid artistic and technical foundation with a strategic view of communication. He commands the principles, systems and structures of design, the Adobe Creative Suite ecosystem and the integration of artificial intelligence into ideation, concept development, design and audiovisual production. Over his career he has managed more than 50 commercial accounts and led multidisciplinary creative teams, coordinating strategy, production, client communication and campaign execution in both remote and on-site settings.",
+          "At 19.89 Arquitectura he contributes a creative and strategic vision aimed at building visual communication coherent with the identity, philosophy and quality of each project. His work translates architectural concepts into clear, relevant visual experiences, strengthening the brand's presence and connecting each project with people through design, content and communication.",
+        ] as string[],
+      },
       { slug: "aaron-fonseca", name: "Aarón Fonseca", role: "", bio: [] as string[] },
-      { slug: "alonso-aguirre", name: "Alonso Aguirre", role: "", bio: [] as string[] },
       { slug: "jeancarlo-amores", name: "Jeancarlo Amores", role: "", bio: [] as string[] },
-      { slug: "matias-gutierrez", name: "Matías Gutiérrez Salas", role: "", bio: [] as string[] },
-      { slug: "stephannie-tenorio", name: "Stephannie Tenorio", role: "", bio: [] as string[] },
     ],
   },
 

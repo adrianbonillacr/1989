@@ -9,8 +9,12 @@ export type TeamMember = {
   name: string;
   /** Cargo. Vacío mientras el cliente no lo defina: entonces no se rotula. */
   role: string;
+  /** Formación y especialidades, separadas por barras. Opcional. */
+  credentials?: string;
   /** Biografía en párrafos. Vacía hasta que llegue el texto real. */
   bio: readonly string[];
+  /** Frase propia, al cierre de la biografía. Opcional. */
+  quote?: string;
   /** Texto alternativo del retrato, ya resuelto en el servidor. */
   alt: string;
 };
@@ -135,7 +139,7 @@ export default function TeamGallery({
             aria-modal="true"
             aria-label={`${labels.modalLabel} — ${active.name}`}
             onClick={(e) => e.stopPropagation()}
-            className="accordion-panel max-h-[92svh] w-full max-w-3xl overflow-y-auto bg-white"
+            className="accordion-panel max-h-[92svh] w-full max-w-4xl overflow-y-auto bg-white"
           >
             <div className="grid sm:grid-cols-[minmax(0,15rem)_1fr]">
               <div className="relative aspect-[3/4] w-full max-sm:max-h-[38svh]">
@@ -160,6 +164,11 @@ export default function TeamGallery({
                     {active.role ? (
                       <p className="mt-2 font-light leading-[1.6] text-earth">
                         {active.role}
+                      </p>
+                    ) : null}
+                    {active.credentials ? (
+                      <p className="mt-2 text-[0.82rem] font-light leading-[1.6] text-stone">
+                        {active.credentials}
                       </p>
                     ) : null}
                   </div>
@@ -188,6 +197,11 @@ export default function TeamGallery({
                       {labels.bioPending}
                     </p>
                   )}
+                  {active.quote ? (
+                    <blockquote className="border-l border-earth pl-5 font-light italic leading-[1.7] text-ink">
+                      {active.quote}
+                    </blockquote>
+                  ) : null}
                 </div>
               </div>
             </div>

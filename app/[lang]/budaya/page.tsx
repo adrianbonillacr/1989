@@ -59,7 +59,7 @@ export default async function BudayaPage({ params }: { params: Params }) {
                 eyebrow={b.scopeEyebrow}
                 titleSizeClassName="text-[clamp(1.9rem,3.6vw,2.9rem)]"
               />
-              <p className="mt-8 max-w-[30ch] text-[clamp(1.15rem,2.2vw,1.45rem)] font-light leading-[1.55] text-earth">
+              <p className="mt-8 max-w-[30ch] text-lead font-light leading-[1.55] text-earth">
                 {b.scopeTitle}
               </p>
             </Reveal>
@@ -108,7 +108,7 @@ export default async function BudayaPage({ params }: { params: Params }) {
                 eyebrow={b.processEyebrow}
                 titleSizeClassName="text-[clamp(1.9rem,3.6vw,2.9rem)]"
               />
-              <p className="mt-8 max-w-[30ch] text-[clamp(1.15rem,2.2vw,1.45rem)] font-light leading-[1.55] text-earth">
+              <p className="mt-8 max-w-[30ch] text-lead font-light leading-[1.55] text-earth">
                 {b.processTitle}
               </p>
             </Reveal>
@@ -124,7 +124,7 @@ export default async function BudayaPage({ params }: { params: Params }) {
                   </p>
                 ))}
               </div>
-              <p className="mt-10 border-l border-earth pl-6 text-[clamp(1.1rem,2vw,1.35rem)] font-light leading-[1.6] text-ink">
+              <p className="mt-10 border-l border-earth pl-6 text-lead font-light leading-[1.6] text-ink">
                 {b.processHighlight}
               </p>
             </Reveal>
@@ -201,7 +201,7 @@ export default async function BudayaPage({ params }: { params: Params }) {
             <p className="mt-10 text-[clamp(1.9rem,4vw,2.9rem)] font-semibold leading-[1.18] text-ink">
               {b.closingTitle}
             </p>
-            <p className="mx-auto mt-8 max-w-[54ch] text-[clamp(1.05rem,2vw,1.3rem)] font-light leading-[1.6] text-charcoal">
+            <p className="mx-auto mt-8 max-w-[54ch] text-lead font-light leading-[1.6] text-charcoal">
               {b.closingText}
             </p>
           </Reveal>

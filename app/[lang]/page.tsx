@@ -106,7 +106,7 @@ export default async function HomePage({ params }: { params: Params }) {
                 </p>
               ))}
             </div>
-            <p className="mt-12 border-l border-earth pl-6 text-[clamp(1.15rem,2.2vw,1.5rem)] font-light leading-[1.6] text-ink">
+            <p className="mt-12 border-l border-earth pl-6 text-lead font-light leading-[1.6] text-ink">
               {t.home.purposeHighlight}
             </p>
           </Reveal>

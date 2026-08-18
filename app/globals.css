@@ -13,6 +13,13 @@
   --color-mist: #d1cfcb;
 
   --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  /* Cuerpo mayor: bajada de un bloque, destacado con filete y parrafo de
+     apertura o de cierre. Los tres cumplen el mismo papel y estaban escritos
+     con cinco tamanos distintos (1.3 / 1.35 / 1.45 / 1.5rem), asi que la
+     misma pieza se veia de un tamano en Budaya y de otro en Quienes Somos.
+     Un solo valor para todos. */
+  --text-lead: clamp(1.15rem, 2.2vw, 1.5rem);
 }
 
 @layer base {

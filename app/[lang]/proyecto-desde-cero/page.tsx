@@ -59,7 +59,7 @@ export default async function ProyectoDesdeCeroPage({ params }: { params: Params
         <div className="container-site">
           <Reveal>
             <SectionHeader eyebrow={z.introEyebrow} />
-            <p className="mt-10 max-w-[58ch] text-[clamp(1.15rem,2.2vw,1.5rem)] font-light leading-[1.6] text-ink">
+            <p className="mt-10 max-w-[58ch] text-lead font-light leading-[1.6] text-ink">
               {z.introText}
             </p>
           </Reveal>
@@ -263,7 +263,7 @@ export default async function ProyectoDesdeCeroPage({ params }: { params: Params
         <div className="container-site">
           <Reveal>
             <SectionHeader eyebrow={z.closingEyebrow} />
-            <p className="mt-10 max-w-[56ch] text-[clamp(1.15rem,2.2vw,1.5rem)] font-light leading-[1.6] text-ink">
+            <p className="mt-10 max-w-[56ch] text-lead font-light leading-[1.6] text-ink">
               {z.closingText}
             </p>
           </Reveal>

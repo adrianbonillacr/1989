@@ -29,7 +29,7 @@ export default async function ProyectoYaConstruidoPage({ params }: { params: Par
         <div className="container-site">
           <Reveal>
             <SectionHeader eyebrow={b.introEyebrow} />
-            <p className="mt-10 max-w-[56ch] text-[clamp(1.15rem,2.2vw,1.5rem)] font-light leading-[1.6] text-ink">
+            <p className="mt-10 max-w-[56ch] text-lead font-light leading-[1.6] text-ink">
               {b.introText}
             </p>
           </Reveal>
@@ -161,7 +161,7 @@ export default async function ProyectoYaConstruidoPage({ params }: { params: Par
           </Reveal>
 
           <Reveal className="mt-20">
-            <p className="max-w-[56ch] text-[clamp(1.05rem,2vw,1.35rem)] font-light leading-[1.6] text-ink">
+            <p className="max-w-[56ch] text-lead font-light leading-[1.6] text-ink">
               {b.closingText}
             </p>
           </Reveal>

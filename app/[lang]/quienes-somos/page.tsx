@@ -48,7 +48,7 @@ export default async function QuienesSomosPage({ params }: { params: Params }) {
                 </p>
               ))}
             </div>
-            <p className="mt-12 border-l border-earth pl-6 text-[clamp(1.15rem,2.2vw,1.5rem)] font-light leading-[1.6] text-ink">
+            <p className="mt-12 border-l border-earth pl-6 text-lead font-light leading-[1.6] text-ink">
               {a.introHighlight}
             </p>
           </Reveal>
@@ -64,7 +64,7 @@ export default async function QuienesSomosPage({ params }: { params: Params }) {
                 eyebrow={a.hospitalityEyebrow}
                 titleSizeClassName="text-[clamp(1.9rem,3.6vw,2.9rem)]"
               />
-              <p className="mt-8 max-w-[30ch] text-[clamp(1.15rem,2.2vw,1.45rem)] font-light leading-[1.55] text-earth">
+              <p className="mt-8 max-w-[30ch] text-lead font-light leading-[1.55] text-earth">
                 {a.hospitalityTitle}
               </p>
             </Reveal>
@@ -88,7 +88,7 @@ export default async function QuienesSomosPage({ params }: { params: Params }) {
                 eyebrow={a.purposeEyebrow}
                 titleSizeClassName="text-[clamp(1.9rem,3.6vw,2.9rem)]"
               />
-              <p className="mt-8 max-w-[30ch] text-[clamp(1.15rem,2.2vw,1.45rem)] font-light leading-[1.55] text-earth">
+              <p className="mt-8 max-w-[30ch] text-lead font-light leading-[1.55] text-earth">
                 {a.purposeTitle}
               </p>
             </Reveal>

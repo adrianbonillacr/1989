@@ -1377,13 +1377,82 @@ export const es = {
      */
     teamBioPending: "Biografía en preparación.",
     teamMembers: [
-      { slug: "luisk-salas", name: "LuisK Salas", role: "", bio: [] as string[] },
-      { slug: "jorge-salas", name: "Jorge Salas", role: "", bio: [] as string[] },
+      {
+        slug: "luisk-salas",
+        name: "Luis Carlos Salas Chaves",
+        role: "Fundador & Director Creativo",
+        credentials: "Arquitecto | Lighting Designer | Hospitality Design",
+        bio: [
+          "Luis Carlos Salas es arquitecto y especialista en Diseño de Iluminación por la Universitat Politècnica de Catalunya (UPC Barcelona). Con más de 14 años de experiencia, ha desarrollado una trayectoria profesional en proyectos turísticos, residenciales, comerciales e industriales, integrando la arquitectura, la luz y la experiencia del usuario para crear espacios con identidad, funcionalidad y un alto valor percibido.",
+          "A lo largo de su carrera ha participado en el desarrollo de proyectos de arquitectura en los sectores turístico, residencial, comercial e industrial, consolidando una visión integral que combina diseño, funcionalidad y estrategia. De forma complementaria, ha liderado el diseño y desarrollo de proyectos de iluminación para instituciones públicas a nivel nacional, así como para empresas y desarrollos del sector privado, fortaleciendo su capacidad para integrar la luz como un elemento estratégico dentro de la arquitectura y la experiencia del usuario.",
+          "En 2017 recibió el Premio Regional Sylvania al Mejor Proyecto de Iluminación, reconocimiento que destaca la excelencia e innovación en el desarrollo de proyectos de iluminación en la región. En 2024 fue autor y expositor de la pieza De Luz y De Color, presentada en Mextrópoli, Festival Internacional de Arquitectura y Ciudad celebrado en Ciudad de México, uno de los encuentros de arquitectura más importantes de Latinoamérica.",
+          "Como fundador y director creativo de 19.89 Arquitectura, lidera una firma especializada en arquitectura y diseño de iluminación para proyectos de hospitality, complementando esta visión con servicios estratégicos que permiten acompañar a propietarios e inversionistas desde la evaluación inicial del proyecto hasta su consolidación, integrando arquitectura, iluminación, interiorismo y estrategia.",
+          "Su filosofía parte de una premisa clara: los mejores proyectos nacen cuando el diseño se complementa con una estrategia sólida y cada decisión contribuye a generar valor, diferenciar el proyecto y crear experiencias memorables.",
+        ] as string[],
+      },
+      {
+        slug: "jorge-salas",
+        name: "Jorge Andrés Salas Chaves",
+        role: "Socio Fundador & Director de Estrategia y Finanzas",
+        credentials: "Administrador de Empresas | MBA",
+        bio: [
+          "Jorge Andrés Salas es Administrador de Empresas con un Máster en Administración de Empresas (MBA) por ADEN Business School y una Licenciatura en Administración de Empresas con énfasis en Finanzas por el Instituto Tecnológico de Costa Rica (TEC).",
+          "Con 19 años de experiencia profesional, ha liderado la estrategia, el desarrollo y la consolidación de empresas y proyectos en los sectores automotriz, arquitectura, hospitalidad y desarrollo inmobiliario, aportando una visión estratégica orientada a generar valor sostenible.",
+          "Como socio fundador de 19.89 Arquitectura, cree que los proyectos más exitosos nacen cuando el diseño excepcional se complementa con una estrategia sólida y una visión empresarial de largo plazo. Su compromiso es contribuir al desarrollo de proyectos que generen confianza, creen valor y perduren en el tiempo.",
+        ] as string[],
+      },
+      {
+        slug: "matias-gutierrez",
+        name: "Matías Gutiérrez Salas",
+        role: "Asistente de Arquitectura",
+        credentials: "Estudiante de Ingeniería Civil | Universidad de Costa Rica (UCR)",
+        bio: [
+          "Matías es estudiante de Ingeniería Civil en la Universidad de Costa Rica (UCR) y forma parte del equipo de 19.89 Arquitectura como Asistente de Arquitectura.",
+          "Su trabajo se centra en el apoyo a la coordinación de proyectos, la planificación de agendas, el levantamiento de información en sitio y el seguimiento de procesos internos, contribuyendo al desarrollo ordenado y eficiente de cada proyecto. Además, aporta una perspectiva desde la ingeniería civil que complementa el proceso de diseño y fortalece la coordinación técnica dentro de la firma.",
+          "Como parte del equipo de 19.89 Arquitectura, participa en el acompañamiento de los proyectos desde sus etapas iniciales, colaborando para que cada proceso se desarrolle con organización, atención al detalle y un enfoque integral.",
+        ] as string[],
+      },
+      {
+        slug: "stephannie-tenorio",
+        name: "Stephannie Tenorio Barrios",
+        role: "Directora Legal",
+        credentials:
+          "Abogada | Notaria Pública | Derecho Corporativo y Prevención de Riesgos Legales",
+        bio: [
+          "Stephannie Tenorio es abogada y notaria pública, licenciada en Derecho por la Universidad de La Salle, con una especialización en Derecho Notarial y Registral por la Universidad San José y un Máster en Resolución de Conflictos y Mediación por la Universidad Internacional Iberoamericana (UNINI).",
+          "Con más de 15 años de experiencia profesional en los sectores público y privado, ha desarrollado una sólida trayectoria, hoy enfocada en derecho corporativo, asesoría preventiva y gestión de riesgos legales, acompañando personas, empresas y proyectos en la estructuración de relaciones comerciales y la toma de decisiones con seguridad jurídica.",
+          "En 19.89 Arquitectura, aporta una visión estratégica orientada a asegurar que cada proyecto se desarrolle sobre una base jurídica sólida, brindando respaldo legal en cada etapa del proceso y promoviendo decisiones que minimicen riesgos y fortalezcan la confianza entre todas las partes.",
+        ] as string[],
+        quote:
+          "La mejor estrategia legal es aquella que anticipa los riesgos antes de que se conviertan en conflictos. Mi compromiso es contribuir a que cada proyecto avance con confianza y una base jurídica sólida desde su concepción hasta su consolidación.",
+      },
+      {
+        slug: "alonso-aguirre",
+        name: "Alonso Aguirre Lépiz",
+        role: "Ingeniero Topógrafo",
+        credentials:
+          "Especialista en Desarrollo Territorial, Infraestructura y Gestión Inmobiliaria",
+        bio: [
+          "Alonso Aguirre Lépiz es Ingeniero Topógrafo graduado de la Universidad Nacional de Costa Rica (UNA), con más de 14 años de experiencia en proyectos de infraestructura, urbanismo, catastro y desarrollo inmobiliario. A lo largo de su trayectoria ha participado en la planificación, diseño y ejecución de importantes proyectos públicos y privados, incluyendo carreteras, puentes, viaductos, terminales portuarias, desarrollos turísticos y proyectos residenciales de gran escala.",
+          "Lidera el equipo especializado en topografía, catastro, georreferenciación, análisis territorial y gestión técnica para proyectos inmobiliarios, turísticos y de construcción. Su enfoque combina el conocimiento técnico del territorio con una visión estratégica que permite identificar oportunidades, optimizar procesos de desarrollo y reducir riesgos desde las etapas iniciales de un proyecto.",
+          "Durante su carrera ha ocupado cargos de liderazgo como Jefe de Topografía, Jefe de Oficina Técnica y Gerente de Proyectos, participando en algunas de las obras de infraestructura más relevantes del país para instituciones como el MOPT, el CNC, el BID y gobiernos locales. Esta experiencia le ha permitido desarrollar una comprensión integral de los procesos constructivos, la normativa territorial y la coordinación multidisciplinaria que requieren los proyectos de alta complejidad.",
+          "Ha participado en la consolidación de proyectos turísticos, residenciales y comerciales, aportando información técnica confiable para la toma de decisiones relacionadas con adquisición de propiedades, estudios de factibilidad, planificación territorial, catastros, segregaciones y gestión del suelo.",
+          "Su compromiso es contribuir al desarrollo de proyectos que generen valor sostenible, integrando precisión técnica, conocimiento del territorio y una visión orientada al crecimiento ordenado de cada inversión inmobiliaria.",
+        ] as string[],
+      },
+      {
+        slug: "adrian-bonilla",
+        name: "Adrián A. Bonilla",
+        role: "Director Audiovisual & Especialista en Marketing",
+        credentials: "MSc. Diseño Publicitario | Fotografía y videografía",
+        bio: [
+          "Adrián Bonilla es licenciado en Diseño Publicitario, con formación técnica en Diseño Gráfico y una trayectoria profesional desarrollada desde 2018 entre agencias, marcas y proyectos independientes.",
+          "Su experiencia combina una sólida base artística y técnica con una visión estratégica de la comunicación. Domina los principios, sistemas y estructuras del diseño, el ecosistema Adobe Creative Suite y la integración de inteligencia artificial en procesos de ideación, conceptualización, diseño y producción audiovisual. A lo largo de su carrera ha gestionado más de 50 cuentas comerciales y liderado equipos creativos multidisciplinarios, coordinando estrategia, producción, comunicación con clientes y ejecución de campañas tanto en entornos remotos como presenciales.",
+          "En 19.89 Arquitectura, aporta una visión creativa y estratégica orientada a construir una comunicación visual coherente con la identidad, filosofía y calidad de cada proyecto. Su trabajo busca traducir conceptos arquitectónicos en experiencias visuales claras y relevantes, fortaleciendo la presencia de la marca y conectando cada proyecto con las personas a través del diseño, el contenido y la comunicación.",
+        ] as string[],
+      },
       { slug: "aaron-fonseca", name: "Aarón Fonseca", role: "", bio: [] as string[] },
-      { slug: "alonso-aguirre", name: "Alonso Aguirre", role: "", bio: [] as string[] },
       { slug: "jeancarlo-amores", name: "Jeancarlo Amores", role: "", bio: [] as string[] },
-      { slug: "matias-gutierrez", name: "Matías Gutiérrez Salas", role: "", bio: [] as string[] },
-      { slug: "stephannie-tenorio", name: "Stephannie Tenorio", role: "", bio: [] as string[] },
     ],
   },
 
