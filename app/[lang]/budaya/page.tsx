@@ -112,10 +112,8 @@ export default async function BudayaPage({ params }: { params: Params }) {
                 {b.processTitle}
               </p>
             </Reveal>
-            {/* El ancho de columna se define una sola vez, en el contenedor:
-                si cada párrafo lleva su propio `max-w` en `ch`, el destacado
-                —que va en cuerpo mayor— arma una columna más ancha y los
-                bordes derechos se desalinean al cambiar el tamaño de letra. */}
+            {/* El ancho de columna se define una sola vez, en el contenedor,
+                para que el destacado corte a la misma altura que los párrafos. */}
             <Reveal delay={120} className="max-w-[58ch]">
               <div className="space-y-6">
                 {b.processParagraphs.map((paragraph) => (
@@ -124,7 +122,7 @@ export default async function BudayaPage({ params }: { params: Params }) {
                   </p>
                 ))}
               </div>
-              <p className="mt-10 border-l border-earth pl-6 text-lead font-light leading-[1.6] text-ink">
+              <p className="mt-10 border-l border-earth pl-6 font-light leading-[1.75] text-ink">
                 {b.processHighlight}
               </p>
             </Reveal>

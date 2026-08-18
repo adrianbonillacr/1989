@@ -36,10 +36,8 @@ export default async function QuienesSomosPage({ params }: { params: Params }) {
             />
           </Reveal>
 
-          {/* El ancho de columna se define una sola vez, en el contenedor: si
-              cada párrafo lleva su propio `max-w` en `ch`, el destacado —que
-              va en cuerpo mayor— arma una columna más ancha y los bordes
-              derechos se desalinean al cambiar el tamaño de letra. */}
+          {/* El ancho de columna se define una sola vez, en el contenedor,
+              para que el destacado corte a la misma altura que los párrafos. */}
           <Reveal className="mt-12 max-w-[58ch]">
             <div className="grid gap-6">
               {a.introParagraphs.map((paragraph) => (
@@ -48,7 +46,7 @@ export default async function QuienesSomosPage({ params }: { params: Params }) {
                 </p>
               ))}
             </div>
-            <p className="mt-12 border-l border-earth pl-6 text-lead font-light leading-[1.6] text-ink">
+            <p className="mt-12 border-l border-earth pl-6 font-light leading-[1.75] text-ink">
               {a.introHighlight}
             </p>
           </Reveal>
