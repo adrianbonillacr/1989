@@ -1377,8 +1377,41 @@ export const en: Dictionary = {
           "At 19.89 Arquitectura he contributes a creative and strategic vision aimed at building visual communication coherent with the identity, philosophy and quality of each project. His work translates architectural concepts into clear, relevant visual experiences, strengthening the brand's presence and connecting each project with people through design, content and communication.",
         ] as string[],
       },
-      { slug: "aaron-fonseca", name: "Aarón Fonseca", role: "", bio: [] as string[] },
-      { slug: "jeancarlo-amores", name: "Jeancarlo Amores", role: "", bio: [] as string[] },
+      {
+        slug: "aaron-fonseca",
+        name: "Aarón Fonseca",
+        role: "Electromechanical Engineer",
+        credentials: "Electromechanical Engineering | Inspection | Special Systems",
+        bio: [
+          "Aarón Fonseca is an Electromechanical Engineer from the Universidad Internacional de las Américas (UIA), with more than 11 years of professional experience in the development, supervision and inspection of engineering and construction projects in Costa Rica.",
+          "Over his career he has taken part in small, mid-sized and large-scale projects, developing technical solutions tailored to the needs and particular characteristics of each one. His experience spans electrical and mechanical engineering, special systems, Liquefied Petroleum Gas (LPG) installations and fire protection systems, always under criteria of safety, regulation and sound technical execution.",
+          "As part of the 19.89 Arquitectura team, he is responsible for the electrical and mechanical engineering studies and designs of our projects, working in an integrated way with architecture and the other design disciplines. His experience allows him to approach projects of different scales and typologies, including hospitality, residential, commercial and industrial developments.",
+          "He currently serves as an Inspector of Liquefied Petroleum Gas (LPG) installations, accredited by the Federated Association of Engineers and Architects of Costa Rica (CFIA) and the Ministry of Environment and Energy (MINAE).",
+          "His track record includes nationally and internationally recognised projects, among them AKKA Healing & Movement Center (2020), awarded Most Sustainable Building at the XV International Architecture Biennial of Costa Rica, and El Nido (2022), which received an Honourable Mention at the Tiny House 2022 Architecture Competition.",
+        ] as string[],
+      },
+      {
+        slug: "jeancarlo-amores",
+        name: "Jeancarlo Amores Cubero",
+        role: "Civil Engineer",
+        credentials: "Civil Engineering | Inspection | Structural Design",
+        bio: [
+          "Jeancarlo Amores Cubero is a Civil Engineer from the Universidad Latina de Costa Rica, with more than 10 years of professional experience in structural design and site inspection, working on residential, commercial and industrial projects in both the private and public sectors.",
+          "As part of the 19.89 Arquitectura team, he is responsible for the structural engineering and inspection of our projects, working in an integrated way with architecture and the other disciplines to develop solutions that match the characteristics and needs of each project.",
+          "His involvement makes it possible to integrate architecture, structure and technical feasibility from the earliest stages, contributing to projects that are safe, functional and coherent with the architectural intent.",
+        ] as string[],
+      },
+      {
+        slug: "ruben-guido",
+        name: "Rubén Arturo Guido Villalobos",
+        role: "Real Estate & Investment Advisor",
+        bio: [
+          "Rubén Arturo Guido Villalobos is a real estate professional with approximately 5 years of experience in property sales and advisory in Costa Rica. His experience covers residential and commercial properties, lots, beachfront properties, farms, luxury homes and investment opportunities.",
+          "He is registered with the Costa Rican Chamber of Real Estate Brokers and works across practically the entire country.",
+          "As part of the 19.89 team, he contributes his experience in the identification, analysis, acquisition and sale of properties for hospitality, residential, commercial and industrial projects. His involvement allows us to accompany clients from the search for a property with potential through to its acquisition and, later, in the strategy for marketing and selling the asset.",
+          "His way of working is grounded in trust, transparency and personalised attention, seeking to understand the needs of each client and to find opportunities that respond both to their goals and to the potential of each property.",
+        ] as string[],
+      },
     ],
   },
 

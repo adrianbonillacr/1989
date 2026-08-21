@@ -17,6 +17,8 @@ export type TeamMember = {
   quote?: string;
   /** Texto alternativo del retrato, ya resuelto en el servidor. */
   alt: string;
+  /** Si el archivo del retrato existe: lo comprueba el servidor. */
+  hasPhoto: boolean;
 };
 
 type Labels = {
@@ -24,6 +26,8 @@ type Labels = {
   modalLabel: string;
   closeLabel: string;
   bioPending: string;
+  /** Rótulo del placeholder mientras no hay retrato. */
+  photoLabel: string;
 };
 
 /**
@@ -98,13 +102,29 @@ export default function TeamGallery({
               className="group block w-full text-left"
             >
               <span className="relative block aspect-[3/4] w-full overflow-hidden bg-stone">
-                <Image
-                  src={`/images/equipo/${member.slug}.jpg`}
-                  alt={member.alt}
-                  fill
-                  sizes="(min-width: 1024px) 25vw, 50vw"
-                  className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.035]"
-                />
+                {member.hasPhoto ? (
+                  <Image
+                    src={`/images/equipo/${member.slug}.jpg`}
+                    alt={member.alt}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, 50vw"
+                    className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.035]"
+                  />
+                ) : (
+                  <span
+                    role="img"
+                    aria-label={member.alt}
+                    className="absolute inset-0 block transition-transform duration-[600ms] ease-out group-hover:scale-[1.035]"
+                  >
+                    <span aria-hidden="true" className="texture-grain absolute inset-0 block" />
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-0 flex items-center justify-center px-6 text-center text-[0.68rem] font-normal uppercase tracking-[0.3em] text-white"
+                    >
+                      {labels.photoLabel}
+                    </span>
+                  </span>
+                )}
               </span>
               <span className="mt-4 block text-[0.95rem] font-medium leading-snug text-ink transition-colors duration-300 group-hover:text-earth">
                 {member.name}
@@ -142,14 +162,26 @@ export default function TeamGallery({
             className="accordion-panel max-h-[92svh] w-full max-w-4xl overflow-y-auto bg-white"
           >
             <div className="grid sm:grid-cols-[minmax(0,15rem)_1fr]">
-              <div className="relative aspect-[3/4] w-full max-sm:max-h-[38svh]">
-                <Image
-                  src={`/images/equipo/${active.slug}.jpg`}
-                  alt={active.alt}
-                  fill
-                  sizes="(min-width: 640px) 15rem, 100vw"
-                  className="object-cover"
-                />
+              <div className="relative aspect-[3/4] w-full overflow-hidden bg-stone max-sm:max-h-[38svh]">
+                {active.hasPhoto ? (
+                  <Image
+                    src={`/images/equipo/${active.slug}.jpg`}
+                    alt={active.alt}
+                    fill
+                    sizes="(min-width: 640px) 15rem, 100vw"
+                    className="object-cover"
+                  />
+                ) : (
+                  <div role="img" aria-label={active.alt} className="absolute inset-0">
+                    <div aria-hidden="true" className="texture-grain absolute inset-0" />
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-0 flex items-center justify-center px-6 text-center text-[0.68rem] font-normal uppercase tracking-[0.3em] text-white"
+                    >
+                      {labels.photoLabel}
+                    </span>
+                  </div>
+                )}
               </div>
 
               <div className="flex flex-col p-8 lg:p-10">

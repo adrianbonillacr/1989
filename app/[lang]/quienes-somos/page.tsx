@@ -1,3 +1,5 @@
+import fsSync from "node:fs";
+import nodePath from "node:path";
 import type { Metadata } from "next";
 import CtaBanner from "@/components/CtaBanner";
 import InteriorHero from "@/components/InteriorHero";
@@ -7,6 +9,18 @@ import TeamGallery from "@/components/TeamGallery";
 import { getDict, isLang, type Lang } from "@/lib/i18n";
 
 type Params = Promise<{ lang: string }>;
+
+/**
+ * ¿Está ya el retrato en /public? Mientras una foto no llegue, la galería
+ * muestra el placeholder tonal de marca en vez de una imagen rota.
+ */
+function portraitExists(slug: string): boolean {
+  try {
+    return fsSync.existsSync(nodePath.join(process.cwd(), "public", "images", "equipo", `${slug}.jpg`));
+  } catch {
+    return false;
+  }
+}
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { lang } = await params;
@@ -122,12 +136,14 @@ export default async function QuienesSomosPage({ params }: { params: Params }) {
               members={a.teamMembers.map((member) => ({
                 ...member,
                 alt: a.teamPhotoAlt(member.name),
+                hasPhoto: portraitExists(member.slug),
               }))}
               labels={{
                 openLabel: a.teamOpenLabel,
                 modalLabel: a.teamModalLabel,
                 closeLabel: a.teamModalClose,
                 bioPending: a.teamBioPending,
+                photoLabel: a.teamPhotoLabel,
               }}
             />
           </Reveal>

@@ -1437,8 +1437,41 @@ export const es = {
           "En 19.89 Arquitectura, aporta una visión creativa y estratégica orientada a construir una comunicación visual coherente con la identidad, filosofía y calidad de cada proyecto. Su trabajo busca traducir conceptos arquitectónicos en experiencias visuales claras y relevantes, fortaleciendo la presencia de la marca y conectando cada proyecto con las personas a través del diseño, el contenido y la comunicación.",
         ] as string[],
       },
-      { slug: "aaron-fonseca", name: "Aarón Fonseca", role: "", bio: [] as string[] },
-      { slug: "jeancarlo-amores", name: "Jeancarlo Amores", role: "", bio: [] as string[] },
+      {
+        slug: "aaron-fonseca",
+        name: "Aarón Fonseca",
+        role: "Ingeniero Electromecánico",
+        credentials: "Ingeniería Electromecánica | Inspección | Sistemas Especiales",
+        bio: [
+          "Aarón Fonseca es Ingeniero Electromecánico egresado de la Universidad Internacional de las Américas (UIA), con más de 11 años de experiencia profesional en el desarrollo, supervisión e inspección de proyectos de ingeniería y construcción en Costa Rica.",
+          "A lo largo de su trayectoria ha participado en proyectos de pequeña, mediana y gran escala, desarrollando soluciones técnicas adaptadas a las necesidades y características particulares de cada proyecto. Su experiencia comprende áreas de ingeniería eléctrica y mecánica, sistemas especiales, instalaciones de Gas Licuado de Petróleo (GLP) y sistemas de protección contra incendios, bajo criterios de seguridad, normativa y correcta ejecución técnica.",
+          "Como parte del equipo de 19.89 Arquitectura, es responsable del desarrollo de los estudios y diseños de ingeniería eléctrica y mecánica de nuestros proyectos, trabajando de manera integrada con la arquitectura y las demás disciplinas de diseño. Su experiencia le permite abordar proyectos de distintas escalas y tipologías, incluyendo desarrollos turísticos, residenciales, comerciales e industriales.",
+          "Actualmente se desempeña como Inspector de Instalaciones de Gas Licuado de Petróleo (GLP), avalado por el Colegio Federado de Ingenieros y de Arquitectos de Costa Rica (CFIA) y el Ministerio de Ambiente y Energía (MINAE).",
+          "Dentro de su trayectoria ha participado en proyectos reconocidos nacional e internacionalmente, entre ellos AKKA Healing & Movement Center (2020), premiado como Edificio Más Sostenible en la XV Bienal Internacional de Arquitectura de Costa Rica, y El Nido (2022), con Mención Honorífica en el Tiny House 2022 Architecture Competition.",
+        ] as string[],
+      },
+      {
+        slug: "jeancarlo-amores",
+        name: "Jeancarlo Amores Cubero",
+        role: "Ingeniero Civil",
+        credentials: "Ingeniería Civil | Inspección | Diseño Estructural",
+        bio: [
+          "Jeancarlo Amores Cubero es Ingeniero Civil graduado de la Universidad Latina de Costa Rica, con más de 10 años de experiencia profesional en diseño e inspección estructural de obras, participando en proyectos residenciales, comerciales e industriales, tanto en el sector privado como estatal.",
+          "Como parte del equipo de 19.89 Arquitectura, es responsable del desarrollo de la ingeniería estructural y la inspección de nuestros proyectos, trabajando de manera integrada con arquitectura y las demás disciplinas para desarrollar soluciones acordes con las características y necesidades de cada proyecto.",
+          "Su participación permite integrar desde etapas tempranas arquitectura, estructura y viabilidad técnica, contribuyendo al desarrollo de proyectos seguros, funcionales y coherentes con la intención arquitectónica.",
+        ] as string[],
+      },
+      {
+        slug: "ruben-guido",
+        name: "Rubén Arturo Guido Villalobos",
+        role: "Asesor Inmobiliario & de Inversiones",
+        bio: [
+          "Rubén Arturo Guido Villalobos es profesional del sector inmobiliario con aproximadamente 5 años de experiencia en la comercialización y asesoría de bienes raíces en Costa Rica. Su experiencia comprende propiedades residenciales y comerciales, lotes, propiedades de playa, fincas, casas de lujo y oportunidades de inversión.",
+          "Se encuentra inscrito en la Cámara Costarricense de Corredores de Bienes Raíces y desarrolla su actividad profesional en prácticamente todo el territorio nacional.",
+          "Como parte del equipo de 19.89, aporta su experiencia en la identificación, análisis, adquisición y comercialización de propiedades para proyectos turísticos, residenciales, comerciales e industriales. Su participación permite acompañar a los clientes desde la búsqueda de una propiedad con potencial hasta su adquisición y, posteriormente, en la estrategia de comercialización y venta del activo.",
+          "Su manera de trabajar se fundamenta en la confianza, transparencia y atención personalizada, procurando comprender las necesidades de cada cliente y encontrar oportunidades que respondan tanto a sus objetivos como al potencial de cada propiedad.",
+        ] as string[],
+      },
     ],
   },
 
