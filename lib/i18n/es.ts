@@ -1231,13 +1231,7 @@ export const es = {
       "Establecer prioridades de intervención.",
       "Orientar futuras inversiones mediante una estrategia clara.",
     ],
-    indexEyebrow: "Etapa 2 · Índice de Valor 19.89",
-    indexTitle: "Cinco dimensiones para entender dónde invertir primero.",
-    indexText:
-      "El resultado de la consultoría permite entender dónde invertir primero y qué acciones pueden generar mayor impacto.",
-    indexNote:
-      "Ejemplo visual — la medición real se construye durante la consultoría de cada proyecto",
-    roadmapEyebrow: "Etapa 3 · Proyecto Roadmap",
+    roadmapEyebrow: "Etapa 2 · Proyecto Roadmap",
     roadmapTitle: "Prioridades claras, inversión ordenada.",
     roadmapText:
       "Después de la consultoría, se define una hoja de ruta con prioridades claras. Esta hoja de ruta permite contratar las disciplinas de forma integral o por etapas según el nivel de urgencia, impacto y presupuesto.",
@@ -1254,14 +1248,6 @@ export const es = {
     ctaTitlePart2: "Invertimos después.",
     ctaButton: "Quiero una consultoría de mi proyecto",
   },
-
-  valueDims: [
-    { label: "Funcionalidad", demoFill: 72 },
-    { label: "Experiencia", demoFill: 58 },
-    { label: "Identidad", demoFill: 45 },
-    { label: "Diferenciación", demoFill: 61 },
-    { label: "Potencial comercial", demoFill: 80 },
-  ],
 
   strategyPage: {
     metaTitle:

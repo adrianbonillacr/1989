@@ -82,44 +82,6 @@ export default async function ProyectoYaConstruidoPage({ params }: { params: Par
         </div>
       </section>
 
-      {/* ÍNDICE DE VALOR 19.89 */}
-      <section className="section-pad bg-charcoal text-white">
-        <div className="container-site">
-          <Reveal>
-            <span
-              aria-hidden="true"
-              className="mb-5 block text-[clamp(1.3rem,2vw,1.7rem)] font-semibold leading-none text-earth"
-            >
-              02
-            </span>
-            <SectionHeader eyebrow={b.indexEyebrow} title={b.indexTitle} dark />
-            <p className="mt-6 max-w-[56ch] font-light leading-[1.7] text-mist">
-              {b.indexText}
-            </p>
-          </Reveal>
-          <Reveal className="mt-14 max-w-3xl">
-            <ul className="space-y-8" role="list">
-              {t.valueDims.map((dimension) => (
-                <li key={dimension.label}>
-                  <span className="text-[0.78rem] font-medium uppercase tracking-[0.2em] text-white">
-                    {dimension.label}
-                  </span>
-                  <div aria-hidden="true" className="mt-3 h-1 w-full bg-stone/30">
-                    <div
-                      className="value-bar-fill h-full bg-earth"
-                      style={{ width: `${dimension.demoFill}%` }}
-                    />
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-8 text-[0.68rem] font-normal uppercase tracking-[0.2em] text-stone">
-              {b.indexNote}
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
       {/* PROYECTO ROADMAP */}
       <section className="section-pad bg-white">
         <div className="container-site">
@@ -128,7 +90,7 @@ export default async function ProyectoYaConstruidoPage({ params }: { params: Par
               aria-hidden="true"
               className="mb-5 block text-[clamp(1.3rem,2vw,1.7rem)] font-semibold leading-none text-earth"
             >
-              03
+              02
             </span>
             <div className="grid gap-8">
               <SectionHeader eyebrow={b.roadmapEyebrow} title={b.roadmapTitle} />

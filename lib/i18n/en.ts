@@ -1180,13 +1180,7 @@ export const en: Dictionary = {
       "Establishing intervention priorities.",
       "Guiding future investments through a clear strategy.",
     ],
-    indexEyebrow: "Stage 2 · 19.89 Value Index",
-    indexTitle: "Five dimensions to understand where to invest first.",
-    indexText:
-      "The result of the consultancy shows where to invest first and which actions can generate the greatest impact.",
-    indexNote:
-      "Visual example — the real measurement is built during each project's consultancy",
-    roadmapEyebrow: "Stage 3 · Project Roadmap",
+    roadmapEyebrow: "Stage 2 · Project Roadmap",
     roadmapTitle: "Clear priorities, ordered investment.",
     roadmapText:
       "After the consultancy, a roadmap with clear priorities is defined. This roadmap allows the disciplines to be engaged comprehensively or by stages according to urgency, impact and budget.",
@@ -1203,14 +1197,6 @@ export const en: Dictionary = {
     ctaTitlePart2: "We invest after.",
     ctaButton: "I want a consultancy for my project",
   },
-
-  valueDims: [
-    { label: "Functionality", demoFill: 72 },
-    { label: "Experience", demoFill: 58 },
-    { label: "Identity", demoFill: 45 },
-    { label: "Differentiation", demoFill: 61 },
-    { label: "Commercial potential", demoFill: 80 },
-  ],
 
   strategyPage: {
     metaTitle:

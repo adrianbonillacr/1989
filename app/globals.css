@@ -186,15 +186,4 @@
     opacity: 1;
     transform: none;
   }
-
-  /* Barras del Índice de Valor 19.89 */
-  .js .value-bar-fill {
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 1.1s cubic-bezier(0.25, 0.8, 0.35, 1);
-  }
-
-  .js .is-visible .value-bar-fill {
-    transform: scaleX(1);
-  }
 }
